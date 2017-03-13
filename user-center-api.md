@@ -15,7 +15,7 @@ User System APIs
 
 
 ###	快捷登录
-*	name: loginQuick
+*	name: login-quick
 *	params: 
 	-	phone(string)
 	-	password(string)
