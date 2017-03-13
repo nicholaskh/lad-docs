@@ -1,25 +1,26 @@
 User System APIs
 ================
 
-*	Common
--	return: in json
+###	Common
+*	return: in json
 	-	ret: 0成功，非0为error code
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 	
-*	登录
--	path: /login
--	params:
-	-	username: 用户名
-	-	password: 密码
--	return: 通用返回值
+###	登录
+*	path: /login
+*	params:
+	-	username(string): 用户名
+	-	password(string): 密码
+*	return: 通用返回值
 
 
-快捷登陆
----
-		name: loginQuick
-		return value: 成功返回：成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "用户名或者密码不正确"}
-		param: String phone
-		param: String password
+###	快捷登录
+*	name: loginQuick
+*	params: 
+	-	phone(string)
+	-	password(string)
+*	return: 通用返回值
+		
 
 登出
 ---
