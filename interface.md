@@ -1,9 +1,18 @@
-登陆
----
-		name: login
-		return value: 成功返回：成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "用户名或者密码不正确"}
-		param: String username
-		param: String password
+User System APIs
+================
+
+*	Common
+-	return: in json
+	-	ret: 0成功，非0为error code
+	-	error: 当ret!=0时，error为error message，否则error字段不存在
+	
+*	登录
+-	path: /login
+-	params:
+	-	username: 用户名
+	-	password: 密码
+-	return: 通用返回值
+
 
 快捷登陆
 ---
