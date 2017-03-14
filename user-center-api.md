@@ -40,7 +40,7 @@ User System APIs
 ###     账户安全
 *	path: /accountsecurity-set
 *	param: 
-        -       username(string)
+        -	username(string)
 	-	verification(string)
 	-	password(string)
 *	return: 通用返回值
