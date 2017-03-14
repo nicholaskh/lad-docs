@@ -103,20 +103,20 @@ User System APIs
 *       return: 通用返回值
 
 
-绑定微博
+###     绑定微博
 *       path: /microblog-bind
 *       param:
 	-	microblog(string)
 *       return: 通用返回值
 
-Give the thumbs-up点赞
+###     Give the thumbs-up点赞
 *       path: /thumbsup
 *       param:
 	-	personFrom(string)
 	-	personTo(string)
 *       return: 通用返回值
 
-好友动态
+###     好友动态
 *       path: /friends-dynamic
 *       param:
 	-	person(string)
@@ -124,7 +124,7 @@ Give the thumbs-up点赞
 	-	ret: 0成功，非0为error code,ret为数据信息
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-获得基本信息
+###     获得基本信息
 *       path: /get-basicinfo
 *       param:
 	-	person(string)
@@ -132,7 +132,7 @@ Give the thumbs-up点赞
 	-	ret: 0成功，非0为error code,ret为数据信息
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-关于老友
+###     关于老友
 *       path: /about
 *       return: 通用返回值
 
