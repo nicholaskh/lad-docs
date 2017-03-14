@@ -38,7 +38,7 @@ User System APIs
 *       return: 通用返回值
 
 ###     账户安全
-*	path: /accountSecuritySet
+*	path: /accountsecurity-set
 *	param: 
         -	username(string)
 	-	verification(string)
@@ -46,90 +46,95 @@ User System APIs
 *	return: 通用返回值
 
 ###     手机号码是否正确
-*       path: /isPhoneRight
+*       path: /is-phone-right
 *	param: 
         -       phone(string)
 	-	verification(string)
 *	return: 通用返回值
 
-手机号码是否重复
----
-		name: isPhoneRepeat
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "该手机号码已存在"}
-		param: String phone
-		param: String verification
+###     手机号码是否重复
+*       path: /is-phone-repeat
+*       param:
+        -       phone(string)
+	-	verification(string)
+*       return: 通用返回值
 
-设置新密码
----
-		name: passwordSet
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "密码设置失败"}
-		param: String oldPassword
-		param: String password1
-		param: String password2
+###     设置新密码
+*       path: /password-set
+*       param:
+        -       oldPassword(string)
+	-	password1(string)
+	-	password2(string)
+*      return: 通用返回值
 
-验证码是否正确
----
-		name: isVerificationRight
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "验证码错误"}
-		param: String verification
+###     验证码是否正确
+*       path: /is-verification-right
+*       param:
+	-	verification(string)
+*       return: 通用返回值
 
-设置个人信息
----
-		name: psersonInfoSet
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "设置失败"}
-		param: String picUrl
-		param: String nickname
-		param: String birthday
-		param: String personalizedSignature
+###     设置个人信息
+*       path: /psersoninfo-set
+*       param:
+	-	picUrl(string)
+	-	nickname(string)
+	-	birthday(string)
+	-	personalizedSignature(string)
+*       return: 通用返回值
 
-意见反馈
----
-		name: feedbackSet
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "设置失败"}
-		param: String feedback;
-		param: String phone;
+###     意见反馈
+*       path: /feedback-set
+*       param:
+	-	feedback(string)
+	-	phone(string)
+*       return: 通用返回值
 
-绑定QQ
----
-		name: QQBind
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "设置失败"}
-		param: String QQ
+###     绑定QQ
+*       path: /QQ-bind
+*       param:
+	-	QQ(string)
+*       return: 通用返回值
 
-绑定微信
----
-		name: WeChatBind
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "设置失败"}
-		param: String WeChat
+
+###     绑定微信
+*       path: /WeChat-bind
+*       param:
+	-	WeChat(string)
+*       return: 通用返回值
+
 
 绑定微博
----
-		name: microblogBind
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "设置失败"}
-		param: String microblog
+*       path: /microblog-bind
+*       param:
+	-	microblog(string)
+*       return: 通用返回值
 
 Give the thumbs-up点赞
------
-		name: thumbsup
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "失败"}
-		param: String personFrom
-		param: String personTo
+*       path: /thumbsup
+*       param:
+	-	personFrom(string)
+	-	personTo(string)
+*       return: 通用返回值
 
 好友动态
-----
-		name:friendsDynamic
-		return value:成功返回：{ret: [data]}; 失败返回：{ret: 1001，error: "失败"}
-		param:String person
+*       path: /friends-dynamic
+*       param:
+	-	person(string)
+*	return: in json
+	-	ret: 0成功，非0为error code,ret为数据信息
+	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
 获得基本信息
-----
-		name:getBasicInfo
-		return value:成功返回：{ret: [data]}; 失败返回：{ret: 1001，error: "失败"}
-		param:String person
+*       path: /get-basicinfo
+*       param:
+	-	person(string)
+*	return: in json
+	-	ret: 0成功，非0为error code,ret为数据信息
+	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
 关于老友
-----
-		name:about
-		return value:成功返回：{ret: data}; 失败返回：{ret: 1001，error: "失败"}
+*       path: /about
+*       return: 通用返回值
 
 
 
