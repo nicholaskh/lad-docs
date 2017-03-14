@@ -40,7 +40,7 @@ User System APIs
 ###     账户安全
 *	path: /accountsecurity-set
 *	param: 
-        -	username(string)
+        -       username(string)
 	-	verification(string)
 	-	password(string)
 *	return: 通用返回值
@@ -76,7 +76,7 @@ User System APIs
 ###     设置个人信息
 *       path: /psersoninfo-set
 *       param:
-	-	picUrl(string)
+	-       picUrl(string)
 	-	nickname(string)
 	-	birthday(string)
 	-	personalizedSignature(string)
@@ -99,7 +99,7 @@ User System APIs
 ###     绑定微信
 *       path: /WeChat-bind
 *       param:
-	-	WeChat(string)
+	-       WeChat(string)
 *       return: 通用返回值
 
 
