@@ -23,19 +23,19 @@ User System APIs
 		
 
 ###     登出
-*       path: /loginout
+*       path: /loginout
 *	params:
-	-       password(username)
+	-       username(string)
 *	return: 通用返回值
 
 
-注册
----
-		name: register
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "用户名已存在"}
-		param: String username
-		param: String verification
-		param: String password
+###     注册
+*	path: /register
+*	param:	
+	-	username(string)
+	-	verification(string)
+	-	password(string)
+*       return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "用户名已存在"}
 
 账户安全
 ---
