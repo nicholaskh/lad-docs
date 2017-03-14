@@ -47,7 +47,7 @@ User System APIs
 
 ###     手机号码是否正确
 *       path: /is-phone-right
-*	param: 
+*	param:
         -       phone(string)
 	-	verification(string)
 *	return: 通用返回值
@@ -70,7 +70,7 @@ User System APIs
 ###     验证码是否正确
 *       path: /is-verification-right
 *       param:
-        -       verification(string)
+         -       verification(string)
 *       return: 通用返回值
 
 ###     设置个人信息
