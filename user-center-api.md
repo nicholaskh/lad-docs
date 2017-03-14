@@ -22,11 +22,12 @@ User System APIs
 *	return: 通用返回值
 		
 
-登出
----
-		name: loginout
-		return value: 成功返回：成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "用户名或者密码不正确"}
-		param: String username
+###     登出
+*       path: /loginout
+*	params:
+	-       password(username)
+*	return: 通用返回值
+
 
 注册
 ---
