@@ -35,22 +35,22 @@ User System APIs
 	-	username(string)
 	-	verification(string)
 	-	password(string)
-*       return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "用户名已存在"}
+*       return: 通用返回值
 
-账户安全
----
-		name: accountSecuritySet
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "设置失败"}
-		param: String username
-		param: String verification
-		param: String password
+###     账户安全
+*	path: /accountSecuritySet
+*	param: 
+        -	username(string)
+	-	verification(string)
+	-	password(string)
+*	return: 通用返回值
 
-手机号码是否正确
----
-		name: isPhoneRight
-		return value: 成功返回：{ret: 0}; 失败返回：{ret: 1001，error: "该手机号码不正确"}
-		param: String phone
-		param: String verification
+###     手机号码是否正确
+*       path: /isPhoneRight
+*	param: 
+        -       phone(string)
+	-	verification(string)
+*	return: 通用返回值
 
 手机号码是否重复
 ---
