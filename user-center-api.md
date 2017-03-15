@@ -94,7 +94,7 @@ User System APIs
 
 
 ### 绑定微信
-*   path: /WeChat-bind
+*   path: /wechat-bind
 *   param:
 	-   wechat(string)
 *   return: 通用返回值
@@ -106,11 +106,11 @@ User System APIs
 	-	microblog(string)
 *   return: 通用返回值
 
-### Give the thumbs-up点赞
+
 *   path: /thumbsup
 *   param:
-	-	personFrom(string)
-	-	personTo(string)
+	-	person_from(string)
+	-	person_to(string)
 *   return: 通用返回值
 
 ### 好友动态
@@ -129,7 +129,7 @@ User System APIs
 	-	ret: 0成功，非0为error code,ret为数据信息
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-### 关于老友
+
 *   path: /about
 *   return: 通用返回值
 
