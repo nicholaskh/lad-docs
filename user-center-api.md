@@ -59,7 +59,7 @@ User System APIs
 ###     设置新密码
 *   path: /password-set
 *   param:
-    -   oldPassword(string)
+    -   old_password(string)
 	-	password1(string)
 	-	password2(string)
 *      return: 通用返回值
@@ -73,10 +73,10 @@ User System APIs
 ### 设置个人信息
 *   path: /psersoninfo-set
 *   param:
-	-   picUrl(string)
+	-   pic_url(string)
 	-	nickname(string)
 	-	birthday(string)
-	-	personalizedSignature(string)
+	-	personalized_signature(string): 个性签名
 *   return: 通用返回值
 
 ### 意见反馈
@@ -87,16 +87,16 @@ User System APIs
 *   return: 通用返回值
 
 ### 绑定QQ
-*   path: /QQ-bind
+*   path: /qq-bind
 *   param:
-	-	QQ(string)
+	-	qq(string)
 *   return: 通用返回值
 
 
 ### 绑定微信
 *   path: /WeChat-bind
 *   param:
-	-   WeChat(string)
+	-   wechat(string)
 *   return: 通用返回值
 
 
