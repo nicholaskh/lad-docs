@@ -5,7 +5,7 @@ User System APIs
 *	return: in json
 	-	ret: 0成功，非0为error code
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
-	
+
 ###	登录
 *	path: /login
 *	params:
@@ -13,128 +13,125 @@ User System APIs
 	-	password(string): 密码
 *	return: 通用返回值
 
-
 ###	快捷登录
 *	path: /login-quick
-*	params: 
+*	params:
 	-	phone(string)
 	-	password(string)
 *	return: 通用返回值
-		
 
-###     登出
-*       path: /loginout
+###	登出
+*   path: /loginout
 *	params:
-	-       username(string)
+	-   username(string)
 *	return: 通用返回值
 
-
-###     注册
+### 注册
 *	path: /register
-*	param:	
+*	param:
 	-	username(string)
 	-	verification(string)
 	-	password(string)
-*       return: 通用返回值
+*   return: 通用返回值
 
-###     账户安全
+### 账户安全
 *	path: /accountsecurity-set
-*	param: 
-        -	username(string)
+*	param:
+    -	username(string)
 	-	verification(string)
 	-	password(string)
 *	return: 通用返回值
 
-###     手机号码是否正确
-*       path: /is-phone-right
+### 手机号码是否正确
+*   path: /is-phone-right
 *	param:
-        -       phone(string)
+    -   phone(string)
 	-	verification(string)
 *	return: 通用返回值
 
-###     手机号码是否重复
-*       path: /is-phone-repeat
-*       param:
-        -       phone(string)
+### 手机号码是否重复
+*   path: /is-phone-repeat
+*   param:
+    -   phone(string)
 	-	verification(string)
 *       return: 通用返回值
 
 ###     设置新密码
-*       path: /password-set
-*       param:
-        -       oldPassword(string)
+*   path: /password-set
+*   param:
+    -   oldPassword(string)
 	-	password1(string)
 	-	password2(string)
 *      return: 通用返回值
 
-###     验证码是否正确
-*       path: /is-verification-right
-*       param:
-         -       verification(string)
-*       return: 通用返回值
+### 验证码是否正确
+*   path: /is-verification-right
+*   param:
+    -   verification(string)
+*   return: 通用返回值
 
-###     设置个人信息
-*       path: /psersoninfo-set
-*       param:
-	-       picUrl(string)
+### 设置个人信息
+*   path: /psersoninfo-set
+*   param:
+	-   picUrl(string)
 	-	nickname(string)
 	-	birthday(string)
 	-	personalizedSignature(string)
-*       return: 通用返回值
+*   return: 通用返回值
 
-###     意见反馈
-*       path: /feedback-set
-*       param:
+### 意见反馈
+*   path: /feedback-set
+*   param:
 	-	feedback(string)
 	-	phone(string)
-*       return: 通用返回值
+*   return: 通用返回值
 
-###     绑定QQ
-*       path: /QQ-bind
-*       param:
+### 绑定QQ
+*   path: /QQ-bind
+*   param:
 	-	QQ(string)
-*       return: 通用返回值
+*   return: 通用返回值
 
 
-###     绑定微信
-*       path: /WeChat-bind
-*       param:
-	-       WeChat(string)
-*       return: 通用返回值
+### 绑定微信
+*   path: /WeChat-bind
+*   param:
+	-   WeChat(string)
+*   return: 通用返回值
 
 
-###     绑定微博
-*       path: /microblog-bind
-*       param:
+### 绑定微博
+*   path: /microblog-bind
+*   param:
 	-	microblog(string)
-*       return: 通用返回值
+*   return: 通用返回值
 
-###     Give the thumbs-up点赞
-*       path: /thumbsup
-*       param:
+### Give the thumbs-up点赞
+*   path: /thumbsup
+*   param:
 	-	personFrom(string)
 	-	personTo(string)
-*       return: 通用返回值
+*   return: 通用返回值
 
-###     好友动态
-*       path: /friends-dynamic
-*       param:
+### 好友动态
+*   path: /friends-dynamic
+*   param:
 	-	person(string)
-*	return: in json
+*	return:
 	-	ret: 0成功，非0为error code,ret为数据信息
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-###     获得基本信息
-*       path: /get-basicinfo
-*       param:
+### 获得基本信息
+*   path: /get-basicinfo
+*   param:
 	-	person(string)
-*	return: in json
+*	return:
 	-	ret: 0成功，非0为error code,ret为数据信息
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-###     关于老友
-*       path: /about
-*       return: 通用返回值
+### 关于老友
+*   path: /about
+*   return: 通用返回值
 
 
 
