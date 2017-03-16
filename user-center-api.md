@@ -9,7 +9,7 @@ User System APIs
 ### cookie，session机制说明
 *    注册：注册成功后，接收到从服务端传来的{"session_id",[value]},保存在本地cookie下；
 *    登陆：从cookie中取得key为"session_id"的值，拼装为{"session_id",[value]}，作为request的参数，传递到服务端，如果session_id为空则不附带此参数；如果接收到服务器端传来的session_id的值：{"session_id",[value]}，则将此值更新到本地cookie中；
-*     页面跳转/请求转发：从cookie中取得key为"session_id"的值，拼装为{"session_id",[value]}，作为request的参数；如果从服务端收到{"error":[value]}，则跳转到登陆页面；其他情况下，正常跳转；
+*    页面跳转/请求转发：从cookie中取得key为"session_id"的值，拼装为{"session_id",[value]}，作为request的参数；如果从服务端收到{"error":[value]}，则跳转到登陆页面；其他情况下，正常跳转；
 *    页面登出：直接跳转到登出页面；
 
 ###	登录
