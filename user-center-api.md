@@ -7,11 +7,11 @@ User System APIs
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
 ### cookie，session机制说明
-*    -注册：服务端生成session_id，保存在session中，将用户信息都保存到session中，注册成功后统一保存到数据库中；
-*    -登陆：从cookie中取得username,password,验证通过则自动登陆；同时生成session_id保存到session中,构建cookie("session_id",session_value),保存到客户端；
-*    -页面跳转/请求转发：附带session_id，与服务器session比较,如果存在此session_id则继续浏览,否则跳转到登陆页面；
-*    -页面登出：删除客户端cookie中保存的session_id,删除服务器session;
-*    -session中可以保留其他重要信息：比如用户权限信息；
+*    注册：服务端生成session_id，保存在session中，将用户信息都保存到session中，注册成功后统一保存到数据库中；
+*    登陆：从cookie中取得username,password,验证通过则自动登陆；同时生成session_id保存到session中,构建cookie("session_id",session_value),保存到客户端；
+*    页面跳转/请求转发：附带session_id，与服务器session比较,如果存在此session_id则继续浏览,否则跳转到登陆页面；
+*    页面登出：删除客户端cookie中保存的session_id,删除服务器session;
+*    session中可以保留其他重要信息：比如用户权限信息；
 
 ###	登录
 *	path: /login
