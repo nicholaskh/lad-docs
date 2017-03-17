@@ -6,30 +6,18 @@ User System APIs
 	-	ret: 0成功，非0为error code
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-### cookie，session机制说明
-*    注册：注册成功后，接收到从服务端传来的{"session_id",[value]},保存在本地cookie下；
-*    登陆：从cookie中取得key为"session_id"的值，拼装为{"session_id",[value]}，作为request的参数，传递到服务端，如果session_id为空则不附带此参数；如果接收到服务器端传来的session_id的值：{"session_id",[value]}，则将此值更新到本地cookie中；
-*    页面跳转/请求转发：从cookie中取得key为"session_id"的值，拼装为{"session_id",[value]}，作为request的参数；如果从服务端收到{"error":[value]}，则跳转到登陆页面；其他情况下，正常跳转；
-*    页面登出：直接跳转到登出页面；
-
 ###	登录
 *	path: /login
 *	params:
 	-	username(string): 用户名
 	-	password(string): 密码
-*	return: 通用返回值
+*	return: 
+	-	通用返回值
+	-	登录成功后返回cookie SESSIONID
 
-###	快捷登录
-*	path: /login-quick
-*	params:
-	-	phone(string)
-	-	password(string)
-*	return: 通用返回值
-
-###	登出
-*   path: /loginout
-*	params:
-	-   username(string)
+###	退出登录
+*   path: /logout
+*	params:	无
 *	return: 通用返回值
 
 ### 注册
@@ -62,13 +50,15 @@ User System APIs
 	-	verification(string)
 *       return: 通用返回值
 
-###     设置新密码
+###	设置新密码
 *   path: /password-set
 *   param:
     -   old_password(string)
 	-	password1(string)
 	-	password2(string)
-*      return: 通用返回值
+*	return:
+	-	通用返回值
+	-	成功后退出登录
 
 ### 验证码是否正确
 *   path: /is-verification-right
@@ -135,7 +125,8 @@ User System APIs
 	-	ret: 0成功，非0为error code,ret为数据信息
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 
-
+###	获取企业信息
 *   path: /about
 *   return: 
-    -	ret: 0成功，非0为error code,ret为介绍的信息
+    -	ret: 0成功，非0为error code
+    -	info: 介绍的信息
