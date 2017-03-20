@@ -43,13 +43,6 @@ User System APIs
 	-	verification(string)
 *	return: 通用返回值
 
-### 手机号码是否重复
-*   path: /is-phone-repeat
-*   param:
-    -   phone(string)
-	-	verification(string)
-*       return: 通用返回值
-
 ###	设置新密码
 *   path: /password-set
 *   param:
@@ -60,9 +53,28 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 
-### 验证码是否正确
+### 注册，验证码是否正确
 *   path: /is-verification-right
 *   param:
+    -   verification(string)
+*   return: 通用返回值
+
+### 注册，发送验证码
+*   path: /verification-send
+*   param:
+    -   phone(string)
+*   return: 通用返回值
+
+### 修改密码，验证码是否正确
+*   path: /is-verification-right
+*   param:
+    -   verification(string)
+*   return: 通用返回值
+
+### 修改密码，发送验证码
+*   path: /verification-send
+*   param:
+    -   phone(string)
     -   verification(string)
 *   return: 通用返回值
 
