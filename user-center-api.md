@@ -51,6 +51,9 @@ User System APIs
 *	return:
 	-	通用返回值
 	-	成功后退出登录
+*   example:
+    -    http://180.76.173.200:9999/mongodb-demo/regist/password_set.do?password1=111111&password2=111111&sesssionId=8FF5BC6C528A94216934934AB7B2E670
+    -    {"ret":0}
 
 ###	设置新密码
 *   path: /password-set
@@ -67,13 +70,19 @@ User System APIs
 *   param:
     -   verification(string)
 *   return: 通用返回值
-
+*   example:
+    -    http://180.76.173.200:9999/mongodb-demo/regist/is_verification_right.do?verification=111111&sesssionId=8FF5BC6C528A94216934934AB7B2E670
+    -    {"ret":0,"sesssionId":"8FF5BC6C528A94216934934AB7B2E670"}
+    
 ### 注册，发送验证码
 *   path: /verification-send
 *   param:
     -   phone(string)
 *   return: 通用返回值
-
+*   example:
+    -    http://180.76.173.200:9999/mongodb-demo/regist/verification_send.do?phone=123
+    -    {"ret":0,"sesssionId":"8FF5BC6C528A94216934934AB7B2E670","verification":"111111"}
+    
 ### 修改密码，验证码是否正确
 *   path: /is-verification-right
 *   param:
