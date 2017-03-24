@@ -43,6 +43,15 @@ User System APIs
 	-	verification(string)
 *	return: 通用返回值
 
+###     注册设置密码
+*   path: /password-set
+*   param:
+	-	password1(string)
+	-	password2(string)
+*	return:
+	-	通用返回值
+	-	成功后退出登录
+
 ###	设置新密码
 *   path: /password-set
 *   param:
