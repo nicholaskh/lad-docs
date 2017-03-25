@@ -14,6 +14,23 @@ User System APIs
 *	return: 
 	-	通用返回值
 	-	登录成功后返回cookie SESSIONID
+	
+	### 快速登录 获取验证码
+*	path: /verification_send
+*	params:
+	-	phone(string): 密码
+*	return: 
+	-	通用返回值
+	-	登录成功后返回cookie SESSIONID
+	
+###     快速登录
+*	path: /login_quick
+*	params:
+	-	phone(string): 手机号码
+	-	verification(string): 验证码
+*	return: 
+	-	通用返回值
+	-	登录成功后返回cookie SESSIONID	
 
 ###	退出登录
 *   path: /logout
