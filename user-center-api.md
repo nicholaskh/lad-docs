@@ -5,6 +5,8 @@ User System APIs
 *	return: in json
 	-	ret: 0成功，非0为error code
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
+*   servers
+    -   test: 180.76.173.200:9999
 
 ###	登录
 *	path: /login
