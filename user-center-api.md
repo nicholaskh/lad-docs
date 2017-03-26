@@ -2,6 +2,8 @@ User System APIs
 ================
 
 ###	Common
+*   cookie
+    -   sessionId: session相关ID
 *	return: in json
 	-	ret: 0成功，非0为error code
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
@@ -97,7 +99,10 @@ User System APIs
 *   path: /verification-send
 *   param:
     -   phone(string)
-*   return: 通用返回值
+*   return:
+    -   通用返回值
+    -   cookie: sessionId
+
 *   example:
     -    http://180.76.173.200:9999/mongodb-demo/regist/verification_send.do?phone=123
     -    {"ret":0,"sesssionId":"8FF5BC6C528A94216934934AB7B2E670","verification":"111111"}
