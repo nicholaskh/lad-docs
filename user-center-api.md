@@ -9,6 +9,36 @@ User System APIs
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 *   servers
     -   test: 180.76.173.200:9999
+    
+### 注册，发送验证码
+*   path: /verification-send
+*   param:
+    -   phone(string)
+*   return:
+    -   通用返回值
+    -   cookie: sessionId
+
+*   example:
+    -    curl -c /Users/gouxubo/cookies http://180.76.173.200:9999/regist/verification-send.do?phone=123456
+
+### 注册，验证码是否正确
+*   path: /is-verification-right
+*   param:
+    -   verification(string)
+*   return: 通用返回值
+*   example:
+    -    curl -b /Users/gouxubo/cookies http://180.76.173.200:9999/regist/is-verification-right.do?verification=111111
+
+###     注册设置密码
+*   path: /password-set
+*   param:
+	-	password1(string)
+	-	password2(string)
+*	return:
+	-	通用返回值
+	-	成功后退出登录
+*   example:
+    -    http://180.76.173.200:9999/mongodb-demo/regist/password_set.do?password1=111111&password2=111111&sesssionId=8FF5BC6C528A94216934934AB7B2E670
 
 ###	登录
 *	path: /login
@@ -48,6 +78,8 @@ User System APIs
 	-	verification(string)
 	-	password(string)
 *   return: 通用返回值
+*   example:
+
 
 ### 账户安全
 *	path: /accountsecurity-set
@@ -64,18 +96,6 @@ User System APIs
 	-	verification(string)
 *	return: 通用返回值
 
-###     注册设置密码
-*   path: /password-set
-*   param:
-	-	password1(string)
-	-	password2(string)
-*	return:
-	-	通用返回值
-	-	成功后退出登录
-*   example:
-    -    http://180.76.173.200:9999/mongodb-demo/regist/password_set.do?password1=111111&password2=111111&sesssionId=8FF5BC6C528A94216934934AB7B2E670
-    -    {"ret":0}
-
 ###	设置新密码
 *   path: /password-set
 *   param:
@@ -86,27 +106,6 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 
-### 注册，验证码是否正确
-*   path: /is-verification-right
-*   param:
-    -   verification(string)
-*   return: 通用返回值
-*   example:
-    -    http://180.76.173.200:9999/mongodb-demo/regist/is_verification_right.do?verification=111111&sesssionId=8FF5BC6C528A94216934934AB7B2E670
-    -    {"ret":0,"sesssionId":"8FF5BC6C528A94216934934AB7B2E670"}
-    
-### 注册，发送验证码
-*   path: /verification-send
-*   param:
-    -   phone(string)
-*   return:
-    -   通用返回值
-    -   cookie: sessionId
-
-*   example:
-    -    http://180.76.173.200:9999/mongodb-demo/regist/verification_send.do?phone=123
-    -    {"ret":0,"sesssionId":"8FF5BC6C528A94216934934AB7B2E670","verification":"111111"}
-    
 ### 修改密码，验证码是否正确
 *   path: /is-verification-right
 *   param:
