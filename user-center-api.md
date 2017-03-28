@@ -17,7 +17,7 @@ User System APIs
 *   return:
     -   通用返回值
 *   example:
-    -    curl -c /Users/gouxubo/cookies -d 'phone=123456' 'http://180.76.173.200:9999/regist/verification-send.do'
+    -    curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/regist/verification-send.do'
 
 ### 注册，验证码是否正确
 *   path: /regist/is-verification-right.do
