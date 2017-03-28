@@ -11,24 +11,24 @@ User System APIs
     -   test: 180.76.173.200:9999
     
 ### 注册，发送验证码
-*   path: /verification-send
+*   path: /regist/verification-send
 *   param:
     -   phone(string)
 *   return:
     -   通用返回值
 *   example:
-    -    curl -c /Users/gouxubo/cookies -d 'phone=123456' http://180.76.173.200:9999/regist/verification-send.do
+    -    curl -c /Users/gouxubo/cookies -d 'phone=123456' 'http://180.76.173.200:9999/regist/verification-send.do'
 
 ### 注册，验证码是否正确
-*   path: /is-verification-right
+*   path: /regist/is-verification-right
 *   param:
     -   verification(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'verification=111111' http://180.76.173.200:9999/regist/is-verification-right.do?
+    -    curl -b cookie/cookie路径 -d 'verification=111111' 'http://180.76.173.200:9999/regist/is-verification-right.do?'
 
 ###     注册设置密码
-*   path: /password-set
+*   path: /regist/password-set
 *   param:
 	-	password1(string)
 	-	password2(string)
@@ -36,64 +36,64 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' http://180.76.173.200:9999/regist/password-set.do?
+    -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' 'http://180.76.173.200:9999/regist/password-set.do?'
 
 ###	登录
-*	path: /login
+*	path: /login/login
 *	params:
 	-	username(string): 用户名
 	-	password(string): 密码
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -c cookie/cookie路径 -d 'phone=1234&password=1' http://127.0.0.1:8080/login/login.do?
+    -    curl -c cookie/cookie路径 -d 'phone=1234&password=1' 'http://180.76.173.200:9999/login/login.do?'
 	
 ### 快速登录 获取验证码
-*	path: /verification_send
+*	path: /login/verification_send
 *	params:
 	-	phone(string): 密码
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -c cookie/cookie路径 -d 'phone=123456' http://180.76.173.200:9999/login/verification-send.do
+    -    curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/login/verification-send.do'
 	
 ###     快速登录
-*	path: /login_quick
+*	path: /login/login_quick
 *	params:
 	-	phone(string): 手机号码
 	-	verification(string): 验证码
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' http://180.76.173.200:9999/login/login-quick.do
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
 ### 修改密码，生成图片验证码
-*   path: /verification-generator
+*   path: /password/verification-generator
 *   param:
 *   return: 通用返回值
 *   example:
-    -    curl -c cookie/cookie路径  http://180.76.173.200:9999/password/verification-generator.do?
+    -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/password/verification-generator.do?'
 
 ### 修改密码，发送验证码
-*   path: /verification-send
+*   path: /password/verification-send
 *   param:
     -   phone(string)
     -   verification_img(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' http://180.76.173.200:9999/password/verification-send.do?
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
 ### 修改密码，发送验证码
-*   path: /verification-send
+*   path: /password/verification-send
 *   param:
     -   phone(string)
     -   verification_img(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' http://180.76.173.200:9999/password/verification-send.do?
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
 ###    修改密码，设置新密码
-*   path: /password-set
+*   path: /password/password-set
 *   param:
 	-	password1(string)
 	-	password2(string)
@@ -101,7 +101,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' http://180.76.173.200:9999/password/password-set.do?
+    -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' 'http://180.76.173.200:9999/password/password-set.do?'
     
 ###	退出登录
 *   path: /logout
