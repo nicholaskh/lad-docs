@@ -38,7 +38,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    http://180.76.173.200:9999/mongodb-demo/regist/password_set.do?password1=111111&password2=111111&sesssionId=8FF5BC6C528A94216934934AB7B2E670
+    -    curl -b /Users/gouxubo/cookiel -d 'password1=1&password2=1' http://180.76.173.200:9999/mongodb-demo/regist/password-set.do?
 
 ###	登录
 *	path: /login
