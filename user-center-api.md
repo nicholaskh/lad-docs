@@ -82,14 +82,14 @@ User System APIs
 *   example:
     -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
-### 修改密码，发送验证码
-*   path: /password/verification-send.do
+### 修改密码，校验验证码
+*   path: /password/verification-check.do
 *   param:
     -   phone(string)
-    -   verification_img(string)
+    -   verification(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-check.do?'
     
 ###    修改密码，设置新密码
 *   path: /password/password-set.do
