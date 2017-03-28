@@ -11,7 +11,7 @@ User System APIs
     -   test: 180.76.173.200:9999
     
 ### 注册，发送验证码
-*   path: /regist/verification-send
+*   path: /regist/verification-send.do
 *   param:
     -   phone(string)
 *   return:
@@ -20,7 +20,7 @@ User System APIs
     -    curl -c /Users/gouxubo/cookies -d 'phone=123456' 'http://180.76.173.200:9999/regist/verification-send.do'
 
 ### 注册，验证码是否正确
-*   path: /regist/is-verification-right
+*   path: /regist/is-verification-right.do
 *   param:
     -   verification(string)
 *   return: 通用返回值
@@ -28,7 +28,7 @@ User System APIs
     -    curl -b cookie/cookie路径 -d 'verification=111111' 'http://180.76.173.200:9999/regist/is-verification-right.do'
 
 ###     注册设置密码
-*   path: /regist/password-set
+*   path: /regist/password-set.do
 *   param:
 	-	password1(string)
 	-	password2(string)
@@ -39,7 +39,7 @@ User System APIs
     -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' 'http://180.76.173.200:9999/regist/password-set.do'
 
 ###	登录
-*	path: /login/login
+*	path: /login/login.do
 *	params:
 	-	username(string): 用户名
 	-	password(string): 密码
@@ -49,7 +49,7 @@ User System APIs
     -    curl -c cookie/cookie路径 -d 'phone=1234&password=1' 'http://180.76.173.200:9999/login/login.do'
 	
 ### 快速登录 获取验证码
-*	path: /login/verification_send
+*	path: /login/verification_send.do
 *	params:
 	-	phone(string): 密码
 *	return: 
@@ -58,24 +58,23 @@ User System APIs
     -    curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/login/verification-send.do'
 	
 ###     快速登录
-*	path: /login/login_quick
+*	path: /login/login_quick.do
 *	params:
 	-	phone(string): 手机号码
-	-	verification(string): 验证码
 *	return: 
 	-	通用返回值
 *   example:
     -    curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
 ### 修改密码，生成图片验证码
-*   path: /password/verification-generator
+*   path: /password/verification-generator.do
 *   param:
 *   return: 通用返回值
 *   example:
     -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/password/verification-generator.do?'
 
 ### 修改密码，发送验证码
-*   path: /password/verification-send
+*   path: /password/verification-send.do
 *   param:
     -   phone(string)
     -   verification_img(string)
@@ -84,7 +83,7 @@ User System APIs
     -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
 ### 修改密码，发送验证码
-*   path: /password/verification-send
+*   path: /password/verification-send.do
 *   param:
     -   phone(string)
     -   verification_img(string)
@@ -93,7 +92,7 @@ User System APIs
     -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
 ###    修改密码，设置新密码
-*   path: /password/password-set
+*   path: /password/password-set.do
 *   param:
 	-	password1(string)
 	-	password2(string)
