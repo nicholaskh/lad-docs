@@ -10,7 +10,7 @@ User System APIs
 *   servers
     -   test: 180.76.173.200:9999
 *   method
-    -   约定：方法只读用get，增删改用post
+    -   约定：方法只读用get，增删改用post
     
 ### 注册，发送验证码
 *   path: /regist/verification-send.do
