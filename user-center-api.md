@@ -27,7 +27,7 @@ User System APIs
     -   verification(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b /Users/gouxubo/cookies http://180.76.173.200:9999/regist/is-verification-right.do?verification=111111
+    -    curl -b cookie/cookie路径 http://180.76.173.200:9999/regist/is-verification-right.do?verification=111111
 
 ###     注册设置密码
 *   path: /password-set
@@ -38,7 +38,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b /Users/gouxubo/cookiel -d 'password1=1&password2=1' http://180.76.173.200:9999/regist/password-set.do?
+    -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' http://180.76.173.200:9999/regist/password-set.do?
 
 ###	登录
 *	path: /login
@@ -47,11 +47,10 @@ User System APIs
 	-	password(string): 密码
 *	return: 
 	-	通用返回值
-	-	登录成功后返回cookie SESSIONID
 *   example:
-    -    curl -c /Users/gouxubo/cookiel -d 'phone=1234&password=1' http://127.0.0.1:8080/login/login.do?
+    -    curl -c cookie/cookie路径 -d 'phone=1234&password=1' http://127.0.0.1:8080/login/login.do?
 	
-	### 快速登录 获取验证码
+### 快速登录 获取验证码
 *	path: /verification_send
 *	params:
 	-	phone(string): 密码
