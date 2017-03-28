@@ -48,6 +48,8 @@ User System APIs
 *	return: 
 	-	通用返回值
 	-	登录成功后返回cookie SESSIONID
+*   example:
+    -    curl -c /Users/gouxubo/cookiel -d 'phone=1234&password=1' http://127.0.0.1:8080/login/login.do?
 	
 	### 快速登录 获取验证码
 *	path: /verification_send
