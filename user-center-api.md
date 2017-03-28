@@ -55,7 +55,7 @@ User System APIs
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -c /Users/gouxubo/cookies -d 'phone=123456' http://180.76.173.200:9999/login/verification-send.do
+    -    curl -c cookie/cookie路径 -d 'phone=123456' http://180.76.173.200:9999/login/verification-send.do
 	
 ###     快速登录
 *	path: /login_quick
@@ -65,8 +65,44 @@ User System APIs
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -c /Users/gouxubo/cookies -d 'phone=1234&verification=111111' http://180.76.173.200:9999/login/login-quick.do
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' http://180.76.173.200:9999/login/login-quick.do
 
+### 修改密码，生成图片验证码
+*   path: /verification-generator
+*   param:
+*   return: 通用返回值
+*   example:
+    -    curl -c cookie/cookie路径  http://180.76.173.200:9999/password/verification-generator.do?
+
+### 修改密码，发送验证码
+*   path: /verification-send
+*   param:
+    -   phone(string)
+    -   verification_img(string)
+*   return: 通用返回值
+*   example:
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' http://180.76.173.200:9999/password/verification-send.do?
+    
+### 修改密码，发送验证码
+*   path: /verification-send
+*   param:
+    -   phone(string)
+    -   verification_img(string)
+*   return: 通用返回值
+*   example:
+    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' http://180.76.173.200:9999/password/verification-send.do?
+    
+###    修改密码，设置新密码
+*   path: /password-set
+*   param:
+	-	password1(string)
+	-	password2(string)
+*	return:
+	-	通用返回值
+	-	成功后退出登录
+*   example:
+    -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' http://180.76.173.200:9999/password/password-set.do?
+    
 ###	退出登录
 *   path: /logout
 *	params:	无
@@ -97,15 +133,6 @@ User System APIs
 	-	verification(string)
 *	return: 通用返回值
 
-###	设置新密码
-*   path: /password-set
-*   param:
-    -   old_password(string)
-	-	password1(string)
-	-	password2(string)
-*	return:
-	-	通用返回值
-	-	成功后退出登录
 
 ### 修改密码，验证码是否正确
 *   path: /is-verification-right
@@ -113,12 +140,7 @@ User System APIs
     -   verification(string)
 *   return: 通用返回值
 
-### 修改密码，发送验证码
-*   path: /verification-send
-*   param:
-    -   phone(string)
-    -   verification(string)
-*   return: 通用返回值
+
 
 ### 设置个人信息
 *   path: /psersoninfo-set
