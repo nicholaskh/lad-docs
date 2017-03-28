@@ -25,7 +25,7 @@ User System APIs
     -   verification(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'verification=111111' http://180.76.173.200:9999/regist/is-verification-right.do?
+    -    curl -b cookie/cookie路径 -d 'verification=111111' http://180.76.173.200:9999/regist/is-verification-right.do
 
 ###     注册设置密码
 *   path: /password-set
@@ -36,7 +36,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' http://180.76.173.200:9999/regist/password-set.do?
+    -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' http://180.76.173.200:9999/regist/password-set.do
 
 ###	登录
 *	path: /login
