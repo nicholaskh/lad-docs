@@ -104,20 +104,20 @@ User System APIs
 *   example:
     -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' 'http://180.76.173.200:9999/password/password-set.do?'
     
+###    个人设置，设置头像
+*   path: /upload/head-picture.do
+*   param:
+	-	head_picture(@RequestParam("head_picture") MultipartFile file)
+*	return:
+	-	通用返回值
+	-	成功后退出登录
+*   example:
+    -    curl -b cookie  -F  "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do?'
+    
 ###	退出登录
 *   path: /logout
 *	params:	无
 *	return: 通用返回值
-
-### 注册
-*	path: /register
-*	param:
-	-	username(string)
-	-	verification(string)
-	-	password(string)
-*   return: 通用返回值
-*   example:
-
 
 ### 账户安全
 *	path: /accountsecurity-set
