@@ -51,7 +51,7 @@ User System APIs
     -    curl -c cookie/cookie路径 -d 'phone=1234&password=1' 'http://180.76.173.200:9999/login/login.do'
 	
 ### 快速登录 获取验证码
-*	path: /login/verification_send.do
+*	path: /login/verification-send.do
 *	params:
 	-	phone(string): 密码
 *	return: 
@@ -60,7 +60,7 @@ User System APIs
     -    curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/login/verification-send.do'
 	
 ###     快速登录
-*	path: /login/login_quick.do
+*	path: /login/login-quick.do
 *	params:
 	-	phone(string): 手机号码
 *	return: 
