@@ -110,7 +110,6 @@ User System APIs
 	-	head_picture(@RequestParam("head_picture") MultipartFile file)
 *	return:
 	-	通用返回值
-	-	成功后退出登录
 *   example:
     -    curl -b cookie  -F  "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do?'
     
