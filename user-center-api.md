@@ -74,6 +74,7 @@ User System APIs
 *   return: null
 *   example:
     -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/image-verification/generator.do?'
+    -    http://180.76.173.200:9999/hello.jsp
 
 ### 修改密码，发送验证码
 *   path: /password/verification-send.do
