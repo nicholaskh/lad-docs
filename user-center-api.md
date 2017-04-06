@@ -123,7 +123,7 @@ User System APIs
     -     curl -b cookie -d 'username=haha' http://180.76.173.200:9999/personSet/username.do?
     
 ###    个人设置，设置生日
-*   path: /personSet/birthday.do
+*   path: /person-set/birthday.do
 *   param:
 	-	birthday(string)
 *	return:
