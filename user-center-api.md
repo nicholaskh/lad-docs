@@ -69,11 +69,11 @@ User System APIs
     -    curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
 ### 修改密码，生成图片验证码
-*   path: /password/verification-generator.do
+*   path: /image-verification/generator.do
 *   param:
 *   return: 通用返回值
 *   example:
-    -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/password/verification-generator.do?'
+    -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/image-verification/generator.do?'
 
 ### 修改密码，发送验证码
 *   path: /password/verification-send.do
@@ -114,7 +114,7 @@ User System APIs
     -    curl -b cookie  -F  "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do?'
     
 ###    个人设置，设置昵称
-*   path: /personSet/username.do
+*   path: /person-set/username.do
 *   param:
 	-	username(string)
 *	return:
@@ -123,22 +123,22 @@ User System APIs
     -     curl -b cookie -d 'username=haha' http://180.76.173.200:9999/personSet/username.do?
     
 ###    个人设置，设置生日
-*   path: /personSet/birth-day.do
+*   path: /personSet/birthday.do
 *   param:
-	-	birthDay(string)
+	-	birthday(string)
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'birthDay=haha' http://180.76.173.200:9999/personSet/birth-day.do?
+    -     curl -b cookie -d 'birthday=haha' http://180.76.173.200:9999/person-set/birthday.do?
     
 ###    个人设置，设置个性签名
-*   path: /personSet/personalized-signature.do
+*   path: /person-set/personalized-signature.do
 *   param:
-	-	personalizedSignature(string)
+	-	personalized_signature(string)
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'personalizedSignature=haha' http://180.76.173.200:9999/personSet/personalized-signature.do?
+    -     curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do?
     
     
     
