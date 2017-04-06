@@ -71,7 +71,7 @@ User System APIs
 ### 修改密码，生成图片验证码
 *   path: /image-verification/generator.do
 *   param:
-*   return: 通用返回值
+*   return: null
 *   example:
     -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/image-verification/generator.do?'
 
