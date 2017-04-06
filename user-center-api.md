@@ -102,7 +102,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' 'http://180.76.173.200:9999/password/password-set.do?'
+    -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' 'http://180.76.173.200:9999/password/password-set.do'
     
 ###    个人设置，设置头像
 *   path: /upload/head-picture.do
@@ -111,7 +111,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -    curl -b cookie  -F  "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do?'
+    -    curl -b cookie  -F  "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do'
     
 ###    个人设置，设置昵称
 *   path: /person-set/username.do
@@ -129,7 +129,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'birthday=haha' http://180.76.173.200:9999/person-set/birthday.do?
+    -     curl -b cookie -d 'birthday=haha' http://180.76.173.200:9999/person-set/birthday.do
     
 ###    个人设置，设置个性签名
 *   path: /person-set/personalized-signature.do
@@ -138,7 +138,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do?
+    -     curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
     
     
     
