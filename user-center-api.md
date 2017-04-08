@@ -19,7 +19,7 @@ User System APIs
 *   return:
     -   通用返回值
 *   example:
-    -    curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/regist/verification-send.do'
+    -   curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/regist/verification-send.do'
 
 ### 注册，验证码是否正确
 *   path: /regist/is-verification-right.do
@@ -27,7 +27,7 @@ User System APIs
     -   verification(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'verification=111111' 'http://180.76.173.200:9999/regist/is-verification-right.do'
+    -   curl -b cookie/cookie路径 -d 'verification=111111' 'http://180.76.173.200:9999/regist/is-verification-right.do'
 
 ###     注册设置密码
 *   path: /regist/password-set.do
@@ -38,7 +38,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b cookie/cookie路径 -d 'password1=1&password2=1' 'http://180.76.173.200:9999/regist/password-set.do'
+    -   curl -b cookie/cookie路径 -d 'password1=1&password2=1' 'http://180.76.173.200:9999/regist/password-set.do'
 
 ###	登录
 *	path: /login/login.do
@@ -48,7 +48,7 @@ User System APIs
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -c cookie/cookie路径 -d 'phone=1234&password=1' 'http://180.76.173.200:9999/login/login.do'
+    -   curl -c cookie/cookie路径 -d 'phone=1234&password=1' 'http://180.76.173.200:9999/login/login.do'
 	
 ### 快速登录 获取验证码
 *	path: /login/verification-send.do
@@ -57,7 +57,7 @@ User System APIs
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/login/verification-send.do'
+    -   curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/login/verification-send.do'
 	
 ###     快速登录
 *	path: /login/login-quick.do
@@ -66,15 +66,15 @@ User System APIs
 *	return: 
 	-	通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
+    -   curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
 ### 修改密码，生成图片验证码
 *   path: /image-verification/generator.do
 *   param:
-*   return: null
+*   return: 图片验证码二进制内容
 *   example:
-    -    curl -c cookie/cookie路径  'http://180.76.173.200:9999/image-verification/generator.do?'
-    -    http://180.76.173.200:9999/hello.jsp
+    -   curl -c cookie/cookie路径 'http://180.76.173.200:9999/image-verification/generator.do?'
+    -   验证码样例: http://180.76.173.200:9999/hello.jsp
 
 ### 修改密码，发送验证码
 *   path: /password/verification-send.do
@@ -83,7 +83,7 @@ User System APIs
     -   verification_img(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
+    -   curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
 ### 修改密码，校验验证码
 *   path: /password/verification-check.do
@@ -92,7 +92,7 @@ User System APIs
     -   verification(string)
 *   return: 通用返回值
 *   example:
-    -    curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-check.do?'
+    -   curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-check.do?'
     
 ###    修改密码，设置新密码
 *   path: /password/password-set.do
@@ -103,7 +103,7 @@ User System APIs
 	-	通用返回值
 	-	成功后退出登录
 *   example:
-    -    curl -b cookie/cookie路径 -d 'password1=111&password2=111' 'http://180.76.173.200:9999/password/password-set.do'
+    -   curl -b cookie/cookie路径 -d 'password1=111&password2=111' 'http://180.76.173.200:9999/password/password-set.do'
     
 ###    个人设置，设置头像
 *   path: /upload/head-picture.do
@@ -112,7 +112,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -    curl -b cookie  -F  "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do'
+    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/head-picture.do'
     
 ###    个人设置，设置昵称
 *   path: /person-set/username.do
@@ -121,7 +121,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'username=haha' http://180.76.173.200:9999/personSet/username.do?
+    -   curl -b cookie -d 'username=haha' http://180.76.173.200:9999/personSet/username.do?
     
 ###    个人设置，设置生日
 *   path: /person-set/birthday.do
@@ -130,7 +130,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'birthday=haha' http://180.76.173.200:9999/person-set/birthday.do
+    -   curl -b cookie -d 'birthday=haha' http://180.76.173.200:9999/person-set/birthday.do
     
 ###    个人设置，设置个性签名
 *   path: /person-set/personalized-signature.do
@@ -139,7 +139,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -     curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
+    -   curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
     
     
     
