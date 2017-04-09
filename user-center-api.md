@@ -146,7 +146,7 @@ User System APIs
 *   param:
 	-	old_password(string)
 	-	password1(string)
-	-	password1(string)
+	-	password2(string)
 *	return:
 	-	通用返回值
 *   example:
@@ -188,6 +188,8 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b cookie -d 'phone=123321&verification=111111'  http://180.76.173.200:9999/account-security/phone-change.do
+    
+    
     
     
 ###	退出登录
