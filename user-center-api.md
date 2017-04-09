@@ -29,7 +29,7 @@ User System APIs
 *   example:
     -   curl -b cookie/cookie路径 -d 'verification=111111' 'http://180.76.173.200:9999/regist/is-verification-right.do'
 
-###     注册设置密码
+### 注册设置密码
 *   path: /regist/password-set.do
 *   param:
 	-	password1(string)
@@ -68,7 +68,7 @@ User System APIs
 *   example:
     -   curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
-### 修改密码，生成图片验证码
+### 忘记密码，生成图片验证码
 *   path: /image-verification/generator.do
 *   param:
 *   return: 图片验证码二进制内容
@@ -76,7 +76,7 @@ User System APIs
     -   curl -c cookie/cookie路径 'http://180.76.173.200:9999/image-verification/generator.do?'
     -   验证码样例: http://180.76.173.200:9999/hello.jsp
 
-### 修改密码，发送验证码
+### 忘记密码，发送验证码
 *   path: /password/verification-send.do
 *   param:
     -   phone(string)
@@ -85,7 +85,7 @@ User System APIs
 *   example:
     -   curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-send.do?'
     
-### 修改密码，校验验证码
+### 忘记密码，校验验证码
 *   path: /password/verification-check.do
 *   param:
     -   phone(string)
@@ -94,7 +94,7 @@ User System APIs
 *   example:
     -   curl -b cookie/cookie路径 -d 'phone=1234&verification_img=fshg' 'http://180.76.173.200:9999/password/verification-check.do?'
     
-###    修改密码，设置新密码
+### 忘记密码，设置新密码
 *   path: /password/password-set.do
 *   param:
 	-	password1(string)
