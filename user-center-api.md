@@ -140,7 +140,54 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
+
+###    账户安全，修改密码
+*   path: /password/password-change.do
+*   param:
+	-	old_password(string)
+	-	password1(string)
+	-	password1(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -d 'old_password=1&password1=12&password2=12' http://180.76.173.200:9999/password/password-change.do
     
+###    账户安全，发送验证码到老手机
+*   path: /account-security/verification-send.do
+*   param:
+
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie http://180.76.173.200:9999/account-security/verification-send.do
+    
+###    账户安全，老手机验证码的验证
+*   path: /password/is-verification-right.do
+*   param:
+	-	verification(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -d 'verification=111111'  http://180.76.173.200:9999/account-security/is-verification-right.do
+    
+###    账户安全，新号码获取验证码
+*   path: /password/verification-send-phone.do
+*   param:
+	-	phone(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -d 'phone=13111110000' http://180.76.173.200:9999/account-security/verification-send-phone.do
+    
+###    账户安全，提交绑定新号
+*   path: /password/phone-change.do
+*   param:
+	-	phone(string)
+	-	verification(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -d 'phone=123321&verification=111111'  http://180.76.173.200:9999/account-security/phone-change.do
     
     
 ###	退出登录
