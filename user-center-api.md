@@ -189,21 +189,55 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'phone=123321&verification=111111'  http://180.76.173.200:9999/account-security/phone-change.do
     
+###    个人中心首页，信息插入
+*   path: /message/insert.do
+*   param:
+	-	content(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie  http://180.76.173.200:9999/message/insert.do
     
+###    个人中心首页，点赞
+*   path: /message/thumbsup.do
+*   param:
+	-	messageId(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie  -d 'messageId=58ecaf0c589b557bced4bbba'  http://180.76.173.200:9999/message/thumbsup.do
     
+###    个人中心首页，首页插入
+*   path: /homepage/insert.do
+*   param:
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie http://180.76.173.200:9999/message/insert.do
+    
+###    个人中心首页，访问我的首页
+*   path: /homepage/visit-my-homepage.do
+*   param:
+	-	visitor_id(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie -d 'visitor_id=12345321'  http://180.76.173.200:9999/homepage/visit-my-homepage.do
+    
+###    个人中心首页，新看过我的人数
+*   path: /homepage/new-visitors-count.do
+*   param:
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie http://180.76.173.200:9999/homepage/new_visitors-count.do
+
     
 ###	退出登录
 *   path: /logout
 *	params:	无
 *	return: 通用返回值
 
-### 账户安全
-*	path: /accountsecurity-set
-*	param:
-    -	username(string)
-	-	verification(string)
-	-	password(string)
-*	return: 通用返回值
 
 ### 手机号码是否正确
 *   path: /is-phone-right
@@ -211,24 +245,6 @@ User System APIs
     -   phone(string)
 	-	verification(string)
 *	return: 通用返回值
-
-
-### 修改密码，验证码是否正确
-*   path: /is-verification-right
-*   param:
-    -   verification(string)
-*   return: 通用返回值
-
-
-
-### 设置个人信息
-*   path: /psersoninfo-set
-*   param:
-	-   pic_url(string)
-	-	nickname(string)
-	-	birthday(string)
-	-	personalized_signature(string): 个性签名
-*   return: 通用返回值
 
 ### 意见反馈
 *   path: /feedback-set
