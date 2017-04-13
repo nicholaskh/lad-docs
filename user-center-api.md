@@ -236,7 +236,7 @@ User System APIs
 *   path: /homepage/thumbsup-from-me.do
 *   param:
 *   return:
-	-    通用返回值
+	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
     -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-from-me.do
     
@@ -244,7 +244,7 @@ User System APIs
 *   path: /homepage/thumbsup-to-me.do
 *   param:
 *   return:
-	-    通用返回值
+	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
     -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-to-me.do
 
