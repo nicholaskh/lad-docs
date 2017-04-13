@@ -201,11 +201,11 @@ User System APIs
 ###    个人中心首页，点赞
 *   path: /message/thumbsup.do
 *   param:
-	-	messageId(string)
+	-	message_id(string)
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -b  cookie  -d 'messageId=58ecaf0c589b557bced4bbba'  http://180.76.173.200:9999/message/thumbsup.do
+    -   curl -b  cookie  -d 'message_id=58ecaf0c589b557bced4bbba'  http://180.76.173.200:9999/message/thumbsup.do
     
 ###    个人中心首页，首页插入
 *   path: /homepage/insert.do
@@ -227,10 +227,26 @@ User System APIs
 ###    个人中心首页，新看过我的人数
 *   path: /homepage/new-visitors-count.do
 *   param:
-*	return:
+*   return:
 	-	通用返回值
 *   example:
     -   curl -b  cookie http://180.76.173.200:9999/homepage/new_visitors-count.do
+    
+###    个人中心首页，我点赞的人
+*   path: /homepage/thumbsup-from-me.do
+*   param:
+*   return:
+	-    通用返回值
+*   example:
+    -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-from-me.do
+    
+    ###    个人中心首页，给我点赞的人
+*   path: /homepage/thumbsup-to-me.do
+*   param:
+*   return:
+	-    通用返回值
+*   example:
+    -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-to-me.do
 
     
 ###	退出登录
