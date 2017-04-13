@@ -68,6 +68,13 @@ User System APIs
 *   example:
     -   curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
+###	退出登录
+*   path: /login/logout
+*	params:	无
+*	return: 通用返回值
+*   example:
+    -   curl -b cookie/cookie路径 'http://180.76.173.200:9999/login/logout.do'
+
 ### 忘记密码，生成图片验证码
 *   path: /image-verification/generator.do
 *   param:
@@ -240,19 +247,13 @@ User System APIs
 *   example:
     -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-from-me.do
     
-    ###    个人中心首页，给我点赞的人
+###    个人中心首页，给我点赞的人
 *   path: /homepage/thumbsup-to-me.do
 *   param:
 *   return:
 	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
     -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-to-me.do
-
-    
-###	退出登录
-*   path: /logout
-*	params:	无
-*	return: 通用返回值
 
 
 ### 手机号码是否正确
