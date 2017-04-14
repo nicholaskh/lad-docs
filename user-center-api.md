@@ -139,6 +139,15 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'birthday=haha' http://180.76.173.200:9999/person-set/birthday.do
     
+###    个人设置，设置性别
+*   path: /person-set/sex.do
+*   param:
+	-	sex(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -d 'sex=1' http://180.76.173.200:9999/person-set/sex.do
+
 ###    个人设置，设置个性签名
 *   path: /person-set/personalized-signature.do
 *   param:
