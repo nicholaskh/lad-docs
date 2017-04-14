@@ -264,66 +264,20 @@ User System APIs
 *   example:
     -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-to-me.do
 
-
-### 手机号码是否正确
-*   path: /is-phone-right
-*	param:
-    -   phone(string)
-	-	verification(string)
-*	return: 通用返回值
-
-### 意见反馈
-*   path: /feedback-set
+###    帮助反馈，图片上传
+*   path: /upload/feedback-picture.do
 *   param:
-	-	feedback(string)
-	-	phone(string)
-*   return: 通用返回值
-
-### 绑定QQ
-*   path: /qq-bind
-*   param:
-	-	qq(string)
-*   return: 通用返回值
-
-
-### 绑定微信
-*   path: /wechat-bind
-*   param:
-	-   wechat(string)
-*   return: 通用返回值
-
-
-### 绑定微博
-*   path: /microblog-bind
-*   param:
-	-	microblog(string)
-*   return: 通用返回值
-
-
-*   path: /thumbsup
-*   param:
-	-	person_from(string)
-	-	person_to(string)
-*   return: 通用返回值
-
-### 好友动态
-*   path: /friends-dynamic
-*   param:
-	-	person(string)
+	-	@RequestParam("feedback_picture") MultipartFile file
 *	return:
-	-	ret: 0成功，非0为error code,ret为数据信息
-	-	error: 当ret!=0时，error为error message，否则error字段不存在
+	-	通用返回值
+*   example:
+    -   curl -b  cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/feedback-picture.do'
 
-### 获得基本信息
-*   path: /get-basicinfo
+###    帮助反馈，提交
+*   path: /feedback/insert.do
 *   param:
-	-	person(string)
+	-	@RequestParam("feedback_picture") MultipartFile file
 *	return:
-	-	ret: 0成功，非0为error code,ret为数据信息
-	-	error: 当ret!=0时，error为error message，否则error字段不存在
-
-###	获取企业信息
-*   path: /about
-*   return: 
-    -	ret: 0成功，非0为error code
-    -	info: 介绍的信息
+	-	通用返回值
+*   example:
+    -   curl -b  cookie -d 'content=123&contactInfo=321&image=' http://180.76.173.200:9999/feedback/insert.do
