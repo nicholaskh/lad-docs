@@ -281,3 +281,23 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b  cookie -d 'content=123&contactInfo=321&image=' http://180.76.173.200:9999/feedback/insert.do
+
+###    我的消息，插入
+*   path: /info/insert.do
+*   param:
+	-	owner_id(string)
+	-	content(string)
+	-	source(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -d 'owner_id=58f210b0589b559c57d55219&content=qwerty&source=web' http://180.76.173.200:9999/info/insert.do
+    
+###    我的消息，我的消息列表
+*   path: /info/my-info.do
+*   param:
+	-	owner_id(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel  -d 'owner_id=58f210b0589b559c57d55219' http://180.76.173.200:9999/info/my-info.do
