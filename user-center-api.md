@@ -133,7 +133,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -b cookie -d 'username=haha' http://180.76.173.200:9999/personSet/username.do?
+    -   curl -b cookie -d 'username=haha' http://180.76.173.200:9999/person-set/username.do?
     
 ###    个人设置，设置生日
 *   path: /person-set/birthday.do
