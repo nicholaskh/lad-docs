@@ -219,31 +219,22 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'phone=123321&verification=111111'  http://180.76.173.200:9999/account-security/phone-change.do
     
-###    个人中心首页，信息插入
-*   path: /message/insert.do
-*   param:
-	-	content(string)
-*	return:
-	-	通用返回值
-*   example:
-    -   curl -b  cookie  http://180.76.173.200:9999/message/insert.do
-    
-###    个人中心首页，点赞
-*   path: /message/thumbsup.do
-*   param:
-	-	message_id(string)
-*	return:
-	-	通用返回值
-*   example:
-    -   curl -b  cookie  -d 'message_id=58ecaf0c589b557bced4bbba'  http://180.76.173.200:9999/message/thumbsup.do
-    
 ###    个人中心首页，首页插入
 *   path: /homepage/insert.do
 *   param:
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -b  cookie http://180.76.173.200:9999/homepage/insert.do
+    -   curl -b  cookie  http://180.76.173.200:9999/homepage/insert.do
+    
+###    个人中心首页，点赞
+*   path: /homepage/thumbsup.do
+*   param:
+	-	user_id(string)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie  -d 'user_id=[]'  http://180.76.173.200:9999/homepage/thumbsup.do
     
 ###    个人中心首页，访问我的首页
 *   path: /homepage/visit-my-homepage.do
@@ -263,20 +254,20 @@ User System APIs
     -   curl -b  cookie http://180.76.173.200:9999/homepage/new_visitors-count.do
     
 ###    个人中心首页，我点赞的人
-*   path: /message/thumbsup-from-me.do
+*   path: /homepage/thumbsup-from-me.do
 *   param:
 *   return:
 	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
-    -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-from-me.do
+    -   curl -b  cookie http://180.76.173.200:9999/homepage/thumbsup-from-me.do
     
 ###    个人中心首页，给我点赞的人
-*   path: /message/thumbsup-to-me.do
+*   path: /homepage/thumbsup-to-me.do
 *   param:
 *   return:
 	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
-    -   curl -b  cookie http://180.76.173.200:9999/message/thumbsup-to-me.do
+    -   curl -b  cookie http://180.76.173.200:9999/homepage/thumbsup-to-me.do
 
 ###    帮助反馈，图片上传
 *   path: /upload/feedback-picture.do
@@ -297,21 +288,19 @@ User System APIs
     -   curl -b  cookie -d 'content=123&contactInfo=321&image=' http://180.76.173.200:9999/feedback/insert.do
 
 ###    我的消息，插入
-*   path: /info/insert.do
+*   path: /message/insert.do
 *   param:
-	-	owner_id(string)
 	-	content(string)
 	-	source(string)
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -d 'owner_id=58f210b0589b559c57d55219&content=qwerty&source=web' http://180.76.173.200:9999/info/insert.do
+    -   curl -d '&content=qwerty&source=web' http://180.76.173.200:9999/message/insert.do
     
 ###    我的消息，我的消息列表
-*   path: /info/my-info.do
+*   path: /message/my-info.do
 *   param:
-	-	owner_id(string)
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel  -d 'owner_id=58f210b0589b559c57d55219' http://180.76.173.200:9999/info/my-info.do
+    -   curl -b  /Users/gouxubo/cookiel  http://180.76.173.200:9999/message/my-info.do
