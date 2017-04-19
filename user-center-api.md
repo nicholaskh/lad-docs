@@ -6,9 +6,9 @@ User System APIs
     -   sessionId: session相关ID
 *	return: in json
 	-	ret: 0成功，非0为error code
-	-	   -1:表示各种系统异常；
-	-	   -2:表示客户未登录异常；
-	-	   -3:表示参数异常；
+	-	-1:表示各种系统异常；
+	-	-2:表示客户未登录异常；
+	-	-3:表示参数异常；
 	-	error: 当ret!=0时，error为error message，否则error字段不存在
 *   servers
     -   test: 180.76.173.200:9999
