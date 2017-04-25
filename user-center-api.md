@@ -179,7 +179,7 @@ User System APIs
     -   curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
     
 ###    个人设置，获得个人信息
-*   path: /person-set/sex.do
+*   path: /person-set/user-info.do
 *   param:
 	-	sex(string)
 *	return:
