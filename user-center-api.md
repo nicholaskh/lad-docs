@@ -181,7 +181,6 @@ User System APIs
 ###    个人设置，获得个人信息
 *   path: /person-set/user-info.do
 *   param:
-	-	sex(string)
 *	return:
 	-	{
     "ret": 0,
