@@ -177,6 +177,27 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
+    
+###    个人设置，获得个人信息
+*   path: /person-set/sex.do
+*   param:
+	-	sex(string)
+*	return:
+	-	{
+    "ret": 0,
+    "user": {
+        "birthDay": "",
+        "headPictureName": "58f210b0589b559c57d5521912.png",
+        "id": "58f210b0589b559c57d55219",
+        "password": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+        "personalizedSignature": "",
+        "phone": "13112345678",
+        "sex": "",
+        "userName": ""
+    }
+}
+*   example:
+    -   curl -b cookie -d 'sex=1' http://180.76.173.200:9999/person-set/sex.do
 
 ###    账户安全，修改密码
 *   path: /password/password-change.do
