@@ -197,7 +197,7 @@ User System APIs
     }
 }
 *   example:
-    -   curl -b cookie -d 'sex=1' http://180.76.173.200:9999/person-set/sex.do
+    -   curl -b cookie  http://180.76.173.200:9999/person-set/user-info.do
 
 ###    账户安全，修改密码
 *   path: /password/password-change.do
@@ -246,14 +246,6 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b cookie -d 'phone=123321&verification=111111'  http://180.76.173.200:9999/account-security/phone-change.do
-    
-###    个人中心首页，首页插入
-*   path: /homepage/insert.do
-*   param:
-*	return:
-	-	通用返回值
-*   example:
-    -   curl -b  cookie  http://180.76.173.200:9999/homepage/insert.do
     
 ###    个人中心首页，点赞
 *   path: /homepage/thumbsup.do
