@@ -269,23 +269,29 @@ User System APIs
 *   return:
 	-	通用返回值
 *   example:
-    -   curl -b  cookie http://180.76.173.200:9999/homepage/new_visitors-count.do
+    -   curl -b  cookie http://180.76.173.200:9999/homepage/new-visitors-count.do
     
 ###    个人中心首页，我点赞的人
 *   path: /homepage/thumbsup-from-me.do
 *   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
 *   return:
 	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
-    -   curl -b  cookie http://180.76.173.200:9999/homepage/thumbsup-from-me.do
+    -   curl -b cookie -d 'start_id="123"&gt=true&limit=10'  http://180.76.173.200:9999/homepage/thumbsup-from-me.do
     
 ###    个人中心首页，给我点赞的人
 *   path: /homepage/thumbsup-to-me.do
 *   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
 *   return:
 	-    通用返回值 返回的json串中：message_id表示消息ID，owner_id表示消息发布者，visitor_id表示点赞的人
 *   example:
-    -   curl -b  cookie http://180.76.173.200:9999/homepage/thumbsup-to-me.do
+    -   curl -b  cookie  -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/homepage/thumbsup-to-me.do
 
 ###    帮助反馈，图片上传
 *   path: /upload/feedback-picture.do
