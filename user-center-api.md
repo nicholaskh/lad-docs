@@ -324,7 +324,10 @@ User System APIs
 ###    我的消息，我的消息列表
 *   path: /message/my-info.do
 *   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
 *	return:
-	-	通用返回值
+   -	通用返回值 content：消息内容；source：消息来源
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel  http://180.76.173.200:9999/message/my-info.do
+    -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/message/my-info.do
