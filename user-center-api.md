@@ -363,7 +363,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-chatrooms.do
    
-  ###  修改聊天室name
+###  修改聊天室name
 *   path: /chatroom/update-name.do
 *   param:
    -	roomid(string) 聊天室ID
@@ -373,7 +373,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'name=[v]&roomid=[v]' http://180.76.173.200:9999/chatroom/update-name.do
   
-    ###  个人信息：根据用户名搜索
+###  个人信息：根据用户名搜索
 *   path: /person-set/search-by-name.do
 *   param:
    -	name(string) 用户名
@@ -382,7 +382,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'name=[v]' http://180.76.173.200:9999/person-set/search-by-name.do
     
-        ###  个人信息：根据手机号码搜索
+###  个人信息：根据手机号码搜索
 *   path: /person-set/search-by-phone.do
 *   param:
    -	phone(string) 
