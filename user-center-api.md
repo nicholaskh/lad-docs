@@ -373,7 +373,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
     
-###  IM：得到好友
+###  IM：得到聊天室
 *   path: /chatroom/get-chatrooms.do
 *   param:
 *	return:
