@@ -347,3 +347,37 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'name=test' http://180.76.173.200:9999/chatroom/create.do
     
+###  IM：加入好友
+*   path: /chatroom/insert-user.do
+*   param:
+   -	userid(string) 
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
+    
+ ###  IM：删除好友
+*   path: /chatroom/delete-user.do
+*   param:
+   -	userid(string) 
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
+    
+###  IM：得到好友
+*   path: /chatroom/get-friends.do
+*   param:
+*	return:
+   -	通用返回值 friends 全部好友信息。
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
+    
+###  IM：得到好友
+*   path: /chatroom/get-chatrooms.do
+*   param:
+*	return:
+   -	通用返回值 ChatroomList 全部聊天室信息。聊天室ID和name
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-chatrooms.do
+   
