@@ -347,24 +347,6 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'name=test' http://180.76.173.200:9999/chatroom/create.do
     
-###  IM：加入好友
-*   path: /chatroom/insert-user.do
-*   param:
-   -	userid(string) 
-*	return:
-   -	通用返回值 
-*   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
-    
- ###  IM：删除好友
-*   path: /chatroom/delete-user.do
-*   param:
-   -	userid(string) 
-*	return:
-   -	通用返回值 
-*   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
-    
 ###  IM：得到好友
 *   path: /chatroom/get-friends.do
 *   param:
@@ -381,3 +363,31 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-chatrooms.do
    
+  ###  修改聊天室name
+*   path: /chatroom/update-name.do
+*   param:
+   -	roomid(string) 聊天室ID
+   -	name(string) 聊天室名称
+*   return:
+   -	通用返回值 ChatroomList 全部聊天室信息。聊天室ID和name
+*   example:
+    -   curl -b cookie -d '-d 'name=[v]&roomid=[v]' http://180.76.173.200:9999/chatroom/update-name.do
+  
+    ###  个人信息：根据用户名搜索
+*   path: /person-set/search-by-name.do
+*   param:
+   -	name(string) 用户名
+*   return:
+   -	通用返回值 userList 用户列表
+*   example:
+    -   curl -b cookie -d '-d 'name=[v]' http://180.76.173.200:9999/person-set/search-by-name.do
+    
+        ###  个人信息：根据手机号码搜索
+*   path: /person-set/search-by-phone.do
+*   param:
+   -	phone(string) 
+*   return:
+   -	通用返回值 user 用户
+*   example:
+    -   curl -b cookie -d '-d 'phone=[v]' http://180.76.173.200:9999/person-set/search-by-phone.do
+    
