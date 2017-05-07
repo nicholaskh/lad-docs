@@ -12,6 +12,7 @@ User System APIs
 	-   10003, "手机号码重复"
 	-   10004, "手机号码错误"
 	-   10005, "未登录"
+	-   10006, "用户名ID错误"
 
 	-   20001, "用户名错误"
 	-   20002, "性别错误"
@@ -27,6 +28,11 @@ User System APIs
 	-   40004, "消息内容错误"
 
 	-   50001, "反馈为空"
+	
+	-   60001, "聊天室name为空"
+	-   60002, "已经加入该聊天室"
+
+	-   70001, "PUSHED系统错误"
 
 *   servers
     -   test: 180.76.173.200:9999
@@ -67,7 +73,7 @@ User System APIs
 	-	username(string): 用户名
 	-	password(string): 密码
 *	return: 
-	-	通用返回值
+	-	通用返回值 token:[value]
 *   example:
     -   curl -c cookie/cookie路径 -d 'phone=1234&password=1' 'http://180.76.173.200:9999/login/login.do'
 	
@@ -76,7 +82,7 @@ User System APIs
 *	params:
 	-	phone(string): 密码
 *	return: 
-	-	通用返回值
+	-	通用返回值 token:[value]
 *   example:
     -   curl -c cookie/cookie路径 -d 'phone=123456' 'http://180.76.173.200:9999/login/verification-send.do'
 	
@@ -331,3 +337,13 @@ User System APIs
    -	通用返回值 content：消息内容；source：消息来源
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/message/my-info.do
+ 
+ ###  IM：创建聊天室
+*   path: /chatroom/create.do
+*   param:
+   -	name(string) 聊天室名称
+*	return:
+   -	通用返回值 channelId：聊天室ID
+*   example:
+    -   curl -b cookie -d '-d 'name=test' http://180.76.173.200:9999/chatroom/create.do
+    
