@@ -39,10 +39,10 @@ User System APIs
 *   method
     -   约定：方法只读用get，增删改用post
 *   数据库查询
-    -    start_id(string)
+    -    start_id(string)
     -    gt(boolean)
     -    limit(int)
-    -    如果传入start_id为空，则取最新的limit条，否则使用start_id来确定开始位置，gt来确定比较的方向，取limit条；
+    -    如果传入start_id为空，则取最新的limit条，否则使用start_id来确定开始位置，gt来确定比较的方向，取limit条；
     
 ### 注册，发送验证码
 *   path: /regist/verification-send.do
