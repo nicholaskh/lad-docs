@@ -18,6 +18,8 @@ User System APIs
 	-   20002, "性别错误"
 	-   20003, "个性签名错误"
 	-   20004, "生日错误"
+	-   20005, "手机号码错误"
+	-   20006, "用户ID错误"
 
 	-   30001, "密码不一致"
 	-   30002, "验证码错误"
@@ -26,11 +28,14 @@ User System APIs
 	-   40002, "首页为空"
 	-   40003, "消息来源错误"
 	-   40004, "消息内容错误"
+	-   40005, "重复点赞"
 
 	-   50001, "反馈为空"
 	
 	-   60001, "聊天室name为空"
 	-   60002, "已经加入该聊天室"
+	-   60003, "聊天室为空"
+	-   60004, "已经加入该聊天室"
 
 	-   70001, "PUSHED系统错误"
 
@@ -207,6 +212,68 @@ User System APIs
 }
 *   example:
     -   curl -b cookie  http://180.76.173.200:9999/person-set/user-info.do
+    
+###    个人设置，通过userid获得个人信息
+*   path: /person-set/search-by-userid.do
+*   param:
+    -   userid(String)
+*	return:
+	-	{
+    "ret": 0,
+    "user": {
+        "birthDay": "",
+        "headPictureName": "58f210b0589b559c57d5521912.png",
+        "id": "58f210b0589b559c57d55219",
+        "personalizedSignature": "",
+        "phone": "13112345678",
+        "sex": "",
+        "userName": ""
+    }
+}
+*   example:
+    -   curl -b cookie  http://180.76.173.200:9999/person-set/search-by-userid.do
+    
+###    个人设置，通过phone获得个人信息
+*   path: /person-set/search-by-phone.do
+*   param:
+    -   phone(String)
+*	return:
+	-	{
+    "ret": 0,
+    "user": {
+        "birthDay": "",
+        "headPictureName": "58f210b0589b559c57d5521912.png",
+        "id": "58f210b0589b559c57d55219",
+        "personalizedSignature": "",
+        "phone": "13112345678",
+        "sex": "",
+        "userName": ""
+    }
+}
+*   example:
+    -   curl -b cookie  http://180.76.173.200:9999/person-set/search-by-phone.do
+    
+###    个人设置，通过name获得个人信息
+*   path: /person-set/search-by-name.do
+*   param:
+    -   name(String)
+*	return:
+	-	{
+    "ret": 0,
+    "userList": [{
+        "birthDay": "",
+        "headPictureName": "58f210b0589b559c57d5521912.png",
+        "id": "58f210b0589b559c57d55219",
+        "personalizedSignature": "",
+        "phone": "13112345678",
+        "sex": "",
+        "userName": ""
+    }
+}]...
+*   example:
+    -   curl -b cookie  http://180.76.173.200:9999/person-set/search-by-name.do
+    
+  
 
 ###    账户安全，修改密码
 *   path: /password/password-change.do
