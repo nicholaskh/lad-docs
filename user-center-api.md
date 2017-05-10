@@ -38,6 +38,11 @@ User System APIs
 	-   60004, "已经加入该聊天室"
 
 	-   70001, "PUSHED系统错误"
+	
+	-   80001, "朋友为空"
+	-   80002, "VIP为空
+	-   80003, "黑名单为空"
+	-   80004, "朋友关系已经存在"
 
 *   servers
     -   test: 180.76.173.200:9999
@@ -463,3 +468,31 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'phone=[v]' http://180.76.173.200:9999/person-set/search-by-phone.do
     
+ ###  好友：加入好友
+*   path: /friends/insert.do
+*   param:
+   -	friendid(string) 
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]' http://180.76.173.200:9999/friends/insert.do
+    
+###  好友：设置星标
+*   path: /friends/set-VIP.do
+*   param:
+   -	friendid(string) 
+   -	VIP(int) 0表示非VIP，1表示VIP。
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]&VIP=1' http://180.76.173.200:9999/friends/set-VIP.do
+    
+###  好友：设置黑名单
+*   path: /friends/set-black.do
+*   param:
+   -	friendid(string) 
+   -	black(int) 0表示非black，1表示black。
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]&black=1' http://180.76.173.200:9999/friends/set-black.do
