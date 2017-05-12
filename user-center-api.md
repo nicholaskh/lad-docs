@@ -583,12 +583,4 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -d '-d 'friendids=[v]&chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
-    
-###  好友：删除好友
-*   path: /friends/multi-insert.do
-*   param:
-   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
-*   return:
-   -	通用返回值 
-*   example:
-    -   curl -b cookie -d '-d 'friendids=[v]' http://180.76.173.200:9999/friends/multi-insert.do
+
