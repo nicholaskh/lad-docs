@@ -43,6 +43,10 @@ User System APIs
 	-   80002, "VIP为空
 	-   80003, "黑名单为空"
 	-   80004, "朋友关系已经存在"
+	-   80005, "朋友标签为空"
+	-   80006, "朋友电话为空"
+	-   80007, "朋友描述为空"
+	-   80008, "备注名为空"
 
 *   servers
     -   test: 180.76.173.200:9999
@@ -577,10 +581,9 @@ User System APIs
 ###  好友：退出群聊
 *   path: /friends/multi-out.do
 *   param:
-   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
    -    chatroomid(string)
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendids=[v]&chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
+    -   curl -b cookie -d '-d 'chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
 
