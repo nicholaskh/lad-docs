@@ -496,3 +496,99 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -d '-d 'friendid=[v]&black=1' http://180.76.173.200:9999/friends/set-black.do
+    
+ ###  好友：设置备注名
+*   path: /friends/set-backname.do
+*   param:
+   -	friendid(string) 
+   -	backname(string)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]&backname=[v]' http://180.76.173.200:9999/friends/set-backname.do
+    
+###  好友：设置标签
+*   path: /friends/set-tag.do
+*   param:
+   -	friendid(string) 
+   -	tag(string)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]&tag=[v]' http://180.76.173.200:9999/friends/set-tag.do
+ 
+     
+###  好友：设置电话号码
+*   path: /friends/set-phone.do
+*   param:
+   -	friendid(string) 
+   -	phone(string)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]&phone=[v]' http://180.76.173.200:9999/friends/set-phone.do
+    
+###  好友：设置描述信息
+*   path: /friends/set-description.do
+*   param:
+   -	friendid(string) 
+   -	description(string)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendid=[v]&description=[v]' http://180.76.173.200:9999/friends/set-description.do
+    
+###  好友：tag列表
+*   path: /friends/get-tag.do
+*   param:
+   -	userid(string) 
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/get-tag.do
+    
+###  好友：好友列表
+*   path: /friends/get-friends.do
+*   param:
+   -	userid(string) 
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/get-friends.do
+
+###  好友：删除好友
+*   path: /friends/delete.do
+*   param:
+   -	userid(string) 
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/delete.do
+    
+###  好友：创建群聊
+*   path: /friends/multi-insert.do
+*   param:
+   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendids=[v]' http://180.76.173.200:9999/friends/multi-insert.do
+    
+###  好友：退出群聊
+*   path: /friends/multi-out.do
+*   param:
+   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
+   -    chatroomid(string)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendids=[v]&chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
+    
+###  好友：删除好友
+*   path: /friends/multi-insert.do
+*   param:
+   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'friendids=[v]' http://180.76.173.200:9999/friends/multi-insert.do
