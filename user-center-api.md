@@ -393,6 +393,8 @@ User System APIs
 *   path: /feedback/insert.do
 *   param:
 	-	@RequestParam("feedback_picture") MultipartFile file
+	-	content(string)
+	-	contactInfo(string)
 *	return:
 	-	通用返回值
 *   example:
@@ -435,6 +437,15 @@ User System APIs
    -	通用返回值 friends 全部好友信息。
 *   example:
     -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
+    
+###    IM，文件上传
+*   path: /upload/imfile.do
+*   param:
+	-	imfile(@RequestParam("imfile") MultipartFile imfile) 文件名不能重复
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -F "imfile=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/imfile.do'
     
 ###  IM：得到聊天室
 *   path: /chatroom/get-chatrooms.do
@@ -586,4 +597,3 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -d '-d 'chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
-
