@@ -567,7 +567,7 @@ User System APIs
 *   param:
    -	userid(string) 
 *   return:
-   -	通用返回值 
+   -	通用返回值 userid friendid backname(备注名) tag phone(设置的朋友的电话) description VIP black username picture 
 *   example:
     -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/get-friends.do
 
