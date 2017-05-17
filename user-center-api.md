@@ -208,7 +208,7 @@ User System APIs
 *   path: /person-set/location.do
 *   param:
 	-	px(Double)经度
-        -	py(Double)纬度
+	-	py(Double)纬度
 *	return:
 	-	通用返回值
 *   example:
