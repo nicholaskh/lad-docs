@@ -204,6 +204,16 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'personalized_signature=haha' http://180.76.173.200:9999/person-set/personalized-signature.do
     
+###    个人设置，上传地理位置信息
+*   path: /person-set/location.do
+*   param:
+	-	px(Double)经度
+        -	py(Double)纬度
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -d 'sex=1' http://180.76.173.200:9999/person-set/location.do
+
 ###    个人设置，获得个人信息
 *   path: /person-set/user-info.do
 *   param:
