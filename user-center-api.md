@@ -432,7 +432,7 @@ User System APIs
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/message/my-info.do
  
- ###  IM：创建聊天室
+###  IM：创建聊天室
 *   path: /chatroom/create.do
 *   param:
    -	name(string) 聊天室名称
@@ -494,7 +494,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'phone=[v]' http://180.76.173.200:9999/person-set/search-by-phone.do
     
- ###  好友：加入好友
+###  好友：加入好友
 *   path: /friends/insert.do
 *   param:
    -	friendid(string) 
@@ -523,7 +523,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'friendid=[v]&black=1' http://180.76.173.200:9999/friends/set-black.do
     
- ###  好友：设置备注名
+###  好友：设置备注名
 *   path: /friends/set-backname.do
 *   param:
    -	friendid(string) 
