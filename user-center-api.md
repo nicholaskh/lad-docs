@@ -624,6 +624,6 @@ User System APIs
    -    px(double)经度
    -    py(double)纬度
 *   return:
-   -	通用返回值 
+   -	通用返回值 userList
 *   example:
     -   curl -b cookie -d '-d 'px=[v]&py=[v]' http://180.76.173.200:9999/location/near.do
