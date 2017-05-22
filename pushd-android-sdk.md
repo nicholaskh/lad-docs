@@ -17,7 +17,7 @@ Pushd Android SDK
 * 接收到的消息类型需开发者区分  
     1、目前sdk接收到的服务器推送的消息不区分类型  
     2、对于消息属于图片、语音、视频、文字哪一类，需要开发者根据消息的开头标签来区分  
-    3、各标签[video]、[voice]、[pic]，分别是视频、语音、图片，没有标签则为文本,对应的音视频文件地址在标签后main。如：[pic]http://git.oschina.net/logo.svg?201702241900  
+    3、各标签[video]、[voice]、[pic]，分别是视频、语音、图片，没有标签则为文本,对应的音视频文件地址在标签后面。如：[pic]http://git.oschina.net/logo.svg?201702241900  
 
 
 
@@ -33,6 +33,15 @@ Note: 如果返回的imAssistant为null，则初始化失败。开发者只需�
 
 
 ```
+
+
+## 自定义Excetion介绍
+
+* TokenException
+    * 访问Token错误
+
+* ConnectExcetion
+    *  与im服务器建立连接异常
 
 
 
@@ -144,11 +153,60 @@ void reSendVideo(long msgId, String cookie, String channelId, File video, ISendR
 
         }
 
-        
+
+
 
 ```
+
+* 2、SendResultMsg类
+```java
+
+    // 下面是类中暴露出来的三个方法
+
+
+    // 获取消息的id
+    long getMsgId()
+
+    // 获取发送结果详情
+    String getMsg()  
+
+    // 获取结果状态码
+    int getStatus()
+
+    // 返回sdk内部封装的消息对象（一般不需要）
+    SendMsg getSdkSendMsg()
+
+
+```
+
+* 3、发送结果个状态码介绍
+
+```java
+
+    // 需要开发者处理的状态码：success、timeOut、tokenInvalid
+
+    public static class ResultStatus {
+
+        // 发送成功
+        public final static int success = 200;
+
+        // 开发者可忽略此错误
+        public final static int failed = 400;
+
+        // 服务器响应超时
+        public final static int timeOut = 500;
+
+        // 访问token失效，此时需要开发者重新获取token，并调用imAssistant.updateToken()
+        public final static int tokenInvalid = 600;
+    }
+
+
+```
+
 * 2、IProcessor 接口
 ```java
+
+// 全局接收im服务器消息推送，回调函数
 
 public interface IProcessor {
 
@@ -179,6 +237,7 @@ public class PushMsg {
     }
 
     // 消息类型
+    // 目前只有一种类型，（音视频文字图片消息看作是一种消息类型，以后随着业务的扩展可能会添加）
     public int getMsgType() {
         return msgType;
     }
@@ -210,6 +269,7 @@ public class PushMsg {
 }
 ```
 
+##
 
 
 
