@@ -608,3 +608,22 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -d '-d 'chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
+
+###  投诉
+*   path: /complain/create.do
+*   param:
+   -    content(string)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'content=[v]' http://180.76.173.200:9999/complain/create.do
+
+###  附近的人
+*   path: /location/near.do
+*   param:
+   -    px(double)经度
+   -    py(double)纬度
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d '-d 'px=[v]&py=[v]' http://180.76.173.200:9999/location/near.do
