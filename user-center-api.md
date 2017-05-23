@@ -466,6 +466,26 @@ User System APIs
    -	通用返回值 ChatroomList 全部聊天室信息。聊天室ID和name
 *   example:
     -   curl -b cookie -d '-d 'name=[v]&roomid=[v]' http://180.76.173.200:9999/chatroom/update-name.do
+
+###  聊天室：加入用户
+*   path: /chatroom/insert-user.do
+*   param:
+   -	chatroomid(string) 聊天室ID
+   -	userid(string) 用户ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
+
+###  聊天室：删除用户
+*   path: /chatroom/delete-user.do
+*   param:
+   -	chatroomid(string) 聊天室ID
+   -	userid(string) 用户ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d '-d 'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
   
 ###  个人信息：根据用户名搜索
 *   path: /person-set/search-by-name.do
