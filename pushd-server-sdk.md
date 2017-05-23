@@ -4,11 +4,11 @@
 
 ## 名词解释：
 
-* 服务端token： 服务端调im服务的大部分接口时需要token，im服务器根据此token来验证服务端是否合法
-* 服务端appkey： 服务端颁发的认证key，服务端需要使用appkey来获取服务端token
+* 服务端term： 服务端调im服务的大部分接口时需要term，im服务器根据此term来验证服务端是否合法
+* 服务端appkey： 服务端颁发的认证key，服务端需要使用appkey来获取服务端term
 * 手机端token:： 手机端连接im使用的token
 
-* im提供的不需要服务端token，即可调用的ImAssistant中的方法:  
+* im提供的不需要服务端term，即可调用的ImAssistant中的方法:  
 
     * authServer()
     * getAppKey()
@@ -37,14 +37,14 @@
     Message getAppKey()
 
     5、
-    // 将获取到的服务端token保存到ImAssitant对象中
-    // token: 下次访问服务器时使用的token，需要调用此方法存储到ImAssisten对象中。调用其他方法时，将会附带此值访问
-    void setServerToken(String token)
+    // 将获取到的服务端term保存到ImAssitant对象中
+    // term: 下次访问服务器时使用的erm，需要调用此方法存储到ImAssisten对象中。调用其他方法时，将会附带此值访问
+    void setServerTerm(String term)
 
     6、
-    // 认证服务器，并获取服务端token
+    // 认证服务器，并获取服务端term
     // appkey： 分发给服务器的key
-    // 返回值： 从返回的Message对象中获取服务端token
+    // 返回值： 从返回的Message对象中获取服务端term
     Message authServer(String appKey)
 
 
@@ -61,7 +61,7 @@
 ## Message状态码介绍
 
 
-    // Note：开发者需要处理：success、timeOut、tokenError三种状态
+    // Note：开发者需要处理：success、timeOut、termError三种状态
 
     public static class Status {
 
@@ -74,8 +74,8 @@
         // 接口调用失败，开发者可忽略此错误，此错误需要sdk制作者考虑。sdk制作者应保证不出现此错误
         public static final int failed = 3;
 
-        // 服务端访问token失效，此时需要开发者重新获取服务端token
-        public static final int tokenError = 4;
+        // 服务端访问term失效，此时需要开发者重新获取服务端term
+        public static final int termError = 4;
     }
 
 
@@ -88,12 +88,12 @@
 
     //一定用到的方法
     init()
-    setServerToken()
+    setServerTerm()
     subscribe()
     close()
 
     //可能涉及到的方法
-    authServer()  // token过期时需要使用此方法重新获取token
+    authServer()  // term过期时需要使用此方法重新获取term
     setReadTime() //
 ```
 
@@ -101,16 +101,16 @@
 ```java
    // 一定用到的方法
     init()
-    setServerToken()
+    setServerTerm()
     getToken()
     close()
 
     //可能涉及到的方法
-    authServer()  // token过期时需要使用此方法重新获取token
+    authServer()  // term过期时需要使用此方法重新获取term
     setReadTime() //
 ```
 
-* **获取服务端访问token**
+* **获取服务端访问term**
 ```java
     //一定用到的方法
     init()
