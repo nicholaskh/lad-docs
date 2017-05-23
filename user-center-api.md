@@ -432,7 +432,7 @@ User System APIs
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/message/my-info.do
  
-###  IM：创建聊天室
+###  IM相关：创建聊天室
 *   path: /chatroom/create.do
 *   param:
    -	name(string) 聊天室名称
@@ -441,7 +441,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'name=test' http://180.76.173.200:9999/chatroom/create.do
     
-###  IM：得到好友
+###  IM相关：得到好友
 *   path: /chatroom/get-friends.do
 *   param:
 *	return:
@@ -449,16 +449,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
     
-###    IM，文件上传
-*   path: /upload/imfile.do
-*   param:
-	-	imfile(@RequestParam("imfile") MultipartFile imfile) 文件名不能重复
-*	return:
-	-	通用返回值
-*   example:
-    -   curl -b cookie -F "imfile=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/imfile.do'
-    
-###  IM：得到聊天室
+###  IM相关：得到聊天室
 *   path: /chatroom/get-chatrooms.do
 *   param:
 *	return:
