@@ -4,11 +4,11 @@
 
 ## 名词解释：
 
-* 服务端term： 服务端调im服务的大部分接口时需要term，im服务器根据此term来验证服务端是否合法
-* 服务端appkey： 服务端颁发的认证key，服务端需要使用appkey来获取服务端term
-* 手机端token:： 手机端连接im使用的token
+* api server的term： api server调 im server的大部分接口时需要term，im server根据api server 提供的term来验证api server的合法性
+* api server的appkey： im server颁发的认证key，api server需要使用appkey来获取term
+* 手机端token:： 手机端连接im server使用的token
 
-* im提供的不需要服务端term，即可调用的ImAssistant中的方法:  
+* server sdk提供的不需要term，即可调用的im server中的接口:  
 
     * authServer()
     * getAppKey()
@@ -33,28 +33,28 @@
     Message subscribe(String channelName, String channelId, String... uuids)
 
     4、
-    // 获取服务端使用的appkey
+    // 获取api server使用的appkey
     Message getAppKey()
 
     5、
-    // 将获取到的服务端term保存到ImAssitant对象中
-    // term: 下次访问服务器时使用的erm，需要调用此方法存储到ImAssisten对象中。调用其他方法时，将会附带此值访问
+    // 将获取到的term保存到ImAssitant对象中
+    // term: 下次访问im server时使用的erm，需要调用此方法存储到ImAssisten对象中。调用其他方法时，将会附带此值访问
     void setServerTerm(String term)
 
     6、
-    // 认证服务器，并获取服务端term
-    // appkey： 分发给服务器的key
-    // 返回值： 从返回的Message对象中获取服务端term
+    // 认证，并获取term
+    // appkey： 分发给api server的key
+    // 返回值： 从返回的Message对象中获取term。String term = message.getMsg()
     Message authServer(String appKey)
 
 
     7、
-    // 获取手机端连接im服务器使用的token
+    // 获取手机端连接im server使用的token
     Message getToken()
 
 
     8、
-    // 关闭与im服务器的连接
+    // 关闭与im server的连接
     void close()
 
 
@@ -68,13 +68,13 @@
         // 访问接口成功
         public static final int success = 1;
 
-        // 等待服务器响应超时（sdk默认等待5秒，开发者可以通过setReadTime方法设置）
+        // 等待im server响应超时（sdk默认等待5秒，开发者可以通过setReadTime方法设置）
         public static final int timeOut = 2;
 
         // 接口调用失败，开发者可忽略此错误，此错误需要sdk制作者考虑。sdk制作者应保证不出现此错误
         public static final int failed = 3;
 
-        // 服务端访问term失效，此时需要开发者重新获取服务端term
+        // api server访问的term失效，此时需要开发者重新获取term
         public static final int termError = 4;
     }
 
@@ -125,8 +125,8 @@
 
 ## 特殊情况:
     调用ImAssistant各接口时，如果返回的Message对象为null。这种情况是读错误引起的。
-    造成此错误的原因是：与im服务器的连接异常断开。如果开发者所处环境连接容易被安全软件或其他误伤，需要考虑此情况。
-    出现此情况时，需要重新连接im服务器。
+    造成此错误的原因是：与im server的连接异常断开。如果开发者所处环境连接容易被安全软件或其他误伤，需要考虑此情况。
+    出现此情况时，需要重新连接im server。
 
 
 
