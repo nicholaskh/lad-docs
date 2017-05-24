@@ -602,11 +602,11 @@ User System APIs
 ###  好友：删除好友
 *   path: /friends/delete.do
 *   param:
-   -	userid(string) 
+   -	friendid(string) 
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d  'userid=[v]' http://180.76.173.200:9999/friends/delete.do
+    -   curl -b cookie -d  'friendid=[v]' http://180.76.173.200:9999/friends/delete.do
     
 ###  好友：创建群聊
 *   path: /friends/multi-insert.do
