@@ -601,14 +601,14 @@ User System APIs
 *   example:
     -   curl -b cookie -d  'friendid=[v]&description=[v]' http://180.76.173.200:9999/friends/set-description.do
     
-###  好友：tag列表
+###  好友：获得标签
 *   path: /friends/get-tag.do
 *   param:
-   -	userid(string) 
+   -	friendid(string) 
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/friends/get-tag.do
+    -   curl -b cookie -d 'friendid=[v]' http://180.76.173.200:9999/friends/get-tag.do
     
 ###  好友：好友列表
 *   path: /friends/get-friends.do
