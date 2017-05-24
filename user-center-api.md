@@ -116,7 +116,7 @@ User System APIs
     -   curl -b cookie/cookie路径 -d 'phone=1234&verification=111111' 'http://180.76.173.200:9999/login/login-quick.do'
 
 ###	退出登录
-*   path: /login/logout
+*   path: /login/logout.do
 *	params:	无
 *	return: 通用返回值
 *   example:
