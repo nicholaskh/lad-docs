@@ -569,18 +569,7 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -d 'friendid=[v]&backname=[v]' http://180.76.173.200:9999/friends/set-backname.do
-    
-###  好友：设置标签
-*   path: /friends/set-tag.do
-*   param:
-   -	friendid(string) 
-   -	tag(string)
-*   return:
-   -	通用返回值 
-*   example:
-    -   curl -b cookie -d  'friendid=[v]&tag=[v]' http://180.76.173.200:9999/friends/set-tag.do
  
-     
 ###  好友：设置电话号码
 *   path: /friends/set-phone.do
 *   param:
@@ -600,15 +589,6 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -d  'friendid=[v]&description=[v]' http://180.76.173.200:9999/friends/set-description.do
-    
-###  好友：获得标签
-*   path: /friends/get-tag.do
-*   param:
-   -	friendid(string) 
-*   return:
-   -	通用返回值 
-*   example:
-    -   curl -b cookie -d 'friendid=[v]' http://180.76.173.200:9999/friends/get-tag.do
     
 ###  好友：好友列表
 *   path: /friends/get-friends.do
@@ -664,3 +644,50 @@ User System APIs
    -	通用返回值 userList
 *   example:
     -   curl -b cookie -d 'px=[v]&py=[v]' http://180.76.173.200:9999/location/near.do
+
+###  标签:创建标签
+*   path: /tag/set-tag.do
+*   param:
+   -    name(String) 标签名称
+   -    friendsids(String) 使用英文逗号分隔的好友ID
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d 'name=[v]&friendsids=[v]' http://180.76.173.200:9999/tag/set-tag.do
+
+###  标签:得到指定好友标签
+*   path: /tag/get-friend-tag.do
+*   param:
+   -    friendsid(String) 好友ID
+*   return:
+   -	通用返回值 tag 标签内容
+*   example:
+    -   curl -b cookie -d 'friendsid=[v]' http://180.76.173.200:9999/tag/get-friend-tag.do
+
+###  标签:得到全部好友标签列表
+*   path: /tag/get-tag-list.do
+*   param:
+*   return:
+   -	通用返回值 tag 标签内容
+*   example:
+    -   curl -b cookie http://180.76.173.200:9999/tag/get-friend-tag.do
+
+###  标签:删除标签
+*   path: /tag/delete-tag.do
+*   param:
+   -    tagid(String) 标签表ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'tagid=[v]' http://180.76.173.200:9999/tag/delete-tag.do
+
+###  标签:添加好友
+*   path: /tag/tag-add-friends.do
+*   param:
+   -    tagid(String) 标签表ID
+   -    friendsids(String) 使用英文逗号分隔的朋友ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/tag-add-friends
+
