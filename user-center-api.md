@@ -439,7 +439,7 @@ User System APIs
 *	return:
    -	通用返回值 channelId：聊天室ID
 *   example:
-    -   curl -b cookie -d '-d 'name=test' http://180.76.173.200:9999/chatroom/create.do
+    -   curl -b cookie -d  'name=test' http://180.76.173.200:9999/chatroom/create.do
     
 ###  IM相关：得到好友
 *   path: /chatroom/get-friends.do
@@ -447,7 +447,7 @@ User System APIs
 *	return:
    -	通用返回值 friends 全部好友信息。
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
+    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
     
 ###  IM相关：得到聊天室
 *   path: /chatroom/get-chatrooms.do
@@ -455,7 +455,7 @@ User System APIs
 *	return:
    -	通用返回值 ChatroomList 全部聊天室信息。聊天室ID和name
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-chatrooms.do
+    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-chatrooms.do
    
 ###  修改聊天室name
 *   path: /chatroom/update-name.do
@@ -465,7 +465,7 @@ User System APIs
 *   return:
    -	通用返回值 ChatroomList 全部聊天室信息。聊天室ID和name
 *   example:
-    -   curl -b cookie -d '-d 'name=[v]&roomid=[v]' http://180.76.173.200:9999/chatroom/update-name.do
+    -   curl -b cookie -d 'name=[v]&roomid=[v]' http://180.76.173.200:9999/chatroom/update-name.do
 
 ###  聊天室：加入用户
 *   path: /chatroom/insert-user.do
@@ -475,7 +475,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
+    -   curl -b cookie -d 'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
 
 ###  聊天室：删除用户
 *   path: /chatroom/delete-user.do
@@ -485,7 +485,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
+    -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
   
 ###  个人信息：根据用户名搜索
 *   path: /person-set/search-by-name.do
@@ -494,7 +494,7 @@ User System APIs
 *   return:
    -	通用返回值 userList 用户列表
 *   example:
-    -   curl -b cookie -d '-d 'name=[v]' http://180.76.173.200:9999/person-set/search-by-name.do
+    -   curl -b cookie -d 'name=[v]' http://180.76.173.200:9999/person-set/search-by-name.do
     
 ###  个人信息：根据手机号码搜索
 *   path: /person-set/search-by-phone.do
@@ -503,16 +503,42 @@ User System APIs
 *   return:
    -	通用返回值 user 用户
 *   example:
-    -   curl -b cookie -d '-d 'phone=[v]' http://180.76.173.200:9999/person-set/search-by-phone.do
+    -   curl -b cookie -d 'phone=[v]' http://180.76.173.200:9999/person-set/search-by-phone.do
     
-###  好友：加入好友
-*   path: /friends/insert.do
+###  好友：申请添加好友
+*   path: /friends/apply.do
 *   param:
    -	friendid(string) 
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]' http://180.76.173.200:9999/friends/insert.do
+    -   curl -b cookie -d 'friendid=[v]' http://180.76.173.200:9999/friends/apply.do
+
+###  好友：同意添加好友
+*   path: /friends/agree.do
+*   param:
+   -	id(string) 好友数据表记录的ID，不是朋友ID和userid。
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d 'id=[v]' http://180.76.173.200:9999/friends/agree.do
+
+###  好友：拒绝添加好友
+*   path: /friends/refuse.do
+*   param:
+   -	id(string) 好友数据表记录的ID，不是朋友ID和userid。
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d 'id=[v]' http://180.76.173.200:9999/friends/refuse.do
+
+###  好友：获得申请添加好友列表
+*   path: /friends/apply-list.do
+*   param:
+*   return:
+   -	通用返回值 friendsVoList 好友列表信息
+*   example:
+    -   curl -b cookie  http://180.76.173.200:9999/friends/apply-list.do
     
 ###  好友：设置星标
 *   path: /friends/set-VIP.do
@@ -522,7 +548,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]&VIP=1' http://180.76.173.200:9999/friends/set-VIP.do
+    -   curl -b cookie -d  'friendid=[v]&VIP=1' http://180.76.173.200:9999/friends/set-VIP.do
     
 ###  好友：设置黑名单
 *   path: /friends/set-black.do
@@ -532,7 +558,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]&black=1' http://180.76.173.200:9999/friends/set-black.do
+    -   curl -b cookie -d 'friendid=[v]&black=1' http://180.76.173.200:9999/friends/set-black.do
     
 ###  好友：设置备注名
 *   path: /friends/set-backname.do
@@ -542,7 +568,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]&backname=[v]' http://180.76.173.200:9999/friends/set-backname.do
+    -   curl -b cookie -d 'friendid=[v]&backname=[v]' http://180.76.173.200:9999/friends/set-backname.do
     
 ###  好友：设置标签
 *   path: /friends/set-tag.do
@@ -552,7 +578,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]&tag=[v]' http://180.76.173.200:9999/friends/set-tag.do
+    -   curl -b cookie -d  'friendid=[v]&tag=[v]' http://180.76.173.200:9999/friends/set-tag.do
  
      
 ###  好友：设置电话号码
@@ -563,7 +589,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]&phone=[v]' http://180.76.173.200:9999/friends/set-phone.do
+    -   curl -b cookie -d  'friendid=[v]&phone=[v]' http://180.76.173.200:9999/friends/set-phone.do
     
 ###  好友：设置描述信息
 *   path: /friends/set-description.do
@@ -573,7 +599,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendid=[v]&description=[v]' http://180.76.173.200:9999/friends/set-description.do
+    -   curl -b cookie -d  'friendid=[v]&description=[v]' http://180.76.173.200:9999/friends/set-description.do
     
 ###  好友：tag列表
 *   path: /friends/get-tag.do
@@ -582,7 +608,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/get-tag.do
+    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/friends/get-tag.do
     
 ###  好友：好友列表
 *   path: /friends/get-friends.do
@@ -591,7 +617,7 @@ User System APIs
 *   return:
    -	通用返回值 userid friendid backname(备注名) tag phone(设置的朋友的电话) description VIP black username picture 
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/get-friends.do
+    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/friends/get-friends.do
 
 ###  好友：删除好友
 *   path: /friends/delete.do
@@ -600,7 +626,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'userid=[v]' http://180.76.173.200:9999/friends/delete.do
+    -   curl -b cookie -d  'userid=[v]' http://180.76.173.200:9999/friends/delete.do
     
 ###  好友：创建群聊
 *   path: /friends/multi-insert.do
@@ -609,7 +635,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'friendids=[v]' http://180.76.173.200:9999/friends/multi-insert.do
+    -   curl -b cookie -d  'friendids=[v]' http://180.76.173.200:9999/friends/multi-insert.do
     
 ###  好友：退出群聊
 *   path: /friends/multi-out.do
@@ -618,7 +644,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
+    -   curl -b cookie -d 'chatroomid=[v]' http://180.76.173.200:9999/friends/multi-out.do
 
 ###  投诉
 *   path: /complain/create.do
@@ -627,7 +653,7 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -d '-d 'content=[v]' http://180.76.173.200:9999/complain/create.do
+    -   curl -b cookie -d 'content=[v]' http://180.76.173.200:9999/complain/create.do
 
 ###  附近的人
 *   path: /location/near.do
@@ -637,4 +663,4 @@ User System APIs
 *   return:
    -	通用返回值 userList
 *   example:
-    -   curl -b cookie -d '-d 'px=[v]&py=[v]' http://180.76.173.200:9999/location/near.do
+    -   curl -b cookie -d 'px=[v]&py=[v]' http://180.76.173.200:9999/location/near.do
