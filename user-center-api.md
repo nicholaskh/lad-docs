@@ -658,11 +658,11 @@ User System APIs
 ###  标签:得到指定好友标签
 *   path: /tag/get-friend-tag.do
 *   param:
-   -    friendsid(String) 好友ID
+   -    friendid(String) 好友ID
 *   return:
    -	通用返回值 tag 标签内容
 *   example:
-    -   curl -b cookie -d 'friendsid=[v]' http://180.76.173.200:9999/tag/get-friend-tag.do
+    -   curl -b cookie -d 'friendid=[v]' http://180.76.173.200:9999/tag/get-friend-tag.do
 
 ###  标签:得到全部好友标签列表
 *   path: /tag/get-tag-list.do
