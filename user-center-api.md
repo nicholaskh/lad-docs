@@ -676,6 +676,7 @@ User System APIs
 *   path: /tag/delete-tag.do
 *   param:
    -    tagid(String) 标签表ID
+   -    frinedid(String) 朋友的ID
 *   return:
    -	通用返回值
 *   example:
