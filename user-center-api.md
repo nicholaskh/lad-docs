@@ -545,7 +545,7 @@ User System APIs
 *   path: /friends/apply-list.do
 *   param:
 *   return:
-   -	通用返回值 friendsVoList 好友列表信息
+   -	通用返回值 userVoList 好友列表信息
 *   example:
     -   curl -b cookie  http://180.76.173.200:9999/friends/apply-list.do
     
