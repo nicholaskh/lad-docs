@@ -692,3 +692,17 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/tag-add-friends
 
+###  群组:创建群组
+*   path: /organization/insert.do
+*   param:
+   -    px(double)
+   -    py(double)
+   -    landmark(String)
+   -    name(double)
+   -    tag(double)
+   -    sub_tag(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'px=[v]&py=[v]&landmark=[v]&name=[v]&tag=[v]&sub_tag=[v]' 
+ http://180.76.173.200:9999/organization/insert.do
