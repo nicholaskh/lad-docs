@@ -449,13 +449,22 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-friends.do
     
-###  IM相关：得到聊天室
-*   path: /chatroom/get-chatrooms.do
+###  IM相关：得到全部聊天室
+*   path: /chatroom/get-my-chatrooms.do
 *   param:
 *	return:
-   -	通用返回值 ChatroomList 全部聊天室信息。聊天室ID和name
+   -	通用返回值 ChatroomList 全部聊天室信息，置顶聊天室在前。ChatroomTopNum 置顶的聊天室数目。
 *   example:
-    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-chatrooms.do
+    -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-my-chatrooms.do
+
+###  IM相关：得到聊天室
+*   path: /chatroom/get-chatroom-info.do
+*   param:
+   -	chatroomid(string) 聊天室ID
+*	return:
+   -	通用返回值 chatroom 聊天室信息
+*   example:
+    -   curl -b cookie -d 'chatroomid=[v]' http://180.76.173.200:9999/chatroom/get-chatroom-info.do
    
 ###  修改聊天室name
 *   path: /chatroom/update-name.do
