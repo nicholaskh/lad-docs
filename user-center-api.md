@@ -613,7 +613,7 @@ User System APIs
 *   param:
    -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
 *   return:
-   -	通用返回值 
+   -	通用返回值 channelId
 *   example:
     -   curl -b cookie -d  'friendids=[v]' http://180.76.173.200:9999/friends/multi-insert.do
     
