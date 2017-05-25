@@ -706,3 +706,32 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'px=[v]&py=[v]&landmark=[v]&name=[v]&tag=[v]&sub_tag=[v]' 
  http://180.76.173.200:9999/organization/insert.do
+
+###  群组:列表
+*   path: /organization/list.do
+*   param:
+   -    tag(double)
+   -    sub_tag(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'tag=[v]&sub_tag=[v]'  http://180.76.173.200:9999/organization/list.do
+
+###  群组:申请加入
+*   path: /organization/apply-join.do
+*   param:
+   -    organizationid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/apply-join.do
+
+###  群组:同意加入
+*   path: /organization/apply-agree.do
+*   param:
+   -    userid(String)
+   -    organizationid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/apply-agree.do
