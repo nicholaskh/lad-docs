@@ -58,6 +58,7 @@ User System APIs
     -    gt(boolean)
     -    limit(int)
     -    如果传入start_id为空，则取最新的limit条，否则使用start_id来确定开始位置，gt来确定比较的方向，取limit条；
+*   聊天室类型type：1表示1对1聊天；2表示群聊；3表示面对面建群。
     
 ### 注册，发送验证码
 *   path: /regist/verification-send.do
@@ -453,7 +454,7 @@ User System APIs
 *   path: /chatroom/get-my-chatrooms.do
 *   param:
 *	return:
-   -	通用返回值 ChatroomList 全部聊天室信息，置顶聊天室在前。ChatroomTopNum 置顶的聊天室数目。
+   -	通用返回值 ChatroomList 全部聊天室信息，置顶聊天室在前。ChatroomTopNum 置顶的聊天室数目。id表示聊天室ID。
 *   example:
     -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-my-chatrooms.do
 
