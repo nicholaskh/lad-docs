@@ -745,3 +745,29 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/apply-agree.do
+
+###  圈子:创建
+*   path: /circle/insert.do
+*   param:
+   -    px(double)
+   -    py(double)
+   -    landmark(String)
+   -    name(double)
+   -    tag(double)
+   -    sub_tag(String)
+   -    category(String) 圈子类别，比如旅行、文学、美食……
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'px=[v]&py=[v]&landmark=[v]&name=[v]&tag=[v]&sub_tag=[v]&category=[v]' 
+ http://180.76.173.200:9999/circle/insert.do
+
+###  圈子:加入群组
+*   path: /circle/add-organization.do
+*   param:
+   -    organizationid(String)
+   -    circleid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'organizationid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/add-organization.do
