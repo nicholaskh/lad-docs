@@ -776,8 +776,8 @@ User System APIs
 ###    圈子，设置头像
 *   path: /circle/head-picture.do
 *   param:
-	-	head_picture(@RequestParam("head_picture") MultipartFile file)
-        -    circleid(String)
+   -    head_picture(@RequestParam("head_picture") MultipartFile file)
+   -    circleid(String)
 *	return:
 	-	通用返回值
 *   example:
