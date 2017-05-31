@@ -771,3 +771,14 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'organizationid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/add-organization.do
+
+    
+###    圈子，设置头像
+*   path: /circle/head-picture.do
+*   param:
+	-	head_picture(@RequestParam("head_picture") MultipartFile file)
+        -    circleid(String)
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/circle/head-picture.do'
