@@ -496,6 +496,24 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
+
+###  聊天室：置顶
+*   path: /chatroom/set-top.do
+*   param:
+   -	chatroomid(string) 聊天室ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/set-top.do
+
+###  聊天室：取消置顶
+*   path: /chatroom/cancel-top.do
+*   param:
+   -	chatroomid(string) 聊天室ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/cancel-top.do
   
 ###  个人信息：根据用户名搜索
 *   path: /person-set/search-by-name.do
