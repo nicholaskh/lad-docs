@@ -454,7 +454,7 @@ User System APIs
 *   path: /chatroom/get-my-chatrooms.do
 *   param:
 *	return:
-   -	通用返回值 ChatroomList 全部聊天室信息，置顶聊天室在前。ChatroomTopNum 置顶的聊天室数目。id表示聊天室ID。
+   -	通用返回值 ChatroomList 全部聊天室信息.top字段表示是否置顶。
 *   example:
     -   curl -b cookie -d 'userid=[v]' http://180.76.173.200:9999/chatroom/get-my-chatrooms.do
 
