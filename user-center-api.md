@@ -803,3 +803,12 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/circle/head-picture.do'
+
+###  圈子:申请加入群组
+*   path: /circle/apply-insert.do
+*   param:
+   -    circleid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
