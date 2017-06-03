@@ -59,7 +59,7 @@ User System APIs
     -    limit(int)
     -    如果传入start_id为空，则取最新的limit条，否则使用start_id来确定开始位置，gt来确定比较的方向，取limit条；
 *   聊天室类型type：1表示1对1聊天；2表示群聊；3表示面对面建群。
-1、同意添加好友后，后台会自动创建一个一对一聊天室。传入userid和friendis去subscribe。返回channelID；
+*   聊天室创建说明：1、同意添加好友后，后台会自动创建一个一对一聊天室。传入userid和friendis去subscribe。返回channelID；
 2、chatroom/create 会创建一个聊天室，传入userid去subscribe，返回channelID，之后可以通过添加聊天室用户去家人。
 3、friends/multi-insert，会创建一个多人聊天室，要传入friendids，这个ID要包括userid，统一由前端传入。传入friendids去subscribe，返回channelID；
     
