@@ -547,7 +547,7 @@ User System APIs
 *   param:
    -	id(string) 好友数据表记录的ID，不是朋友ID和userid。
 *   return:
-   -	通用返回值 
+   -	通用返回值 channelId 已经创建了一对一聊天室
 *   example:
     -   curl -b cookie -d 'id=[v]' http://180.76.173.200:9999/friends/agree.do
 
@@ -639,7 +639,7 @@ User System APIs
 ###  好友：创建群聊
 *   path: /friends/multi-insert.do
 *   param:
-   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"
+   -	friendids(string) 用户id使用英文逗号分隔,例如："123,234"，包含userid
 *   return:
    -	通用返回值 channelId
 *   example:
