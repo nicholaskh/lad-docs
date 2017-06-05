@@ -767,6 +767,23 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/apply-agree.do
 
+###   群组:设置群组介绍
+ *  path: /organization/set-description.do
+ *  param:
+    -   description(String)
+    -   organizationid(String)
+ *  return:   - 通用返回值
+ *  example:    -   curl -b cookie -d 'description=[v]&organizationid=[v]' http://180.76.173.200:9999/organization/set-description.do
+
+###  群组:获取群组信息
+*   path: /organization/info.do
+*   param:
+   -    organizationid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'info=[v]'  http://180.76.173.200:9999/organization/info.do
+
 ###  圈子:创建
 *   path: /circle/insert.do
 *   param:
