@@ -829,3 +829,12 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
+
+###  圈子:我的圈子
+*   path: /circle/my-info.do
+*   param:
+*   return:
+   -	通用返回值 CircleVoList
+*   example:
+    -   curl -b cookie  http://180.76.173.200:9999/circle/my-info.do
+
