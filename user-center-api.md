@@ -838,3 +838,32 @@ User System APIs
 *   example:
     -   curl -b cookie  http://180.76.173.200:9999/circle/my-info.do
 
+###  圈子:申请人列表
+*   path: /circle/user-apply.do
+*   param:
+   -    circleid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply.do
+
+###  圈子:同意加入
+*   path: /circle/user-apply-agree.do
+*   param:
+   -    circleid(String)
+   -    userid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'circleid=[v]&userid=[v]'  http://180.76.173.200:9999/circle/user-apply-agree.do
+
+###  圈子:拒绝加入
+*   path: /circle/user-apply-refuse.do
+*   param:
+   -    circleid(String)
+   -    userid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
+
