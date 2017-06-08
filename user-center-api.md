@@ -878,3 +878,28 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'tag=[v]&sub_tag=[v]&category=[v]'  http://180.76.173.200:9999/circle/list.do
 
+###  帖子:插入新的帖子
+*   path: /note/insert.do
+*   param:
+   -    px(double)
+   -    py(double)
+   -    subject(String)
+   -    landmark(String)
+   -    content(String)
+   -    circleid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&circleid=[v]&'  http://180.76.173.200:9999/note/insert.do
+
+###  帖子:设置图片
+*   path: /note/phone.do
+*   param:
+   -    @RequestParam("photo") MultipartFile file
+   -    noteid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png"  http://180.76.173.200:9999/note/phone.do
+
+
