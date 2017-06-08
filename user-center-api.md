@@ -867,3 +867,14 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
 
+###  圈子:列表
+*   path: /circle/list.do
+*   param:
+   -    sub_tag(String)
+   -    tag(String)
+   -    category(String)
+*   return:
+   -	通用返回值 id name userSize用户数 notesSize 帖子数
+*   example:
+    -   curl -b cookie -d 'tag=[v]&sub_tag=[v]&category=[v]'  http://180.76.173.200:9999/circle/list.do
+
