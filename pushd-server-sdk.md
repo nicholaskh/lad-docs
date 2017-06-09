@@ -113,6 +113,36 @@
     setReadTime() //
 ```
 
+* **退出群聊**
+```java
+// unSubscribe()接口具有幂等性，多次重复调用同样参数不影响结果
+
+    //一定用到的方法
+    init()
+    setServerTerm()
+    // 用户 uuid1 uuid2 退出群 channelId
+    unSubscribe("channelId","uuid1","uuid2”)
+    close()
+
+    //可能涉及到的方法
+    authServer()  // term过期时需要使用此方法重新获取term
+    setReadTime() //
+```
+
+
+* **解除好友关系 或 解散群聊**
+```java
+//一定用到的方法
+    init()
+    setServerTerm()
+    // 群聊id ：channelID
+    disolveRoom("channelId")
+    close()
+
+    //可能涉及到的方法
+    authServer()  // term过期时需要使用此方法重新获取term
+    setReadTime() //
+```
 
 * **获取手机端访问token**
 ```java
