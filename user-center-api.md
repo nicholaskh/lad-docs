@@ -902,4 +902,13 @@ User System APIs
 *   example:
     -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png"  http://180.76.173.200:9999/note/phone.do
 
+###  聊天：收藏聊天记录
+*   path: /chat/collect-chat.do
+*   param:
+   -    title(String) 具体的聊天对象或群组名称 
+   -    content(String)
+*   return:
+   -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
+*   example:
+    -   curl -b cookie -F "title=[v]&content=[v]" http://180.76.173.200:9999/chat/collect-chat.do
 
