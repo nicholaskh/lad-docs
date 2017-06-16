@@ -484,21 +484,21 @@ User System APIs
 *   path: /chatroom/insert-user.do
 *   param:
    -	chatroomid(string) 聊天室ID
-   -	userid(string) 用户ID
+   -	userids(string) 一个或多个用户ID，用“,”隔开
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
+    -   curl -b cookie -d 'userids=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/insert-user.do
 
 ###  聊天室：删除用户
 *   path: /chatroom/delete-user.do
 *   param:
    -	chatroomid(string) 聊天室ID
-   -	userid(string) 用户ID
+   -	userids(string) 一个或多个用户ID，用“,”隔开
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
+    -   curl -b cookie -d  'userids=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/delete-user.do
 
 ###  聊天室：置顶
 *   path: /chatroom/set-top.do
@@ -793,6 +793,16 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/delete-user.do
+ 
+###  群组:转让群主接口
+*   path: /organization/transfer
+*   param:
+   -    organizationid(String)
+   -    userid(String) 转让人
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/transfer.do
 
 ###  圈子:创建
 *   path: /circle/insert.do
