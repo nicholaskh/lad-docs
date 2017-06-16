@@ -783,6 +783,16 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'info=[v]'  http://180.76.173.200:9999/organization/info.do
+ 
+###  群组:、删除群组成员，只有群主才能删除
+*   path: /organization/delete-user
+*   param:
+   -    organizationid(String)
+   -    userid(String) 被删除人
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/delete-user.do
 
 ###  圈子:创建
 *   path: /circle/insert.do
