@@ -517,6 +517,19 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/cancel-top.do
+	
+###  聊天室：面对面创建群聊，通过SEQ加入面对面群聊接口。
+###  如果SEQ不存在，则创建面对面群聊，存在则加入；通过拉人的方式加入面对面群聊，请使用 chatroom/insert-user.do
+*   path: /chatroom/factoface-create.do
+*   param:
+   -	seq(int) 面对面群聊数字序列
+   -	px(double) 建立群聊人地理位置经度
+   -	py(double) 建立群聊人地理位置纬度
+*   return:
+   -	通用返回值  channelId 聊天室ID
+*   example:
+    -   curl -b cookie -d  'seq=[v]&px=[v]&py=[v]' http://180.76.173.200:9999/chatroom/factoface-create.do
+	
   
 ###  个人信息：根据用户名搜索
 *   path: /person-set/search-by-name.do
