@@ -751,7 +751,7 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'px=[v]&py=[v]&landmark=[v]&name=[v]&tag=[v]&sub_tag=[v]&category=[v]' 
- http://180.76.173.200:9999/circle/insert.do
+ http://180.76.173.200:9999/organization/insert.do
 
     
 ### 群组（原圈子），设置头像
@@ -762,7 +762,7 @@ User System APIs
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/circle/head-picture.do'
+    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/organization/head-picture.do'
 
 ###  群组（原圈子）:申请加入群组
 *   path: /organization/apply-insert.do
@@ -771,7 +771,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
+    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/apply-insert.do
 
 ###  群组（原圈子）:我的群组
 *   path: /organization/my-info.do
@@ -779,7 +779,7 @@ User System APIs
 *   return:
    -	通用返回值 organizationList
 *   example:
-    -   curl -b cookie  http://180.76.173.200:9999/circle/my-info.do
+    -   curl -b cookie  http://180.76.173.200:9999/organization/my-info.do
 
 ###  群组（原圈子）:申请人列表
 *   path: /organization/user-apply.do
@@ -788,7 +788,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/circle/user-apply.do
+    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/user-apply.do
 
 ###  群组（原圈子）:同意加入
 *   path: /organization/user-apply-agree.do
@@ -798,7 +798,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]&userid=[v]'  http://180.76.173.200:9999/circle/user-apply-agree.do
+    -   curl -b cookie -d 'organizationid=[v]&userid=[v]'  http://180.76.173.200:9999/organization/user-apply-agree.do
 
 ###  群组（原圈子）:拒绝加入
 *   path: /organization/user-apply-refuse.do
@@ -808,7 +808,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
+    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/user-apply-refuse.do
  
 ###  群组（原圈子）:列表
 *   path: /organization/list.do
@@ -819,7 +819,7 @@ User System APIs
 *   return:
    -	通用返回值 organizationList： id name userSize用户数 notesSize 帖子数
 *   example:
-    -   curl -b cookie -d 'tag=[v]&sub_tag=[v]&category=[v]'  http://180.76.173.200:9999/circle/list.do
+    -   curl -b cookie -d 'tag=[v]&sub_tag=[v]&category=[v]'  http://180.76.173.200:9999/organization/list.do
  
  
 ###  群组:删除群组成员，只有群主才能删除
