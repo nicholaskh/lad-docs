@@ -737,8 +737,8 @@ User System APIs
     -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/tag-add-friends
 
 
-###  群组（原圈子）:创建
-*   path: /organization/insert.do
+###  圈子:创建
+*   path: /circle/insert.do
 *   param:
    -    px(double)
    -    py(double)
@@ -751,105 +751,117 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'px=[v]&py=[v]&landmark=[v]&name=[v]&tag=[v]&sub_tag=[v]&category=[v]' 
- http://180.76.173.200:9999/organization/insert.do
+ http://180.76.173.200:9999/circle/insert.do
 
     
-### 群组（原圈子），设置头像
-*   path: /organization/head-picture.do
+### 圈子，设置头像
+*   path: /circle/head-picture/head-picture.do
 *   param:
    -    head_picture(@RequestParam("head_picture") MultipartFile file)
-   -    organizationid(String)
+   -    circleid(String)
 *	return:
 	-	通用返回值
 *   example:
-    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/organization/head-picture.do'
+    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/circle/head-picture.do'
 
-###  群组（原圈子）:申请加入群组
-*   path: /organization/apply-insert.do
+###  圈子:申请加入群组
+*   path: /circle/apply-insert.do
 *   param:
-   -    organizationid(String)
+   -    circleid(String)
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/apply-insert.do
+    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
 
-###  群组（原圈子）:我的群组
-*   path: /organization/my-info.do
+###  圈子:我的群组
+*   path: /circle/my-info.do
 *   param:
 *   return:
-   -	通用返回值 organizationList
+   -	通用返回值 circleList
 *   example:
-    -   curl -b cookie  http://180.76.173.200:9999/organization/my-info.do
+    -   curl -b cookie  http://180.76.173.200:9999/circle/my-info.do
 
-###  群组（原圈子）:申请人列表
-*   path: /organization/user-apply.do
+###  圈子:申请人列表
+*   path: /circle/user-apply.do
 *   param:
-   -    organizationid(String)
+   -    circleid(String)
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/user-apply.do
+    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply.do
 
-###  群组（原圈子）:同意加入
-*   path: /organization/user-apply-agree.do
+###  圈子:同意加入
+*   path: /circle/user-apply-agree.do
 *   param:
-   -    organizationid(String)
+   -    circleid(String)
    -    userid(String)
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]&userid=[v]'  http://180.76.173.200:9999/organization/user-apply-agree.do
+    -   curl -b cookie -d 'circleid=[v]&userid=[v]'  http://180.76.173.200:9999/circle/user-apply-agree.do
 
-###  群组（原圈子）:拒绝加入
-*   path: /organization/user-apply-refuse.do
+###  圈子:拒绝加入
+*   path: /circle/user-apply-refuse.do
 *   param:
-   -    organizationid(String)
+   -    circleid(String)
    -    userid(String)
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'organizationid=[v]'  http://180.76.173.200:9999/organization/user-apply-refuse.do
+    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
  
-###  群组（原圈子）:列表
-*   path: /organization/list.do
+###  圈子:列表
+*   path: /circle/list.do
 *   param:
    -    sub_tag(String)
    -    tag(String)
    -    category(String)
 *   return:
-   -	通用返回值 organizationList： id name userSize用户数 notesSize 帖子数
+   -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数
 *   example:
-    -   curl -b cookie -d 'tag=[v]&sub_tag=[v]&category=[v]'  http://180.76.173.200:9999/organization/list.do
+    -   curl -b cookie -d 'tag=[v]&sub_tag=[v]&category=[v]'  http://180.76.173.200:9999/circle/list.do
  
  
-###  群组:删除群组成员，只有群主才能删除
-*   path: /organization/delete-user
+###  圈子:删除圈子成员，只有群主才能删除
+*   path: /circle/delete-user
 *   param:
-   -    organizationid(String)
+   -    circleid(String)
    -    userid(String) 被删除人
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/delete-user.do
+    -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/delete-user.do
  
-###  群组:转让群主接口
-*   path: /organization/transfer
+###  圈子:转让圈子接口
+*   path: /circle/transfer
 *   param:
-   -    organizationid(String)
-*   return:
-   -	通用返回值
-*   example:
-    -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/transfer.do
- 
-###  群组:退出群组
-*   path: /organization/quit
-*   param:
-   -    organizationid(String)
+   -    circleid(String)
    -    userid(String) 转让人
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'userid=[v]&organizationid=[v]'  http://180.76.173.200:9999/organization/quit.do
+    -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/transfer.do
+ 
+###  圈子:退出群组
+*   path: /circle/quit
+*   param:
+   -    circleid(String)
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/quit.do
+ 
+###  圈子:我加入的圈子
+*   path: /circle/my-circles
+*   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*	return:
+   -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/circle/my-circles.do
+ 
 
 ###  帖子:插入新的帖子
 *   path: /note/insert.do
@@ -859,11 +871,11 @@ User System APIs
    -    subject(String)
    -    landmark(String)
    -    content(String)
-   -    organizationid(String)
+   -    circleid(String)
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&organizationid=[v]&'  http://180.76.173.200:9999/note/insert.do
+    -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&circleid=[v]&'  http://180.76.173.200:9999/note/insert.do
 
 ###  帖子:设置图片
 *   path: /note/phone.do
