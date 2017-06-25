@@ -764,7 +764,7 @@ User System APIs
 *   example:
     -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/circle/head-picture.do'
 
-###  圈子:申请加入群组
+###  圈子:申请加入
 *   path: /circle/apply-insert.do
 *   param:
    -    circleid(String)
@@ -773,7 +773,7 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
 
-###  圈子:我的群组
+###  圈子:我的圈子
 *   path: /circle/my-info.do
 *   param:
 *   return:
@@ -823,7 +823,7 @@ User System APIs
  
  
 ###  圈子:删除圈子成员，只有群主才能删除
-*   path: /circle/delete-user
+*   path: /circle/delete-user.do
 *   param:
    -    circleid(String)
    -    userid(String) 被删除人
@@ -833,7 +833,7 @@ User System APIs
     -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/delete-user.do
  
 ###  圈子:转让圈子接口
-*   path: /circle/transfer
+*   path: /circle/transfer.do
 *   param:
    -    circleid(String)
    -    userid(String) 转让人
@@ -843,7 +843,7 @@ User System APIs
     -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/transfer.do
  
 ###  圈子:退出群组
-*   path: /circle/quit
+*   path: /circle/quit.do
 *   param:
    -    circleid(String)
 *   return:
@@ -852,7 +852,7 @@ User System APIs
     -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/quit.do
  
 ###  圈子:我加入的圈子
-*   path: /circle/my-circles
+*   path: /circle/my-circles.do
 *   param:
    -	start_id(string)
    -	gt(boolean)
@@ -861,7 +861,38 @@ User System APIs
    -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/circle/my-circles.do
- 
+
+###  圈子:猜你喜欢
+*   path: /circle/guess-you-like.do
+*   param:
+
+*	return:
+   -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/circle/my-circles.do	
+	
+	
+### 帖子:圈子内最新动态 帖子
+*   path: /note/new-situation.do
+*   param:
+   -	circleid(string)
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*	return:
+   -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/note/new-situation.do
+	
+### 帖子:圈子精华 帖子
+*   path: /note/essential-note.do
+*   param:
+   -	circleid(string)
+*	return:
+   -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/note/essential-note.do
+	
 
 ###  帖子:插入新的帖子
 *   path: /note/insert.do
