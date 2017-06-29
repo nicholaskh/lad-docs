@@ -735,6 +735,28 @@ User System APIs
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/tag-add-friends
+ 
+ 
+###  标签:修改标签名称
+*   path: /tag/update-tag-name.do
+*   param:
+   -    tagid(String) 标签表ID
+   -    name(String) 标签名称
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'tagid=[v]&name=[v]'  http://180.76.173.200:9999/tag/update-tag-name.do
+ 
+ 
+###  标签:删除标签中的好友
+*   path: /tag/cancel-friend-tag.do
+*   param:
+   -    tagid(String) 标签表ID
+   -    friendsids(String) 使用英文逗号分隔的朋友ID
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/cancel-friend-tag.do
 
 
 ###  圈子:创建
@@ -869,7 +891,16 @@ User System APIs
 *	return:
    -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/circle/my-circles.do	
+    -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/circle/guess-you-like.do
+
+###  圈子: 红人列表
+*   path: /circle/red-star-list.do
+*   param:
+    - circleid(string)
+*	return:
+   -	通用返回值 total：红人总榜 列表 ；week： 红人周榜列表
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/red-star-list.do	
 	
 	
 ### 帖子:圈子内最新动态 帖子
@@ -915,8 +946,30 @@ User System APIs
    -    noteid(String)
 *   return:
    -	通用返回值
+*   example
+
+
+###  帖子:圈子内热门帖子列表
+*   path: /note/hot-notes.do
+*   param:
+   -    circleid(String)
+*   return:
+   -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
 *   example:
-    -   curl -b cookie -F "head_picture=@/Users/gouxubo/12.png"  http://180.76.173.200:9999/note/phone.do
+    -   curl -b cookie -F "circleid=[v]"  http://180.76.173.200:9999/note/hot-notes.do
+ 
+###  帖子:回复帖子或回复帖子评论
+*   path: /note/add-comment.do
+*   param:
+   -    circleid(String)
+   -    noteid(String) 帖子id
+   -    countent(String) 内容
+   -    parentid(String) 如回复评论则必须输入，当前评论的id
+*   return:
+   -	通用返回值 commentVo 评论信息
+*   example:
+    -   curl -b cookie -F "circleid=[v]&noteid=[v]&countent=[v]&parentid=[v]"  http://180.76.173.200:9999/note/add-comment.do
+
 
 ###  聊天：收藏聊天记录
 *   path: /chat/collect-chat.do
