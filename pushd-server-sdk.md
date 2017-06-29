@@ -121,7 +121,7 @@
     init()
     setServerTerm()
     // 第一个channleName一定要为""
-    subscribe("","channelId","uuid10")
+    subscribe("","channelId","uuid10") 或 addUserToChatRoom("roomId", "uuid1", "uuid2")
     close()
 
     //可能涉及到的方法
