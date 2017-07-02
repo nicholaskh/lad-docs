@@ -27,27 +27,27 @@ Pushd Android SDK
 * 使用PushdManager类初始化，得到ImAssistant对象，此对象使用单例模式，全局唯一
 ```java
 
-1、 在Application的onCreatef方法中调用
- PushdManager.init()
+    1、 在Application的onCreatef方法中调用
+    PushdManager.init()
 
-2、目前网络状态改变需要app端的支持，需要在网络改变方法初调用：
- INetWorkStatChanCallBack iNetWorkStatChanCallBack = PushdManager.getNetWorkStatChanCallBack()
- // 网络断开时调用
- iNetWorkStatChanCallBack.disConnectedCallBack();
- // 网络连接恢复时调用
- iNetWorkStatChanCallBack.connectedCallBack();
+    2、目前网络状态改变需要app端的支持，需要在网络改变方法初调用：
+    INetWorkStatChanCallBack iNetWorkStatChanCallBack = PushdManager.getNetWorkStatChanCallBack()
+    // 网络断开时调用
+    iNetWorkStatChanCallBack.disConnectedCallBack();
+    // 网络连接恢复时调用
+    iNetWorkStatChanCallBack.connectedCallBack();
 
-3、认证用户
-ImAssistant imAssistant = PushdManager.getImAssistant();
-try {
-    PushdManager.setOrUpdateUserId(token, userId);
-} catch (TokenException e) {
-    // token 失效
-} catch (NetworkException e) {
-    // 网络异常
-}
+    3、认证用户
+    ImAssistant imAssistant = PushdManager.getImAssistant();
+    try {
+        PushdManager.setOrUpdateUserId(token, userId);
+    } catch (TokenException e) {
+        // token 失效
+    } catch (NetworkException e) {
+        // 网络异常
+    }
 
-Note: 这三部之间没有依赖关系，所以不用考虑 是不是第一步还没有完成时不能开始第三步的问题。
+    Note: 这三部之间没有依赖关系，所以不用考虑 是不是第一步还没有完成时不能开始第三步的问题。
 
 
 ```
