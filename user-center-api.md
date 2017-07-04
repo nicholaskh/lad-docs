@@ -900,7 +900,16 @@ User System APIs
 *	return:
    -	通用返回值 total：红人总榜 列表 ；week： 红人周榜列表
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/red-star-list.do	
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/red-star-list.do
+
+###  圈子: 圈子详情
+*   path: /circle/circle-info.do
+*   param:
+    - circleid(string)
+*	return:
+   -	通用返回值  圈子信息
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/circle-info.do	
 	
 	
 ### 帖子:圈子内最新动态 帖子
@@ -915,6 +924,7 @@ User System APIs
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/note/new-situation.do
 	
+	
 ### 帖子:圈子精华 帖子
 *   path: /note/essential-note.do
 *   param:
@@ -923,6 +933,16 @@ User System APIs
    -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/note/essential-note.do
+	
+
+### 帖子:圈子内置顶的 帖子
+*   path: /note/top-notes.do
+*   param:
+   -	circleid(string)
+*	return:
+   -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/note/top-notes.do
 	
 
 ###  帖子:插入新的帖子
@@ -940,9 +960,9 @@ User System APIs
     -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&circleid=[v]&'  http://180.76.173.200:9999/note/insert.do
 
 ###  帖子:设置图片
-*   path: /note/phone.do
+*   path: /note/phones.do
 *   param:
-   -    @RequestParam("photo") MultipartFile file
+   -    @RequestParam("photos") MultipartFile[] files
    -    noteid(String)
 *   return:
    -	通用返回值
