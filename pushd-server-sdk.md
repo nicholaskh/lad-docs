@@ -82,6 +82,22 @@
 
 ## 使用场景用例， (每个场景都使用短连接形式)
 
+* **注册用户**
+```java
+
+    // 用户已存在时，创建失败
+
+    //一定用到的方法
+    init()
+    setServerTerm()
+    createUser("userid")
+    close()
+
+    //可能涉及到的方法
+    authServer()  // term过期时需要使用此方法重新获取term
+    setReadTime() //
+```
+
 * **创建聊天室**
 ```java
     // subscribe()接口具有幂等性，多次重复调用同样参数不影响结果
@@ -105,7 +121,7 @@
     init()
     setServerTerm()
     // 第一个channleName一定要为""
-    subscribe("","channelId","uuid10")
+    subscribe("","channelId","uuid10") 或 addUserToChatRoom("roomId", "uuid1", "uuid2")
     close()
 
     //可能涉及到的方法
