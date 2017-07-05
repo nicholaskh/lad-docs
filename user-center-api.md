@@ -790,10 +790,11 @@ User System APIs
 *   path: /circle/apply-insert.do
 *   param:
    -    circleid(String)
+   -    reason(String) 申请理由
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
+    -   curl -b cookie -d 'circleid=[v]&reason=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
 
 ###  圈子:我的圈子
 *   path: /circle/my-info.do
@@ -808,7 +809,7 @@ User System APIs
 *   param:
    -    circleid(String)
 *   return:
-   -	通用返回值
+   -	通用返回值 申请人信息
 *   example:
     -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply.do
 
@@ -826,11 +827,12 @@ User System APIs
 *   path: /circle/user-apply-refuse.do
 *   param:
    -    circleid(String)
-   -    userid(String)
+   -    userid(String) 
+   -    refuse(String) 拒绝理由
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'circleid=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
+    -   curl -b cookie -d 'circleid=[v]&userid=[v]&refuse=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
  
 ###  圈子:列表
 *   path: /circle/list.do
@@ -880,7 +882,7 @@ User System APIs
    -	gt(boolean)
    -	limit(int)
 *	return:
-   -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数
+   -	通用返回值 circleList： id name userSize用户数 notesSize 帖子数   top ：1 表示置顶 ，0未置顶
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'start_id="123"&gt=true&limit=10' http://180.76.173.200:9999/circle/my-circles.do
 
@@ -907,9 +909,27 @@ User System APIs
 *   param:
     - circleid(string)
 *	return:
-   -	通用返回值  圈子信息
+   -	通用返回值  圈子信息   top ：1 表示置顶 ，0未置顶
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/circle-info.do	
+	
+###  圈子: 置顶圈子
+*   path: /circle/set-top.do
+*   param:
+    - circleid(string)
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/set-top.do	
+	
+###  圈子: 取消圈子置顶
+*   path: /circle/cancel-top.do
+*   param:
+    - circleid(string)
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/cancel-top.do	
 	
 	
 ### 帖子:圈子内最新动态 帖子
