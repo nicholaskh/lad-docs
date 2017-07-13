@@ -765,10 +765,13 @@ User System APIs
    -    px(double)
    -    py(double)
    -    landmark(String)
-   -    name(double)
-   -    tag(double)
+   -    name(String)
+   -    tag(String)
    -    sub_tag(String)
    -    category(String) 圈子类别，比如旅行、文学、美食……
+   -    description(String) 简介
+   -    isOpen(boolean) 是否5公里加入
+   -    head_picture(file) 圈子头像
 *   return:
    -	通用返回值
 *   example:
@@ -817,22 +820,22 @@ User System APIs
 *   path: /circle/user-apply-agree.do
 *   param:
    -    circleid(String)
-   -    userid(String)
+   -    userids(String) 多个用逗号隔开
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'circleid=[v]&userid=[v]'  http://180.76.173.200:9999/circle/user-apply-agree.do
+    -   curl -b cookie -d 'circleid=[v]&userids=[v]'  http://180.76.173.200:9999/circle/user-apply-agree.do
 
 ###  圈子:拒绝加入
 *   path: /circle/user-apply-refuse.do
 *   param:
    -    circleid(String)
-   -    userid(String) 
+   -    userids(String)多个用逗号隔开 
    -    refuse(String) 拒绝理由
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'circleid=[v]&userid=[v]&refuse=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
+    -   curl -b cookie -d 'circleid=[v]&userids=[v]&refuse=[v]'  http://180.76.173.200:9999/circle/user-apply-refuse.do
  
 ###  圈子:列表
 *   path: /circle/list.do
