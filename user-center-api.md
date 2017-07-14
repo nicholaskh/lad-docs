@@ -758,6 +758,13 @@ User System APIs
 *   example:
     -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/cancel-friend-tag.do
 
+###  圈子:圈子创建前校验用户当前圈子数量及级别
+*   path: /circle/pre-create.do
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d  http://180.76.173.200:9999/circle/pre-creat.do
+ 
 
 ###  圈子:创建
 *   path: /circle/insert.do
@@ -977,10 +984,11 @@ User System APIs
    -    landmark(String)
    -    content(String)
    -    circleid(String)
+   -    pictures(files)图片或视频文件数组
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&circleid=[v]&'  http://180.76.173.200:9999/note/insert.do
+    -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&circleid=[v]&pictures=[v]'  http://180.76.173.200:9999/note/insert.do
 
 ###  帖子:设置图片
 *   path: /note/phones.do
