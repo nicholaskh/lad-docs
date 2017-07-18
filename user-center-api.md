@@ -1009,6 +1009,49 @@ User System APIs
 *   example:
     -   curl -b cookie -F "circleid=[v]"  http://180.76.173.200:9999/note/hot-notes.do
  
+ 
+###  帖子:帖子详情
+*   path: /note/note-info.do
+*   param:
+   -    noteid(String) 帖子id
+*   return:
+   -	通用返回值 noteVo 帖子信息
+*   example:
+    -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/note-info.do
+ 
+###  帖子:我的帖子
+*   path: /note/my-notes.do
+*   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*   return:
+   -	通用返回值 noteVo 帖子信息
+*   example:
+   -   curl -b cookie -F "start_id=‘123’&gt=true&limit=10"  http://180.76.173.200:9999/note/my-notes.do
+ 
+
+###  帖子:圈主删除帖子
+*   path: /note/delete-circle-notes.do
+*   param:
+   -    noteids(String) 要删除的帖子id，多个以逗号隔开
+   -    circleid(String) 圈子id
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "noteids=[v]&circleid=[v]"  http://180.76.173.200:9999/note/delete-circle-notes.do
+
+ 
+###  帖子:用户删除自己的帖子
+*   path: /note/delete-my-notes.do
+*   param:
+   -    noteids(String) 要删除的帖子id，多个以逗号隔开
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "noteids=[v]&circleid=[v]"  http://180.76.173.200:9999/note/delete-my-notes.do
+ 
+ 
 ###  帖子:回复帖子或回复帖子评论
 *   path: /note/add-comment.do
 *   param:
@@ -1020,6 +1063,8 @@ User System APIs
    -	通用返回值 commentVo 评论信息
 *   example:
     -   curl -b cookie -F "circleid=[v]&noteid=[v]&countent=[v]&parentid=[v]"  http://180.76.173.200:9999/note/add-comment.do
+ 
+ 
 
 
 ###  聊天：收藏聊天记录
