@@ -158,7 +158,8 @@ void reSendSound(long msgId, String cookie, String channelId, File voice, ISendR
 //重发视频消息  
 void reSendVideo(long msgId, String cookie, String channelId, File video, ISendResult iSendResult)  
 //同上  
-  
+
+ 
 ```
 
 ## 两个关键回调函数
@@ -288,6 +289,137 @@ public class PushMsg {
         return ts;
     }
 }
+```
+
+## 实时语音视频相关接口
+
+
+``` java
+
+
+    /**
+     *  申请一对一语音聊天
+     * @param channelId 当前所在的channelId（以下雷同）
+     * @param iSendResult 成功后会返回一个新的channelId，之后通过此新的channelId通信（以下雷同）
+     */
+    public void applyOneToOneSoundChat(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 申请语音群聊
+     * @param channelId
+     * @param iSendResult
+     */
+    public void applyMulSoundChat(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 申请一对一视频聊天
+     * @param channelId
+     * @param iSendResult
+     */
+    public void applyOneToOneVideoChat(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 申请视频群聊
+     * @param channelId
+     * @param iSendResult
+     */
+    public void applyMulVideoChat(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 拒绝一对一语音或视频聊天
+     * @param channleId
+     * @param iSendResult
+     */
+    public void refuseVideoOrPhoneChat(String channleId, ISendResult iSendResult)
+
+
+    /**
+     * 解散语音或视频群聊
+     * @param channelID
+     * @param iSendResult
+     */
+    public void dismissVideoOrPhoneChat(String channelID, ISendResult iSendResult)
+
+
+    /**
+     * 加入语音或视频群聊
+     * @param channelId
+     * @param iSendResult
+     */
+    public void joinVideoOrPhoneChat(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 退出语音或视频群聊
+     * @param channelId
+     * @param iSendResult
+     */
+    public void quitVideoOrPhoneChat(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 获取语音或视频群聊实时信息
+     * @param channelId
+     * @param iSendResult
+     */
+    public void fetchVideoOrPhoneChatRealTimeInfo(String channelId, ISendResult iSendResult)
+
+
+    /**
+     * 设置服务器推送指令接收回调函数
+     * @param iInstructions
+     */
+    public void setIInstructions(IInstructions iInstructions)
+
+
+    /**
+    * 所有与服务器推送命令相关的类
+    * 
+    **/
+    public class InstructMsg
+
+    /**
+    * 内部类Type说明了所有的服务器命令类型
+    */
+    public class InstructMsg {
+        public static class Type{
+            public static int FRAME_CHAT = 1;// 实时语音视频相关命令
+        }
+    }
+
+    /**
+    * 方法getInstruction，获取具体的命令类，通过上转形转为具体的命令对象
+    */
+    public class InstructMsg {
+        public Object getInstruction()
+    }
+
+
+    /**
+    * 此类是实时语音视频命令的具体类，两个内部类说明了此命令中的具体子命令，及聊天的类型
+    */
+    public class InstructFrameMsg {
+        public static class Instructions{
+            public static final int FRAME_CHAT_APPLY = 1;
+            public static final int FRAME_CHAT_DISMISS = 2;
+            public static final int FRAME_CHAT_JOIN = 3;
+            public static final int FRAME_CHAT_OUT = 4;
+            public static final int FRAME_CHAT_REFUSE = 5;
+            public static final int FRAME_CHAT_ACCEPT = 6;
+        }
+
+        public static class FrameChatType {
+            public static final int TYPE_ONE_TO_ONE_SOUND  = 1;
+            public static final int TYPE_MUL_SOUND  = 2;
+            public static final int TYPE_ONE_TO_ONE_VIDEO  = 3;
+            public static final int TYPE_MUL_VIDEO  = 4;
+        }
+    }
+
 ```
 
 ##
