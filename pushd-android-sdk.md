@@ -293,7 +293,16 @@ public class PushMsg {
 
 ## 实时语音视频相关接口
 
+### 一、说明
+* 同一个群聊中有且只有一个用户发起有且只有一种的实时通讯活动。
+* 同一用户可以在不同群聊中同时发起实时通讯活动。
+* 当实时通讯申请后，只要实时通讯活动还存在，那么在一个群中的所有用户，在每次登陆的时候，都会收到apply推送通知。此通知会在sdk每次与服务器重连时被推送。所以即使用户没有退出app，也可能会收到重复的推送通知。
+* 当收到dismiss、refuse推送时，sdk会自动向服务器发送quit命令退出实时通讯，无需开发者调用quit接口。
+* 一对一的实时通讯涉及到的接口为：applyOneToOneXXXXXX、refuseXXXX、acceptXXXX、dismissXXXX
+* 群聊实时通讯涉及到的接口为： applyMulXXXXX、joinXXXXXX、quitXXXXXX、dismissXXXXX
 
+
+### 二、接口详情
 ``` java
 
 
@@ -421,8 +430,18 @@ public class PushMsg {
     }
 
 ```
+### 三、状态码介绍     
+* 10001： 此群聊中已经由其他人发起了一个实时通讯活动，同一个群聊中只能发起有且只有一个有且只有一种实时通讯 applyXXX 会遇到
+* 10002： 此群聊中你已经发起了一个实时通讯活动，同一个群聊中只能发起有且只有一个有且只有一种实时通讯  applyXXX 会遇到
+* 10003： 此实时通话已经结束，joinXXXX、acceptXXXX 会遇到
 
 ##
+
+## 全局状态码
+* 200 成功
+* 500 服务器出错
+* 300 timeout 访问超时
+* 110 token失效
 
 
 
