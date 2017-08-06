@@ -1015,7 +1015,7 @@ User System APIs
 *   param:
    -    noteid(String) 帖子id
 *   return:
-   -	通用返回值 noteVo 帖子信息
+   -	通用返回值 noteVo 帖子信息  is
 *   example:
     -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/note-info.do
  
@@ -1026,7 +1026,7 @@ User System APIs
    -	gt(boolean)
    -	limit(int)
 *   return:
-   -	通用返回值 noteVo 帖子信息
+   -	通用返回值 noteVo 帖子信息  thumbsup 表示当前用户是在这个帖子点赞
 *   example:
    -   curl -b cookie -F "start_id=‘123’&gt=true&limit=10"  http://180.76.173.200:9999/note/my-notes.do
  
@@ -1110,7 +1110,7 @@ User System APIs
     -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/thumbsup.do
  
 ###  帖子:取消点赞
-*   path: /note/thumbsup.do
+*   path: /note/cancal-thumbsup.do
 *   param:
    -    noteid(String) 评论id
 *   return:
