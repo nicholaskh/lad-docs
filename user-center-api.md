@@ -1060,10 +1060,63 @@ User System APIs
    -    countent(String) 内容
    -    parentid(String) 如回复评论则必须输入，当前评论的id
 *   return:
-   -	通用返回值 commentVo 评论信息
+   -	通用返回值 commentVo 评论信息， 评论信息 commentId 评论id， userid 评论人id， username 评论人名称； parentid 回复的评论id; parentUserName 回复评论的评论人名称，parentUserid 回复评论人的id 
 *   example:
     -   curl -b cookie -F "circleid=[v]&noteid=[v]&countent=[v]&parentid=[v]"  http://180.76.173.200:9999/note/add-comment.do
  
+ 
+###  帖子:获取帖子评论
+*   path: /note/get-comments.do
+*   param:
+   -    noteid(String) 帖子id
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*   return:
+   -	通用返回值 commentVoList 评论信息 commentId 评论id， userid 评论人id， username 评论人名称； parentid 回复的评论id; parentUserName 回复评论的评论人名称，parentUserid 回复评论人的id  
+*   example:
+    -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-comments.do
+ 
+  
+###  帖子:获取自己的评论
+*   path: /note/get-self-comments.do
+*   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*   return:
+   -	通用返回值 commentVoList 评论信息 commentId 评论id， userid 评论人id， username 评论人名称； parentid 回复的评论id; parentUserName 回复评论的评论人名称，parentUserid 回复评论人的id  
+*   example:
+    -   curl -b cookie -F "start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-self-comments.do
+ 
+ 
+###  帖子:删除自己帖子评论
+*   path: /note/delete-self-comment.do
+*   param:
+   -    commentid(String) 评论id
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "commentid=[v]"  http://180.76.173.200:9999/note/delete-self-comment.do
+ 
+ 
+###  帖子:帖子点赞
+*   path: /note/thumbsup.do
+*   param:
+   -    noteid(String) 评论id
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/thumbsup.do
+ 
+###  帖子:取消点赞
+*   path: /note/thumbsup.do
+*   param:
+   -    noteid(String) 评论id
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/thumbsup.do
  
 
 
