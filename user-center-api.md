@@ -1058,9 +1058,9 @@ User System APIs
    -    circleid(String)
    -    noteid(String) 帖子id
    -    countent(String) 内容
-   -    parentid(String) 如回复评论则必须输入，当前评论的id
+   -    parentid(String) 如回复其他人评论则必须输入，其他人评论的id
 *   return:
-   -	通用返回值 commentVo 评论信息， 评论信息 commentId 评论id， userid 评论人id， username 评论人名称； parentid 回复的评论id; parentUserName 回复评论的评论人名称，parentUserid 回复评论人的id 
+   -	通用返回值 commentVo 评论信息， 评论信息 commentId 评论id， userid 评论人id， username 评论人名称； parentid 其他人评论id; parentUserName 其他人的名称，parentUserid 其他人的id 
 *   example:
     -   curl -b cookie -F "circleid=[v]&noteid=[v]&countent=[v]&parentid=[v]"  http://180.76.173.200:9999/note/add-comment.do
  
@@ -1103,7 +1103,7 @@ User System APIs
 ###  帖子:帖子点赞
 *   path: /note/thumbsup.do
 *   param:
-   -    noteid(String) 评论id
+   -    noteid(String) 帖子id
 *   return:
    -	通用返回值 
 *   example:
@@ -1112,7 +1112,7 @@ User System APIs
 ###  帖子:取消点赞
 *   path: /note/cancal-thumbsup.do
 *   param:
-   -    noteid(String) 评论id
+   -    noteid(String) 帖子id
 *   return:
    -	通用返回值 
 *   example:
@@ -1129,4 +1129,17 @@ User System APIs
    -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
 *   example:
     -   curl -b cookie -F "title=[v]&content=[v]" http://180.76.173.200:9999/chat/collect-chat.do
+ 
+ 
+#附录
+## commentVo  
+*   commentId(String)     评论id
+*   content(String)       评论分类
+*   parentid(String)      回复他人评论，其他人的评论id
+*   parentUserName(String)回复他人评论，其他人的名称
+*   parentUserid(String)  回复他人评论，其他人的id
+*   userName(String)      评论的用户名称
+*   userid(list)          评论的用户id
+*   createTime(String)    评论时间
+
 
