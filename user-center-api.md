@@ -985,6 +985,7 @@ User System APIs
    -    content(String)
    -    circleid(String)
    -    pictures(files)图片或视频文件数组
+   -    type(String) 上传文件类型
 *   return:
    -	通用返回值
 *   example:
