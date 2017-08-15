@@ -414,6 +414,22 @@ User System APIs
 	-	通用返回值
 *   example:
     -   curl -b  cookie -d 'content=123&contactInfo=321&image=' http://180.76.173.200:9999/feedback/insert.do
+	
+	
+### 反馈，帖子举报
+*   path: /feedback/note-tips-add.do
+*   param:
+	-	module(string) 举报分类
+	-	subModule(string) 举报次级分类
+	-	content(string) 举报内容
+	-	targetId(string) 举报目标帖子id
+	-	targetTitle(string) 举报目标帖子题目
+	-   MultipartFile[] pictures 举报图片
+*	return:
+	-	通用返回值
+*   example:
+    -   curl -b  cookie -d 'module=[]&subModule=[]&content=[]&targetId=[]&targetTitle=[]pictures=[]&' http://180.76.173.200:9999/feedback/note-tips-add.do
+	
 
 ###    我的消息，插入
 *   path: /message/insert.do
@@ -1074,7 +1090,7 @@ User System APIs
    -	gt(boolean)
    -	limit(int)
 *   return:
-   -	通用返回值 commentVoList 评论信息 commentId 评论id， userid 评论人id， username 评论人名称； parentid 回复的评论id; parentUserName 回复评论的评论人名称，parentUserid 回复评论人的id  
+   -	通用返回值 commentVoList  
 *   example:
     -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-comments.do
  
@@ -1091,7 +1107,7 @@ User System APIs
     -   curl -b cookie -F "start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-self-comments.do
  
  
-###  帖子:删除自己帖子评论
+###  帖子:删除自己的评论
 *   path: /note/delete-self-comment.do
 *   param:
    -    commentid(String) 评论id
@@ -1099,6 +1115,18 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -F "commentid=[v]"  http://180.76.173.200:9999/note/delete-self-comment.do
+ 
+ 
+###  帖子:获取自己被评论的帖子
+*   path: /note/my-comment-notes.do
+*   param:
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*   return:
+   -	通用返回值  noteVoList
+*   example:
+    -   curl -b cookie -F "start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/my-comment-notes.do
  
  
 ###  帖子:帖子点赞
@@ -1117,7 +1145,30 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/thumbsup.do
+    -   curl -b cookie -F "noteid=[v]"  http://180.76.173.200:9999/note/cancal-thumbsup.do
+ 
+  
+###  帖子:获取帖子点赞列表
+*   path: /note/get-note-thumbsups.do
+*   param:
+   -    noteid(String) 帖子id
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*   return:
+   -	通用返回值  userVoList
+*   example:
+    -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-note-thumbsups.do
+
+ 
+###  帖子:评论点赞
+*   path: /note/comment-thumbsup.do
+*   param:
+   -    commentid(String) 评论id
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "commentid=[v]"  http://180.76.173.200:9999/note/comment-thumbsup.do
  
 
 
@@ -1132,6 +1183,30 @@ User System APIs
     -   curl -b cookie -F "title=[v]&content=[v]" http://180.76.173.200:9999/chat/collect-chat.do
  
  
+###  用户更新地理位置
+*   path: /location/update.do
+*   param:
+   -    px(double)经度
+   -    py(double)纬度
+   -    phone(string)用户电话
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'px=[v]&py=[v]&phone=[v]' http://180.76.173.200:9999/location/update.do
+ 
+ 
+###  圈子: 添加或删除管理员
+*   path: /circle/master.do
+*   param:
+    - circleid(string)
+	- userids(string) 一个或多个用户
+	- isAdd(boolean) true 添加管理员； false 删除管理员
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&userids=[v]&isAdd=[v]' http://180.76.173.200:9999/circle/master.do	
+ 
+ 
 #附录
 ## commentVo  
 *   commentId(String)     评论id
@@ -1140,7 +1215,9 @@ User System APIs
 *   parentUserName(String)回复他人评论，其他人的名称
 *   parentUserid(String)  回复他人评论，其他人的id
 *   userName(String)      评论的用户名称
-*   userid(list)          评论的用户id
+*   userid(string)        评论的用户id
 *   createTime(String)    评论时间
+*   thumpsubCount(long)   评论点赞数量
+*   isMyThumbsup(boolean) 当前用户是否对该条评论点赞
 
 

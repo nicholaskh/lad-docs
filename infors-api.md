@@ -89,3 +89,24 @@ User System APIs
    -	通用返回值 commentVoList
 *   example:
     -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-comments.do
+
+ 
+### 资讯：资讯或评论点赞
+*   path: /note/thumbsup.do
+*   param:
+   -    targetid(String)  资讯或评论id
+   -	type(int) 0表示资讯，1表示评论
+*   return:
+   -	通用返回值 commentVoList
+*   example:
+    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/note/thumbsup.do
+ 
+### 资讯：取消点赞
+*   path: /note/cancal-thumbsup.do
+*   param:
+   -    targetid(String)  资讯或评论id
+   -	type(int) 0表示资讯，1表示评论
+*   return:
+   -	通用返回值 commentVoList
+*   example:
+    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/note/cancal-thumbsup.do
