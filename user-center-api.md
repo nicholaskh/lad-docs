@@ -1205,7 +1205,34 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&userids=[v]&isAdd=[v]' http://180.76.173.200:9999/circle/master.do	
+
+	
+###  圈子: 根据关键字搜索圈子
+*   path: /circle/search.do
+*   param:
+    - keyword(string)
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'keyword=[v]' http://180.76.173.200:9999/circle/search.do 
  
+###  圈子: 获取管理员
+*   path: /circle/get-master.do
+*   param:
+    - keyword(string)
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/get-master.do 
+ 
+###  圈子: 获取圈主
+*   path: /circle/get-creater.do
+*   param:
+    - keyword(string)
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/get-creater.do
  
 #附录
 ## commentVo  
