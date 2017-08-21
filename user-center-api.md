@@ -787,7 +787,6 @@ User System APIs
 *   param:
    -    px(double)
    -    py(double)
-   -    landmark(String)
    -    name(String)
    -    tag(String)
    -    sub_tag(String)
@@ -798,7 +797,7 @@ User System APIs
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'px=[v]&py=[v]&landmark=[v]&name=[v]&tag=[v]&sub_tag=[v]&category=[v]' 
+    -   curl -b cookie -d 'px=[v]&py=[v]&name=[v]&tag=[v]&sub_tag=[v]&category=[v]&description=[v]&isOpen=[v]&head_picture=[v]' 
  http://180.76.173.200:9999/circle/insert.do
 
     
@@ -1220,7 +1219,7 @@ User System APIs
 *   path: /circle/get-master.do
 *   param:
     - keyword(string)
-*	return:
+*	returncircleid
    -	通用返回值 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/get-master.do 
@@ -1228,11 +1227,45 @@ User System APIs
 ###  圈子: 获取圈主
 *   path: /circle/get-creater.do
 *   param:
-    - keyword(string)
+    - circleid(string)
 *	return:
    -	通用返回值 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/get-creater.do
+
+###  圈子: 获取圈子分类
+*   path: /circle/circle-type.do
+*   param: 
+*	return:
+   -	通用返回值 types 一级分类及以及分类下二级分类 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/circle-type.do
+
+
+###  圈子: 添加圈子分类
+*   path: /circle/add-circle-type.do
+*   param:
+    - name(string) 分类名称
+    - parent(string) 父分类名称，若本身为一级分类，则不填写 
+    - level(int) 分类级别， 1为一级分类； 2为二级分类
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'name=[v]&parent=[v]&level=[v]' http://180.76.173.200:9999/circle/add-circle-type.do
+
+###  圈子: 根据分类获取圈子
+*   path: /circle/get-by-type.do
+*   param:
+   -type(String) 分类名称
+   -	level(int) 分类级别
+   -	start_id(string)
+   -	gt(boolean)
+   -	limit(int)
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'type=[v]&level=[v]&start_id=[v]&gt=[v]&limit=[v]' http://180.76.173.200:9999/circle/get-by-type.do
+
  
 #附录
 ## commentVo  
