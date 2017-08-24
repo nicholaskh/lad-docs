@@ -1266,6 +1266,26 @@ User System APIs
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'type=[v]&level=[v]&start_id=[v]&gt=[v]&limit=[v]' http://180.76.173.200:9999/circle/get-by-type.do
 
+###  圈子: 附近活跃人员
+*   path: /circle/near-people.do
+*   param:
+   -circleid(String) 当前圈子id
+   -	px(double) 经度
+   -	py(double) 纬度
+*	return:
+   -	通用返回值  userVoList
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&px=[v]&py=[v]' http://180.76.173.200:9999/circle/near-people.do
+
+###  圈子: 附近圈子
+*   path: /circle/near-circle.do
+*   param:
+   -	px(double) 经度
+   -	py(double) 纬度
+*	return:
+   -	通用返回值 circleVoList 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'x=[v]&py=[v]' http://180.76.173.200:9999/circle/near-circle.do
  
 #附录
 ## commentVo  
