@@ -79,7 +79,7 @@ User System APIs
 	
 	
 ### 资讯：获取当前资讯的评论
-*   path: /note/get-comments.do
+*   path: /infor/get-comments.do
 *   param:
    -    inforid(String)
    -	start_id(string)
@@ -92,7 +92,7 @@ User System APIs
 
  
 ### 资讯：资讯或评论点赞
-*   path: /note/thumbsup.do
+*   path: /infor/thumbsup.do
 *   param:
    -    targetid(String)  资讯或评论id
    -	type(int) 0表示资讯，1表示评论
@@ -102,7 +102,7 @@ User System APIs
     -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/note/thumbsup.do
  
 ### 资讯：取消点赞
-*   path: /note/cancal-thumbsup.do
+*   path: /infor/cancal-thumbsup.do
 *   param:
    -    targetid(String)  资讯或评论id
    -	type(int) 0表示资讯，1表示评论
