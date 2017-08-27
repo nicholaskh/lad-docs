@@ -1,4 +1,4 @@
-User System APIs
+,User System APIs
 ================
 
 ###	Common
@@ -1218,7 +1218,7 @@ User System APIs
 ###  圈子: 获取管理员
 *   path: /circle/get-master.do
 *   param:
-    - keyword(string)
+    - circleid(string)
 *	returncircleid
    -	通用返回值 
 *   example:
@@ -1286,6 +1286,16 @@ User System APIs
    -	通用返回值 circleVoList 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'x=[v]&py=[v]' http://180.76.173.200:9999/circle/near-circle.do
+
+###  圈子: 当前用户在圈子中的角色
+*   path: /circle/circle-role.do
+*   param:
+   -	circleid(string) 圈子id
+*	return:
+   -	通用返回值 role  0，普通用户或未登录； 1 管理员， 2 圈主 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/circle-rolele.do
+    
  
 #附录
 ## commentVo  
