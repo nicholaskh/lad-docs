@@ -1294,9 +1294,110 @@
 *	return:
    -	通用返回值 role  0，普通用户或未登录； 1 管理员， 2 圈主 
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/circle-rolele.do
-    
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/circle-role.do
  
+###  圈子: 圈子用户
+*   path: /circle/persons.do
+*   param:
+   -	circleid(string) 圈子id
+*	return:
+   -	通用返回值 userVoList 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/persons.do   
+ 
+###  圈子: 更新圈子名称
+*   path: /circle/update-name.do
+*   param:
+   -	circleid(string) 圈子id
+   -	name(string) 圈子名称
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&name=[v]' http://180.76.173.200:9999/circle/update-name.do 
+
+###  圈子: 圈子不允任何人加入
+*   path: /circle/open.do
+*   param:
+   -	circleid(string) 圈子id
+   -	open(boolean) 圈子不允任何人加入开关， true 打开， false 关闭
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&open=[v]' http://180.76.173.200:9999/circle/open.do 
+
+
+###  圈子: 圈子加入验证
+*   path: /circle/verify.do
+*   param:
+   -	circleid(string) 圈子id
+   -	verify(boolean) 圈子加入验证， true 打开， false 关闭
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&&verify=[v]' http://180.76.173.200:9999/circle/verify.do 
+
+###  圈子: 圈子公告修改
+*   path: /circle/notice.do
+*   param:
+   -	circleid(string) 圈子id
+   -	title(string)  公告标题 ，若删除公告请将标题和内容输入为空  
+   -	content(string) 公告内容
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&title=[v]&content=[v]' http://180.76.173.200:9999/circle/notice.do
+
+
+###  圈子: 举报圈子
+*   path: /circle/feed-tips.do
+*   param:
+   -	circleid(string) 圈子id
+   -	title(string)  举报标题  
+   -	content(string) 举报内容
+   -	contact（string） 举报联系人
+   -	images（file[]） 图片数组
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&title=[v]&content=[v]' http://180.76.173.200:9999/circle/feed-tips.do
+
+###  圈子: 圈子内帖子
+*   path: /note/circle-notes.do
+*   param:
+   -	circleid(string) 圈子id
+   -	start_id(string)  
+   -	limit(int) 
+*	return:
+   -	通用返回值  noteVoList  essence：1表示加精，0表示未加精， top：1表示置顶， 0 表示未置顶
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/circle/circle-note.do
+
+
+###  圈子: 圈子内帖子加精或取消加精
+*   path: /note/set-essences.do
+*   param:
+   -	circleid(string) 圈子id
+   -	noteid(string)  
+   -	essence(int) 1 加精， 0 取消加精 
+*	return:
+   -	通用返回值  noteVoList  essence：1表示加精，0表示未加精， top：1表示置顶， 0 表示未置顶
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/circle/circle-note.do
+
+
+###  圈子: 圈子内帖子
+*   path: /note/circle-notes.do
+*   param:
+   -	circleid(string) 圈子id
+   -	start_id(string)  
+   -	limit(int) 
+*	return:
+   -	通用返回值  noteVoList  essence：1表示加精，0表示未加精， top：1表示置顶， 0 表示未置顶
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/circle/circle-note.do
+
+  
+
 #附录
 ## commentVo  
 *   commentId(String)     评论id
