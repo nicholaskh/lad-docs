@@ -535,7 +535,8 @@
     -   curl -b cookie -d  'userid=[v]&chatroomid=[v]' http://180.76.173.200:9999/chatroom/cancel-top.do
 	
 ###  聊天室：面对面创建群聊，通过SEQ加入面对面群聊接口。
-###  如果SEQ不存在，则创建面对面群聊，存在则加入；通过拉人的方式加入面对面群聊，请使用 chatroom/insert-user.do
+
+*  如果SEQ不存在，则创建面对面群聊，存在则加入；通过拉人的方式加入面对面群聊，请使用 chatroom/insert-user.do
 *   path: /chatroom/factoface-create.do
 *   param:
    -	seq(int) 面对面群聊数字序列
@@ -792,6 +793,9 @@
    -    sub_tag(String)
    -    category(String) 圈子类别，比如旅行、文学、美食……
    -    description(String) 简介
+   -    province   省或者直辖市
+   -    city    城市，直辖市与province一致
+   -    district  县或者区
    -    isOpen(boolean) 是否5公里加入
    -    head_picture(file) 圈子头像
 *   return:
@@ -1382,20 +1386,72 @@
 *	return:
    -	通用返回值  noteVoList  essence：1表示加精，0表示未加精， top：1表示置顶， 0 表示未置顶
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/circle/circle-note.do
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&essence=[v]' http://180.76.173.200:9999/circle/set-essences.do
 
 
-###  圈子: 圈子内帖子
-*   path: /note/circle-notes.do
+###  圈子: 圈子内帖子置顶或取消置顶
+*   path: /note/set-top.do
 *   param:
    -	circleid(string) 圈子id
    -	start_id(string)  
-   -	limit(int) 
+   -	top(int) 1 置顶， 0 取消置顶  
 *	return:
-   -	通用返回值  noteVoList  essence：1表示加精，0表示未加精， top：1表示置顶， 0 表示未置顶
+   -	通用返回值 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/circle/circle-note.do
 
+	
+###  圈子: 获取圈子热搜关键字
+*   path: /circle/hot-searchs.do
+*   param:
+*	return:
+   -	通用返回值 hotWords 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/circle/search.do 
+
+###  圈子: 根据城市查找圈子
+*   path: /circle/search-city.do
+*   param:
+    - 	province(string) 省或者直辖市
+    -   city(string)    城市，直辖市与province一致
+    -   district(string)  县或者区
+*	return:
+   -	通用返回值 circleVoList 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/circle/search-city.do 
+
+###  城市: 获取省份
+*   path: /city/get-province.do
+*   param:
+    - 	province(string) 省或者直辖市
+    -   city(string)    城市，直辖市与province一致
+    -   district(string)  县或者区
+*	return:
+   -	通用返回值 provinces 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-province.do 
+
+###  城市: 获取省份下市，若果是直辖市，返回区
+*   path: /city/get-city.do
+*   param:
+    - 	province(string) 省或者直辖市
+    -   city(string)    城市，直辖市与province一致
+    -   district(string)  县或者区
+*	return:
+   -	通用返回值 citys 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-city.do 
+
+###  城市: 非直辖市下县或者区，直辖市返回与上个方法一致
+*   path: /city/get-district.do
+*   param:
+    - 	province(string) 省或市
+    -   city(string)    城市
+    -   district(string)  县或者区
+*	return:
+   -	通用返回值 districts 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-district.do 
   
 
 #附录
