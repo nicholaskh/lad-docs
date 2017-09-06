@@ -1423,9 +1423,6 @@
 ###  城市: 获取省份
 *   path: /city/get-province.do
 *   param:
-    - 	province(string) 省或者直辖市
-    -   city(string)    城市，直辖市与province一致
-    -   district(string)  县或者区
 *	return:
    -	通用返回值 provinces 
 *   example:
@@ -1435,8 +1432,6 @@
 *   path: /city/get-city.do
 *   param:
     - 	province(string) 省或者直辖市
-    -   city(string)    城市，直辖市与province一致
-    -   district(string)  县或者区
 *	return:
    -	通用返回值 citys 
 *   example:
@@ -1452,6 +1447,14 @@
    -	通用返回值 districts 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-district.do 
+
+###  城市: 获所有省份城市信息
+*   path: /city/get-all.do
+*   param:
+*	return:
+   -	通用返回值 provinces 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-all.do 
   
 
 #附录
