@@ -791,7 +791,6 @@
    -    name(String)
    -    tag(String)
    -    sub_tag(String)
-   -    category(String) 圈子类别，比如旅行、文学、美食……
    -    description(String) 简介
    -    province   省或者直辖市
    -    city    城市，直辖市与province一致
@@ -801,7 +800,7 @@
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'px=[v]&py=[v]&name=[v]&tag=[v]&sub_tag=[v]&category=[v]&description=[v]&isOpen=[v]&head_picture=[v]' 
+    -   curl -b cookie -d 'px=[v]&py=[v]&name=[v]&tag=[v]&sub_tag=[v]&description=[v]&isOpen=[v]&head_picture=[v]' 
  http://180.76.173.200:9999/circle/insert.do
 
     
@@ -1415,6 +1414,8 @@
     - 	province(string) 省或者直辖市
     -   city(string)    城市，直辖市与province一致
     -   district(string)  县或者区
+    -   page(int) 当前展示页数，由于按照热度排序，所以不能通过id或者时间来处理，只能按照页码来，从1开始
+    -   limit（int）每页展示条数
 *	return:
    -	通用返回值 circleVoList 
 *   example:
@@ -1455,6 +1456,7 @@
    -	通用返回值 provinces 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-all.do 
+
   
 
 #附录
