@@ -1429,10 +1429,20 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-province.do 
 
-###  城市: 获取省份下市，若果是直辖市，返回区
-*   path: /city/get-city.do
+
+###  城市: 获取省份下地级市
+*   path: /city/get-province-city.do
 *   param:
     - 	province(string) 省或者直辖市
+*	return:
+   -	通用返回值 citys 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-province-city.do 
+
+###  城市: 获取直辖市下区或者县，或者地级市，切换区县
+*   path: /city/get-city.do
+*   param:
+    - 	city(string) 省或者直辖市
 *	return:
    -	通用返回值 citys 
 *   example:
@@ -1449,7 +1459,7 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-district.do 
 
-###  城市: 获所有省份城市信息
+###  城市: 获所有城市信息
 *   path: /city/get-all.do
 *   param:
 *	return:
