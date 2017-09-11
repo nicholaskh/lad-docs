@@ -1173,17 +1173,6 @@
     -   curl -b cookie -F "commentid=[v]"  http://180.76.173.200:9999/note/comment-thumbsup.do
  
 
-
-###  聊天：收藏聊天记录
-*   path: /chat/collect-chat.do
-*   param:
-   -    title(String) 具体的聊天对象或群组名称 
-   -    content(String)
-*   return:
-   -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
-*   example:
-    -   curl -b cookie -F "title=[v]&content=[v]" http://180.76.173.200:9999/chat/collect-chat.do
- 
  
 ###  用户更新地理位置
 *   path: /location/update.do
@@ -1421,6 +1410,15 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/circle/search-city.do 
 
+	
+###  圈子: 获取城市热搜
+*   path: /circle/hot-citys.do
+*   param:
+*	return:
+   -	通用返回值 hotCitys 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/circle/search.do 
+
 ###  城市: 获取省份
 *   path: /city/get-province.do
 *   param:
@@ -1467,6 +1465,27 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/city/get-all.do 
 
+
+###  聊天：收藏聊天记录
+*   path: /collect/chat.do
+*   param:
+   -    title(String) 具体的聊天对象或群组名称 
+   -    content(String)
+*   return:
+   -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
+*   example:
+    -   curl -b cookie -F "title=[v]&content=[v]" http://180.76.173.200:9999/chat/collect/chat.do
+
+
+###  聊天：获取收藏的聊天记录
+*   path: /collect/my-chats.do
+*   param:
+   -    start_id(String) 分页时最后起始的收藏聊天记录的id，为空则表示从最新一条开发
+   -    limit(int) 每页显示条数
+*   return:
+   -	通用返回值   col-chats 收藏聊天 
+*   example:
+    -   curl -b cookie -F "start_id=[v]&limit=[v]" http://180.76.173.200:9999/chat/collect/my-chats.do
   
 
 #附录
