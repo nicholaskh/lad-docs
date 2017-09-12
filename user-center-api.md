@@ -1486,6 +1486,26 @@
    -	通用返回值   col-chats 收藏聊天 
 *   example:
     -   curl -b cookie -F "start_id=[v]&limit=[v]" http://180.76.173.200:9999/chat/collect/my-chats.do
+    
+
+###  用户: 添加用户兴趣分类
+*   path: /homepage/add-interest.do
+*   param:
+    - name(string) 分类名称
+    - parent(string) 父分类名称，若本身为一级分类，则不填写 
+    - level(int) 分类级别， 1为一级分类； 2为二级分类
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'name=[v]&parent=[v]&level=[v]' http://180.76.173.200:9999/homepage/add-interest.do
+
+###  用户: 获取用户兴趣列表
+*   path: /homepage/interest.do
+*   param:
+*	return:
+   -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/homepage/interest.do
   
 
 #附录
@@ -1497,8 +1517,11 @@
 *   parentUserid(String)  回复他人评论，其他人的id
 *   userName(String)      评论的用户名称
 *   userid(string)        评论的用户id
+*   userSex(String)       评论的用户性别
+*   userHeadPic(String)   评论的用户头像
+*   userBirth(String)     评论的用户生日
 *   createTime(String)    评论时间
-*   thumpsubCount(long)   评论点赞数量
+*   thumpsubCount(long)   当前评论的点赞数量
 *   isMyThumbsup(boolean) 当前用户是否对该条评论点赞
 
 
