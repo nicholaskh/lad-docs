@@ -977,20 +977,24 @@
 *   path: /note/essential-note.do
 *   param:
    -	circleid(string)
+   -	start_id(string)
+   -	limit(int)
 *	return:
    -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/note/essential-note.do
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/note/essential-note.do
 	
 
 ### 帖子:圈子内置顶的 帖子
 *   path: /note/top-notes.do
 *   param:
    -	circleid(string)
+   -	start_id(string)
+   -	limit(int)
 *	return:
    -	通用返回值 noteVoList： nodeid subject content visitCount访问量 commontCount 评论数 transCount转发数
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/note/top-notes.do
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&limit=[v]' http://180.76.173.200:9999/note/top-notes.do
 	
 
 ###  帖子:插入新的帖子
@@ -1417,7 +1421,23 @@
 *	return:
    -	通用返回值 hotCitys 
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/circle/search.do 
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/circle/hot-citys.do
+
+
+	
+###  圈子: 获取相关圈子
+*   path: /circle/related.do
+*   param:
+    -  	circleid(string) 圈子id
+    -   page(int)    当前页数，从1开始
+    -   limit(int)  每页展示条数，初始默认为2
+*	return:
+   -	通用返回值 circleVoList 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  
+    -   http://180.76.173.200:9999/circle/related.do
+
+
 
 ###  城市: 获取省份
 *   path: /city/get-province.do
@@ -1488,24 +1508,45 @@
     -   curl -b cookie -F "start_id=[v]&limit=[v]" http://180.76.173.200:9999/chat/collect/my-chats.do
     
 
-###  用户: 添加用户兴趣分类
-*   path: /homepage/add-interest.do
-*   param:
-    - name(string) 分类名称
-    - parent(string) 父分类名称，若本身为一级分类，则不填写 
-    - level(int) 分类级别， 1为一级分类； 2为二级分类
-*	return:
-   -	通用返回值 
-*   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'name=[v]&parent=[v]&level=[v]' http://180.76.173.200:9999/homepage/add-interest.do
-
-###  用户: 获取用户兴趣列表
+###  用户: 获取所有兴趣列表
 *   path: /homepage/interest.do
 *   param:
 *	return:
    -	通用返回值 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/homepage/interest.do
+
+
+
+###  用户: 获取指定兴趣类型下兴趣列表
+*   path: /homepage/get-interest.do
+*   param:
+    -   type(int) 兴趣类型：1 sports; 2 musics; 3 lifes; 4 trips 
+*	return:
+    -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   "type=[v]"  http://180.76.173.200:9999/homepage/interest.do
+
+
+###  用户: 用户自己所有兴趣列表
+*   path: /homepage/my-interest.do
+*   param:
+*	return:
+   -	通用返回值 sports：运动； musics：音乐； lifes：生活； trips 旅行足迹 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/homepage/my-interest.do
+
+
+
+###  用户: 修改指定兴趣类型下兴趣列表
+*   path: /homepage/modify-interest.do
+*   param:
+    -   interests（String） 修改后具体兴趣信息，多个以英文逗号隔开
+    -   type(int) 兴趣类型：1 sports; 2 musics; 3 lifes; 4 trips 
+*	return:
+    -	通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/homepage/modify-interest.do
   
 
 #附录
