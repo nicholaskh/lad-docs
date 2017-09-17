@@ -1258,7 +1258,7 @@
    -	gt(boolean)
    -	limit(int)
 *	return:
-   -	通用返回值 
+   -	通用返回值  userAdd 0 未加入， 1 已经加入， 2 已经退出 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'type=[v]&level=[v]&start_id=[v]&gt=[v]&limit=[v]' http://180.76.173.200:9999/circle/get-by-type.do
 
