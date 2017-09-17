@@ -1547,6 +1547,17 @@
     -	通用返回值 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d  http://180.76.173.200:9999/homepage/modify-interest.do
+    -   
+
+###  圈子:校验在当前分类下是否有相同名称的圈子
+*   path: /circle/check-name.do
+*   return:
+    -   name（String） 待校验的名称
+    -   sub(String)  一级分类
+    -   sub-tag（String） 二级分类 
+   -	通用返回值  0 不存在， -1 已经存在
+*   example:
+    -   curl -b cookie -d  http://180.76.173.200:9999/circle/check-name.do
   
 
 #附录
