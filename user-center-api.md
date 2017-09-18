@@ -405,7 +405,7 @@
     -   curl -b  cookie -F "head_picture=@/Users/gouxubo/12.png" 'http://180.76.173.200:9999/upload/feedback-picture.do'
 
 ###    帮助反馈，提交
-*   path: /feedback/insert.do
+*   path: /feedback/.do
 *   param:
 	-	@RequestParam("feedback_picture") MultipartFile file
 	-	content(string)
@@ -1252,10 +1252,9 @@
 ###  圈子: 根据分类获取圈子
 *   path: /circle/get-by-type.do
 *   param:
-   -type(String) 分类名称
-   -	level(int) 分类级别
-   -	start_id(string)
-   -	gt(boolean)
+   -tag(String)  一级分类
+   -	sub_tag(String)  二级分类，如只查询一级分类，则可为空串
+   -	page(int)
    -	limit(int)
 *	return:
    -	通用返回值  userAdd 0 未加入， 1 已经加入， 2 已经退出 
