@@ -1557,6 +1557,15 @@
    -	通用返回值  0 不存在， -1 已经存在
 *   example:
     -   curl -b cookie -d  http://180.76.173.200:9999/circle/check-name.do
+
+###  圈子: 不通过校验直接加入圈子
+*   path: /circle/free-insert.do
+*   param:
+   -	circleid(string) 圈子id
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/free-insert.do
   
 
 #附录
