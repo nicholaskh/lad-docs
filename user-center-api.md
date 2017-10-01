@@ -1566,7 +1566,66 @@
    -	通用返回值  
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/free-insert.do
+
+###  群聊: 转移群主
+*   path: /chatroom/trans-chatroom
+*   param:
+   -  	chatroomid(string)  群聊id
+   -	    userid（String） 转移用户id 
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&userid=[v]' http://180.76.173.200:9999/chatroom/trans-chatroom.do
   
+
+###  群聊: 修改聊天室昵称
+*   path: /chatroom/update-name
+*   param:
+   -  	chatroomid(string)  群聊id
+   -	    name（String） 要修的聊天室昵称 
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&name=[v]' http://180.76.173.200:9999/chatroom/update-name.do
+
+###  群聊: 修改聊天室公告
+*   path: /chatroom/update-description
+*   param:
+   -  	chatroomid(string)  群聊id
+   -	    description（String） 要修的公告信息
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&description=[v]' http://180.76.173.200:9999/chatroom/update-description.do
+
+###  群聊: 修改是否允许加入
+*   path: /chatroom/update-open
+*   param:
+   -  	chatroomid(string)  群聊id
+   -	    isOpen（boolean） true 允许，false 不允许 
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isOpen=[v]' http://180.76.173.200:9999/chatroom/update-open.do
+
+
+###  群聊: 群聊加入是否需要验证
+*   path: /chatroom/update-verify
+*   param:
+   -  	chatroomid(string)  群聊id
+   -	    isVerify（boolean） true 需要， false 不需要 
+*	return:	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isVerify=[v]' http://180.76.173.200:9999/chatroom/update-verify.do
+
+###  群聊: 退出聊天室
+*   path: /chatroom/quit
+*   param:
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isVerify=[v]' http://180.76.173.200:9999/chatroom/quit.do
+
 
 #附录
 ## commentVo  
@@ -1585,3 +1644,20 @@
 *   isMyThumbsup(boolean) 当前用户是否对该条评论点赞
 
 
+## chatroomVo  
+*   id(String)     聊天室id
+*   name(String)   聊天室名称
+*   type(String)   聊天室类型
+*   userid(String)  单人聊天用户id
+*   friendid(String)  单人聊天朋友id
+*   top(String)      是否置顶
+*   description(string)  聊天室介绍或公告
+*   isOpen(String)       聊天室是否允许加入
+*   isVerify(String)     聊天室加入是否需要验证
+*   userNum(String)     聊天室人数
+*   userVos(String)     群聊用户信息
+######   userVos:  群聊用户对象   
+*   userid(String)   当前评论的点赞数量
+*   username(String) 当前用户是否对该条评论点赞
+*   userPic(String) 当前用户是否对该条评论点赞
+*   role(int) 0 普通用户， 2 群主
