@@ -1621,6 +1621,7 @@
 ###  群聊: 退出聊天室
 *   path: /chatroom/quit
 *   param:
+   -  	chatroomid(string)  群聊id
 *	return:
    -	通用返回值  
 *   example:
