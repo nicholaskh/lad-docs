@@ -141,7 +141,7 @@ User System APIs
 *   return:
    -	通用返回值 commentVoList
 *   example:
-    -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/note/get-comments.do
+    -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/infor/get-comments.do
 
  
 ### 资讯：资讯或评论点赞
@@ -152,7 +152,7 @@ User System APIs
 *   return:
    -	通用返回值 commentVoList
 *   example:
-    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/note/thumbsup.do
+    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/thumbsup.do
  
 ### 资讯：取消点赞
 *   path: /infor/cancal-thumbsup.do
@@ -162,4 +162,25 @@ User System APIs
 *   return:
    -	通用返回值 commentVoList
 *   example:
-    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/note/cancal-thumbsup.do
+    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/cancal-thumbsup.do
+
+### 资讯：获取广播列表
+*   path: /infor/radio-list.do
+*   param:
+   -    module(String)  分类
+   -	    page(string)
+   -	    limit(int)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/radio-list.do
+
+
+### 资讯：获取广播详情
+*   path: /infor/radio-infor.do
+*   param:
+   -    radioid(String)  分类
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/radio-infor.do
