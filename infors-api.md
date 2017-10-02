@@ -168,12 +168,12 @@ User System APIs
 *   path: /infor/radio-list.do
 *   param:
    -    module(String)  分类
-   -	    page(string)
+   -	    page(int) 页码，从1开始
    -	    limit(int)
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/radio-list.do
+    -   curl -b cookie -F "module=[v]&page=[v]&limit=[v]"  http://180.76.173.200:9999/infor/radio-list.do
 
 
 ### 资讯：获取广播详情
@@ -183,4 +183,4 @@ User System APIs
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/radio-infor.do
+    -   curl -b cookie -F "radioid=[v]"  http://180.76.173.200:9999/infor/radio-infor.do
