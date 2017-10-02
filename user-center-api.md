@@ -1658,7 +1658,7 @@
 *   userNum(String)     聊天室人数
 *   userVos(String)     群聊用户信息
 ######   userVos:  群聊用户对象   
-*   userid(String)   当前评论的点赞数量
-*   username(String) 当前用户是否对该条评论点赞
-*   userPic(String) 当前用户是否对该条评论点赞
+*   userid(String)   当前用户的id
+*   username(String) 当前用户用户名称
+*   userPic(String) 当前用户的头像
 *   role(int) 0 普通用户， 2 群主
