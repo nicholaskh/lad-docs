@@ -98,8 +98,78 @@ Party APIs
     -   通用返回值， partyListVos  这个是从partyVo获取的部分参数
 *   example:
     -   curl -c cookie/cookie路径 -d 
-    -   curl -b  /Users/gouxubo/cookiel -d 'page=[1]&limit=[10]' 'http://180.76.173.200:9999/party/join-partys.do'	
+    -   curl -b  /Users/gouxubo/cookiel -d 'page=[1]&limit=[10]' 'http://180.76.173.200:9999/party/join-partys.do'
+    
 	
+### 聚会：发起群聊
+*   path: /party/launch-talk.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/launch-talk.do'	
+
+	
+### 聚会：发起群聊
+*   path: /party/has-chatroom.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值 chatroomid 为空表示尚未发起群聊
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/has-chatroom.do'
+
+
+### 聚会：收藏聚会
+*   path: /party/collect-party.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值 col-time 收藏时间
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/collect-party.do'
+
+
+### 聚会：删除聚会
+*   path: /party/delete-party.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/collect-party.do'
+
+
+### 聚会：评论聚会
+*   path: /party/add-comment.do
+*   param:
+    -   partyid(String) 聚会id
+    -   content(String) 评论内容 
+    -   isSync(boolean) 是否同步到个人动态 
+    -   photos(MultipartFile[]) 图片 
+    -   video(MultipartFile) 视频 
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d  'http://180.76.173.200:9999/party/add-comment.do'
+
+
+### 聚会：获取聚会
+*   path: /party/get-comments.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值 commentVo
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]' 'http://180.76.173.200:9999/party/get-comments.do'
+
 
 
  
@@ -128,6 +198,7 @@ Party APIs
 *   users(partyUserVo) 聚会参与者信息
 *   inCircle(boolean)  当前用户是不是已加入聚会所在圈子
 *   inParty(boolean)  当前用户是不是已加入聚会
+*   isComment(boolean) 当前用户是否已经评论
 *   backPic(String)  聚会背景图片
 *   photos(String[]) 聚会图片信息
 *   video(String)   聚会视频
