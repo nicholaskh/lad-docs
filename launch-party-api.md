@@ -75,8 +75,30 @@ Party APIs
     -   通用返回值， partyUserVo
 *   example:
     -   curl -c cookie/cookie路径 -d 'http://180.76.173.200:9999/party/get-users.do'	  
+
+
+### 聚会：我发起的聚会
+*   path: /party/my-partys.do
+*   param:
+    -   page(int) 分页页码
+    -   limit(int) 每页展示条数
+*   return:
+    -   通用返回值， partyListVos  这个是从partyVo获取的部分参数
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'page=[1]&limit=[10]' 'http://180.76.173.200:9999/party/my-partys.do'	
     	
 	
+### 聚会：我参与的聚会
+*   path: /party/join-partys.do
+*   param:
+    -   page(int) 分页页码
+    -   limit(int) 每页展示条数
+*   return:
+    -   通用返回值， partyListVos  这个是从partyVo获取的部分参数
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'page=[1]&limit=[10]' 'http://180.76.173.200:9999/party/join-partys.do'	
 	
 
 
