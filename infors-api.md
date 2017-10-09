@@ -184,3 +184,24 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -F "radioid=[v]"  http://180.76.173.200:9999/infor/radio-infor.do
+
+### 资讯：获取视频列表
+*   path: /infor/video-list.do
+*   param:
+   -    module(String)  分类
+   -	    page(int) 页码，从1开始
+   -	    limit(int)
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "module=[v]&page=[v]&limit=[v]"  http://180.76.173.200:9999/infor/video-list.do
+
+
+### 资讯：获取视频详情
+*   path: /infor/video-infor.do
+*   param:
+   -    videoid(String)  视频id
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F "videoid=[v]"  http://180.76.173.200:9999/infor/video-infor.do
