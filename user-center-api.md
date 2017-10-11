@@ -1625,7 +1625,18 @@
 *	return:
    -	通用返回值  
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isVerify=[v]' http://180.76.173.200:9999/chatroom/quit.do
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]' http://180.76.173.200:9999/chatroom/quit.do
+
+
+###  群聊: 修改群聊中的昵称
+*   path: /chatroom/update-nickname
+*   param:
+   -  	chatroomid(string)  群聊id
+   -  	nickname（String）
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&nickname=[v]' http://180.76.173.200:9999/chatroom/update-nickname.do
 
 
 #附录
