@@ -1638,6 +1638,15 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&nickname=[v]' http://180.76.173.200:9999/chatroom/update-nickname.do
 
+###  群聊: 获取群聊中的昵称
+*   path: /chatroom/get-nicknames
+*   param:
+   -  	chatroomid(string)  群聊id
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]' http://180.76.173.200:9999/chatroom/get-nicknames.do
+
 
 #附录
 ## commentVo  
