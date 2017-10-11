@@ -1648,6 +1648,18 @@
     -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]' http://180.76.173.200:9999/chatroom/get-nicknames.do
 
 
+###  好友: 通讯录中已注册的好友信息
+*   path: /friends/sign-users
+*   param:
+   -  	phones(string[])  通讯录中的电话数组
+*	return:
+   -	通用返回值  已进注册的好友userVos 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'phones=[v]' http://180.76.173.200:9999/friends/sign-users.do
+
+
+
+
 #附录
 ## commentVo  
 *   commentId(String)     评论id
