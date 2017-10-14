@@ -101,8 +101,6 @@ User System APIs
     -   通用返回值， securityVo
 *   example:
     -   curl -c cookie/cookie路径 -d   'inforid=[v]'  'http://180.76.173.200:9999/infor/security-infor.do'	
-
-
 	
 ### 资讯：评论资讯
 *   path: /infor/add-comment.do
