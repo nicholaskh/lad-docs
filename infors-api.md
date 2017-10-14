@@ -54,20 +54,22 @@ User System APIs
 ### 资讯：我的频道推荐健康资讯初始信息
 *   path: /infor/recommend-groups.do
 *   param:
+    -   type(int) 1 健康，2 安防，3 广播，4 视频
 *   return:
     -   通用返回值， mySubTypes 已订阅的分类， recoTypes 推荐的分类（未订阅） 
 *   example:
-    -   curl -c cookie/cookie路径 -d   'http://180.76.173.200:9999/infor/recommend-groups.do'	
+    -   curl -c cookie/cookie路径 -d 'type=[v]'  'http://180.76.173.200:9999/infor/recommend-groups.do'	
 	
 	
 ### 资讯：我的频道推荐健康资讯分类修改
 *   path: /infor/update-groups.do
 *   param:
-    -   groupNames(string[])
+    -   groupNames(string[]) 订阅的分类的数组
+	-   type(int) 1 健康，2 安防，3 广播，4 视频
 *   return:
     -   通用返回值
 *   example:
-    -   curl -c cookie/cookie路径 -d  'groupNames=[v]'  'http://180.76.173.200:9999/infor/update-groups.do'		
+    -   curl -c cookie/cookie路径 -d  'groupNames=[v]&type=[v]'  'http://180.76.173.200:9999/infor/update-groups.do'		
 
 		
 ### 资讯：资讯详情
@@ -100,23 +102,6 @@ User System APIs
 *   example:
     -   curl -c cookie/cookie路径 -d   'inforid=[v]'  'http://180.76.173.200:9999/infor/security-infor.do'	
 
-### 资讯：我的频道推荐安防资讯初始信息
-*   path: /infor/recommend-securitys.do
-*   param:
-*   return:
-    -   通用返回值， mySubSecuritys 已订阅的分类， recoSecuritys 推荐的分类（未订阅） 
-*   example:
-    -   curl -c cookie/cookie路径 -d   'http://180.76.173.200:9999/infor/recommend-securitys.do'	
-	
-	
-### 资讯：我的频道推荐健康资讯分类修改
-*   path: /infor/update-securitys.do
-*   param:
-    -   securityNames(string[])
-*   return:
-    -   通用返回值
-*   example:
-    -   curl -c cookie/cookie路径 -d  'securityNames=[v]'  'http://180.76.173.200:9999/infor/update-securitys.do'	
 
 	
 ### 资讯：评论资讯
