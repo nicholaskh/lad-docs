@@ -64,7 +64,7 @@ User System APIs
 ### 资讯：我的频道推荐健康资讯分类修改
 *   path: /infor/update-groups.do
 *   param:
-    -   groupNames(string[]) 订阅的分类的数组
+    -   groupNames(string) 订阅的分类,多个以逗号隔开
 	-   type(int) 1 健康，2 安防，3 广播，4 视频
 *   return:
     -   通用返回值
