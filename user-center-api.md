@@ -706,7 +706,7 @@
 *   example:
     -   curl -b cookie -d 'px=[v]&py=[v]' http://180.76.173.200:9999/location/near.do
 
-###  标签:设置标签
+###  标签:对指定的好友添加或修改标签
 *   path: /tag/set-tags.do
 *   param:
    -    tagNames(String) 标签,多个以英文逗号隔开
@@ -715,6 +715,17 @@
    -	通用返回值 
 *   example:
     -   curl -b cookie -d 'tagNames=[v]&friendsid=[v]' http://180.76.173.200:9999/tag/set-tags.do
+ 
+###  标签:更具标签名称添加或修改好友
+*   path: /tag/add-tag-friends.do
+*   param:
+   -    tagName(String) 标签
+   -    friendsids(String) 好友ID,多个以英文逗号隔开
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -d 'tagNames=[v]&friendsid=[v]' http://180.76.173.200:9999/tag/add-tag-friends.do
+ 
 
 ###  标签:得到指定好友标签
 *   path: /tag/get-friend-tags.do
@@ -723,56 +734,46 @@
 *   return:
    -	通用返回值 tags 标签列表
 *   example:
-    -   curl -b cookie -d 'friendid=[v]' http://180.76.173.200:9999/tag/get-friend-tag.do
+    -   curl -b cookie -d 'friendid=[v]' http://180.76.173.200:9999/tag/get-friend-tags.do
 
-###  标签:得到当前用户添加过的所有标签
+
+###  标签: 得到当前用户添加过的所有标签名称
 *   path: /tag/get-tags.do
 *   param:
 *   return: 
    -	通用返回值 tags 标签列表
 *   example:
     -   curl -b cookie http://180.76.173.200:9999/tag/get-tags.do
+ 
 
-###  标签:根据标签名称获取好友信息
-*   path: /tag/friends-by-tag.do
+###  标签:根据标签名称查询或搜索好友信息
+*   path: /tag/get-by-tagName.do
 *   param:
    -    tagName(String) 标签名称
 *   return:
    -	通用返回值 userVos用户信息
 *   example:
     -   curl -b cookie -d 'tagName=[v]' http://180.76.173.200:9999/tag/friends-by-tag.do
+ 
+ 
+###  标签:获取所有标签及标签关联的好友
+*   path: /tag/get-tag-list.do
+*   param:
+*   return:
+   -	通用返回值 tagVos
+*   example:
+    -   curl -b cookie -d http://180.76.173.200:9999/tag/get-tag-list.do
 
-###  标签:添加好友
-*   path: /tag/tag-add-friends.do
+###  标签: 删除标签
+*   path: /tag/delete-tag.do
 *   param:
-   -    tagid(String) 标签表ID
-   -    friendsids(String) 使用英文逗号分隔的朋友ID
+   -    tagid(String) 标签ID 
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/tag-add-friends
+    -   curl -b cookie -d 'tagid=[v]'  http://180.76.173.200:9999/tag/delete-tag.do
  
  
-###  标签:修改标签名称
-*   path: /tag/update-tag-name.do
-*   param:
-   -    tagid(String) 标签表ID
-   -    name(String) 标签名称
-*   return:
-   -	通用返回值
-*   example:
-    -   curl -b cookie -d 'tagid=[v]&name=[v]'  http://180.76.173.200:9999/tag/update-tag-name.do
- 
- 
-###  标签:删除标签中的好友
-*   path: /tag/cancel-friend-tag.do
-*   param:
-   -    tagid(String) 标签表ID
-   -    friendsids(String) 使用英文逗号分隔的朋友ID
-*   return:
-   -	通用返回值
-*   example:
-    -   curl -b cookie -d 'tagid=[v]&friendsids=[v]'  http://180.76.173.200:9999/tag/cancel-friend-tag.do
 
 ###  圈子:圈子创建前校验用户当前圈子数量及级别
 *   path: /circle/pre-create.do
