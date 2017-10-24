@@ -1551,9 +1551,9 @@
 *   path: /circle/check-name.do
 *   return:
     -   name（String） 待校验的名称
-    -   sub(String)  一级分类
-    -   sub-tag（String） 二级分类 
-   -	通用返回值  0 不存在， -1 已经存在
+    -   tag(String)  一级分类
+    -   sub_tag（String） 二级分类 
+   -	通用返回值  0 不存在， 1 已经存在
 *   example:
     -   curl -b cookie -d  http://180.76.173.200:9999/circle/check-name.do
 
