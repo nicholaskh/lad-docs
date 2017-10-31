@@ -41,6 +41,20 @@ Party APIs
 *   example:
     -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/party/create.do'
 	
+	
+### 聚会： 发起聚会
+*   path: /party/update.do
+*   param:
+    -   partyJson(String) 聚会信息参数,包括修改和未修改的
+	-   partyid(String) 聚会id
+    -   backPic(MultipartFile)  背景图片
+	-   photos(MultipartFile[]) 聚会图片 
+	-   video(MultipartFile)  聚会视频
+*   return:
+    -   通用返回值， partyid 聚会id
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/party/update.do'
+	
 
 ### 聚会：聚会详情
 *   path: /party/party-info.do

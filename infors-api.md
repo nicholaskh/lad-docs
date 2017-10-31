@@ -188,3 +188,37 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -F "videoid=[v]"  http://180.76.173.200:9999/infor/video-infor.do
+ 
+ 
+### 资讯：健康首页推荐
+*   path: /infor/home-health.do
+*   param:
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F  http://180.76.173.200:9999/infor/home-health.do
+ 
+
+### 资讯：健康首页推荐top4
+*   path: /infor/home-top4.do
+*   param:
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F  http://180.76.173.200:9999/infor/home-top4.do
+
+### 资讯：健康个性推荐
+*   path: /infor/user-health.do
+*   param:
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-health.do
+ 
+### 资讯：安防个性推荐
+*   path: /infor/user-securitys.do
+*   param:
+*   return:
+   -	通用返回值 
+*   example:
+    -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-securitys.do
