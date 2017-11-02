@@ -1657,6 +1657,16 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'phones=[v]' http://180.76.173.200:9999/friends/sign-users.do
 
+	
+###  圈子: 获取圈子公告信息
+*   path: /circle/get-notice.do
+*   param:
+   -	circleid(string) 圈子id
+*	return:
+   -	通用返回值 noticeTitle 公告标题；notice 公告内容； noticeTime 发布时间；  noticeUser 发布人员，若无改字段，则表示人员信息不存在  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&title=[v]&content=[v]' http://180.76.173.200:9999/circle/get-notice.do
+
 
 
 
