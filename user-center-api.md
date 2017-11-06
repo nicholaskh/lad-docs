@@ -1663,11 +1663,31 @@
 *   param:
    -	circleid(string) 圈子id
 *	return:
-   -	通用返回值 noticeTitle 公告标题；notice 公告内容； noticeTime 发布时间；  noticeUser 发布人员，若无改字段，则表示人员信息不存在  
+   -	通用返回值 noticeTitle 公告标题；notice 公告内容； noticeTime 发布时间；  noticeUser 发布人员，若无该字段，则表示人员信息不存在  
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&title=[v]&content=[v]' http://180.76.173.200:9999/circle/get-notice.do
+	
+
+	###  群聊: 修改群聊昵称显示
+*   path: /chatroom/update-shownick
+*   param:
+   -  	chatroomid(string)  群聊id
+   -  	isShowNick（boolean） true 显示昵称； false 不显示
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isShowNick=[v]' http://180.76.173.200:9999/chatroom/update-shownick.do
 
 
+###  群聊: 修改聊天免打扰
+*   path: /chatroom/update-disturb
+*   param:
+   -  	chatroomid(string)  群聊id
+   -  	isDisturb（boolean） true 开启免打扰； false 关闭免打扰
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/update-disturb.do
 
 
 #附录
