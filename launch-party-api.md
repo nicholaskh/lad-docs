@@ -174,19 +174,60 @@ Party APIs
     -   curl -b  /Users/gouxubo/cookiel -d  'http://180.76.173.200:9999/party/add-comment.do'
 
 
-### 聚会：获取聚会
+### 聚会：获取聚会评论
 *   path: /party/get-comments.do
 *   param:
     -   partyid(String) 聚会id
 *   return:
     -   通用返回值 commentVo
 *   example:
-    -   curl -c cookie/cookie路径 -d 
     -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]' 'http://180.76.173.200:9999/party/get-comments.do'
+	
+
+### 聚会：获取圈子内所有聚会
+*   path: /party/all-partys.do
+*   param:
+    -   circleid(String) 圈子id
+	-   page(int) 
+	-   limit(int) 
+*   return:
+    -   通用返回值 partyListVos
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'circleid=[v]&page=[v]&limit=[v]' http://180.76.173.200:9999/party/all-partys.do	
+
+	
+### 聚会：取消报名
+*   path: /party/cancel-enroll.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]' http://180.76.173.200:9999/party/cancel-enroll.do
+
+	
+### 聚会：取消报名
+*   path: /party/delete-join-party.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=' http://180.76.173.200:9999/party/delete-join-party.do
+
+	
+### 聚会：取消报名
+*   path: /party/enroll-detail.do
+*   param:
+    -   partyid(String) 聚会id
+	-   userid(String) 报名用户id
+*   return:
+    -   通用返回值  partyUser
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=' http://180.76.173.200:9999/party/enroll-detail.do
 
 
-
- 
+	
 #附录
 ## partyVo  
 *   partyid(String)     聚会id

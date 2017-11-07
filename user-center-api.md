@@ -1384,7 +1384,7 @@
 *   path: /note/set-top.do
 *   param:
    -	circleid(string) 圈子id
-   -	start_id(string)  
+   -	noteid(string)  
    -	top(int) 1 置顶， 0 取消置顶  
 *	return:
    -	通用返回值 
