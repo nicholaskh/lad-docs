@@ -142,11 +142,21 @@ Party APIs
 *   param:
     -   partyid(String) 聚会id
 *   return:
+    -   通用返回值 
+*   example:
+    -   curl -c cookie/cookie路径 -d 
+    -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/del-collect.do'
+
+	
+### 聚会：取消已收藏的聚会
+*   path: /party/del-collect.do
+*   param:
+    -   partyid(String) 聚会id
+*   return:
     -   通用返回值 col-time 收藏时间
 *   example:
     -   curl -c cookie/cookie路径 -d 
     -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/collect-party.do'
-
 
 ### 聚会：删除聚会
 *   path: /party/delete-party.do
@@ -166,7 +176,6 @@ Party APIs
     -   content(String) 评论内容 
     -   isSync(boolean) 是否同步到个人动态 
     -   photos(MultipartFile[]) 图片 
-    -   video(MultipartFile) 视频 
 *   return:
     -   通用返回值 
 *   example:
@@ -206,7 +215,7 @@ Party APIs
     -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]' http://180.76.173.200:9999/party/cancel-enroll.do
 
 	
-### 聚会：取消报名
+### 聚会：删除我报名的聚会
 *   path: /party/delete-join-party.do
 *   param:
     -   partyid(String) 聚会id
@@ -216,7 +225,7 @@ Party APIs
     -   curl -b  /Users/gouxubo/cookiel -d   'partyid=' http://180.76.173.200:9999/party/delete-join-party.do
 
 	
-### 聚会：取消报名
+### 聚会：聚会报名详情
 *   path: /party/enroll-detail.do
 *   param:
     -   partyid(String) 聚会id
