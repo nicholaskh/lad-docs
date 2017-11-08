@@ -1369,7 +1369,7 @@
 
 
 ###  圈子: 圈子内帖子加精或取消加精
-*   path: /note/set-essences.do
+*   path: /note/set-essence.do
 *   param:
    -	circleid(string) 圈子id
    -	noteid(string)  
