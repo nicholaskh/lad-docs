@@ -126,7 +126,7 @@ Party APIs
     -   curl -b  /Users/gouxubo/cookiel -d 'partyid=[v]' 'http://180.76.173.200:9999/party/launch-talk.do'	
 
 	
-### 聚会：发起群聊
+### 聚会：判断是否已经发起了群聊
 *   path: /party/has-chatroom.do
 *   param:
     -   partyid(String) 聚会id
@@ -172,9 +172,7 @@ Party APIs
 ### 聚会：评论聚会
 *   path: /party/add-comment.do
 *   param:
-    -   partyid(String) 聚会id
-    -   content(String) 评论内容 
-    -   isSync(boolean) 是否同步到个人动态 
+    -   partyComment(String) 聚会评论信息json格式，包括 partyid（聚会id）， content(String) 评论内容，isSync(boolean) 是否同步到个人动态  
     -   photos(MultipartFile[]) 图片 
 *   return:
     -   通用返回值 
@@ -233,9 +231,19 @@ Party APIs
 *   return:
     -   通用返回值  partyUser
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=' http://180.76.173.200:9999/party/enroll-detail.do
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]&userid=[v]' http://180.76.173.200:9999/party/enroll-detail.do
 
-
+	
+### 聚会：聚会评论点赞或取消点赞
+*   path: /party/comment-thumbsup.do
+*   param:
+    -   commentId(String) 评论id
+	-   type(int) 0 点赞， 1 取消点赞
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'commentId=[v]&type=[v]' http://180.76.173.200:9999/party/comment-thumbsup.do
+	
 	
 #附录
 ## partyVo  
