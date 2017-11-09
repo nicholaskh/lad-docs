@@ -882,7 +882,7 @@
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'userid=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/delete-user.do
+    -   curl -b cookie -d 'userids=[v]&circleid=[v]'  http://180.76.173.200:9999/circle/delete-user.do
  
 ###  圈子:转让圈子接口
 *   path: /circle/transfer.do
