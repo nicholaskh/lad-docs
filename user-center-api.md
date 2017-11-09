@@ -1701,7 +1701,7 @@
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&userids=[v]' http://180.76.173.200:9999/circle/invite-user.do
 
 
-###  圈子: 邀请好友加入圈子
+###  圈子: 邀请好友列表
 *   path: /circle/invite-friend-list.do
 *   param:
    -	circleid(string) 准备邀请进入圈子的id
