@@ -1668,7 +1668,7 @@
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&title=[v]&content=[v]' http://180.76.173.200:9999/circle/get-notice.do
 	
 
-	###  群聊: 修改群聊昵称显示
+###  群聊: 修改群聊昵称显示
 *   path: /chatroom/update-shownick
 *   param:
    -  	chatroomid(string)  群聊id
@@ -1689,6 +1689,28 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/update-disturb.do
 
+
+###  圈子: 邀请好友加入圈子
+*   path: /circle/invite-user.do
+*   param:
+   -	circleid(string) 圈子id
+   -    userids(string) 好友id,多个以逗号隔开
+*	return:
+   -	通用返回值   
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&userids=[v]' http://180.76.173.200:9999/circle/invite-user.do
+
+
+###  圈子: 邀请好友加入圈子
+*   path: /circle/invite-friend-list.do
+*   param:
+   -	circleid(string) 准备邀请进入圈子的id
+*	return:
+   -	通用返回值 userVos  好友信息列表 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/invite-friend-list.do
+	
+	
 
 #附录
 ## commentVo  
