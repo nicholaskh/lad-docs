@@ -271,6 +271,7 @@ Party APIs
 *   inCircle(boolean)  当前用户是不是已加入聚会所在圈子
 *   inParty(boolean)  当前用户是不是已加入聚会
 *   isComment(boolean) 当前用户是否已经评论
+*   isCollect(boolean) 当前用户是否收藏聚会
 *   backPic(String)  聚会背景图片
 *   photos(String[]) 聚会图片信息
 *   video(String)   聚会视频
