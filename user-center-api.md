@@ -1709,6 +1709,27 @@
    -	通用返回值 userVos  好友信息列表 
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/invite-friend-list.do
+
+
+###  IM相关：得到全部聊天室,增量获取
+*   path: /chatroom/my-chatrooms.do
+*   param:
+    -	timestamp(string) 时间戳，首次获取输入0，格式yyyy-MM-dd HH:mm:ss
+*	return:
+    -	通用返回值 ChatroomList timestamp最大时间戳。
+*   example:
+    -   curl -b cookie -d 'timestamp=[v]' http://180.76.173.200:9999/chatroom/my-chatrooms.do
+
+	
+###  好友: 通讯录中已注册的好友信息
+*   path: /friends/sign-users-time
+*   param:
+    -  	phones(string[])  通讯录中的电话数组
+    -	timestamp(string) 时间戳，首次获取输入0，格式yyyy-MM-dd HH:mm:ss
+*	return:
+    -	通用返回值  已进注册的好友userVos，timestamp最大时间戳
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'phones=[v]' http://180.76.173.200:9999/friends/sign-users-time.do	
 	
 	
 
