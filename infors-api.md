@@ -151,8 +151,8 @@ User System APIs
 *   path: /infor/radio-list.do
 *   param:
    -    module(String)  分类
-   -	    page(int) 页码，从1开始
-   -	    limit(int)
+   -	page(int) 页码，从1开始
+   -	limit(int)
 *   return:
    -	通用返回值 
 *   example:
@@ -222,3 +222,24 @@ User System APIs
    -	通用返回值 
 *   example:
     -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-securitys.do
+ 
+### 资讯：获取广播module下的二级分类
+*   path: /infor/radio-classes.do
+*   param:
+    -    module(String)  大分类
+*   return:
+   -	通用返回值  radioClasses 二级分类列表 
+*   example:
+    -   curl -b cookie -F "module=[v]"  http://180.76.173.200:9999/infor/radio-classes.do
+ 
+### 资讯：获取广播下二级分类下广播列表
+*   path: /infor/radio-groups.do
+*   param:
+    -    module(String)  大分类
+	-    className(String)  二级分类
+	-    start(int) 开始集数  
+    -    end(int)   结束集数，如果查询所有 开始集数和结束集数均设置为0
+*   return:
+   -	通用返回值  radioList 广播信息列表 
+*   example:
+    -   curl -b cookie -F "module=[v]&className=[v]&start=[v]&end=[v]"  http://180.76.173.200:9999/infor/radio-groups.do
