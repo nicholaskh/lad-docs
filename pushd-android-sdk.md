@@ -443,6 +443,57 @@ public class PushMsg {
 * 300 timeout 访问超时
 * 110 token失效
 
+## 群通知类型
+
+
+```java
+
+    // 这些通知在 IProcessor 的 void procChatRoomNotification(String data); 中处理
+    // data 为json格式数据
+
+    // 某人加入群聊
+	public static final int SOME_ONE_JOIN_CHAT_ROOM = 4;
+    {
+        "type": 4,
+        "channel": "roomId0",
+        "msg": "userId0,"  // userId0 加入了群聊roomId0
+    }
+
+	// 某人退出群聊
+	public static final int SOME_ONE_QUIT_CHAT_ROOM = 5;
+    {
+        "type": 5,
+        "channel": "roomId0",
+        "msg": "userId0,"  // 用户userId0退出了群聊roomId0
+    }
+
+	// 某人被踢出群聊
+	public static final int SOME_ONE_EXPELLED_FROM_CHAT_ROOM = 6;
+    {
+        "type": 6,
+        "channel": "roomId0",
+        "msg": "userId0,userId1,userId2,userId3"       // 用户userId1,userId2,userId3被用户userId0踢出了群聊
+    }
+
+	// 某人修改了群名称
+	public static final int SOME_ONE_MODIFY_NAME_OF_CHAT_ROOM = 7;
+    {
+        "type": 7,
+        "channel": "roomId0",
+        "msg": "userId0,roomNewName"  // 用户userId0将群聊roomId0的名字改为roomNewName
+    }
+
+	// 某人被邀请加入群聊
+	public static final int SOME_ONE_BE_INVITED_OT_CHAT_ROOM = 8;
+    {
+        "type": 10,
+        "channel": "roomId0",
+        "msg": "userId0,userId1,userId2"  // 用户userId0邀请userId1,userId2进去群聊roomId0
+    }
+
+```
+	
+
 
 
 
