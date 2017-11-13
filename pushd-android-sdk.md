@@ -489,10 +489,19 @@ public class PushMsg {
 	// 某人被邀请加入群聊
 	public static final int SOME_ONE_BE_INVITED_OT_CHAT_ROOM = 8;
     {
-        "type": 10,
+        "type": 8,
         "channel": "roomId0",
         "msg": "userId0,userId1,userId2 name0,name1,name2 name3,name4,name5,name6,name7 userId3,userId4,userId5,userId6,userId7"  // 用户userId0邀请userId1,userId2进去群聊roomId0
         // userId0,userId1,userId2,userId3,userId4,userId5,userId6,userId7 是群中的所有用户
+    }
+
+    // 面对面群中某人第一个加入了群聊
+	public static final int FACE_TO_FACE_SOME_ONE_JOIN_CHAT_ROOM = 9;
+    {
+        "type": 9,
+        "channel": "roomId0",
+        "msg": "userId0,name0,26453"  // userId0第一个加入了面对面群聊roomId0
+
     }
 
 ```
