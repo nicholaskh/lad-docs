@@ -1730,6 +1730,18 @@
     -	通用返回值  已进注册的好友userVos，timestamp最大时间戳
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'phones=[v]' http://180.76.173.200:9999/friends/sign-users-time.do	
+
+	
+###  圈子: 圈子内好友搜索
+*   path: /circle/user-search
+*   param:
+    -  	circleid(string)  圈子id
+    -	keyword(string) 搜索关键字
+*	return:
+    -	通用返回值  已进注册的好友userVos，timestamp最大时间戳
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'phones=[v]' http://180.76.173.200:9999/circle/user-search.do	
+	
 	
 	
 
