@@ -451,31 +451,58 @@ public class PushMsg {
     // 这些通知在 IProcessor 的 void procChatRoomNotification(String data); 中处理
     // data 为json格式数据
 
+     // 这些通知在 IProcessor 的 void procChatRoomNotification(String data); 中处理
+    // data 为json格式数据
+
     // 某人加入群聊
 	public static final int SOME_ONE_JOIN_CHAT_ROOM = 4;
     {
         "type": 4,
         "channel": "roomId0",
-        "msg": "userId0 name0 name1,name2,name3 userId1,userId2,userId3"  // userId0 加入了群聊roomId0
-        /**
-         userId0 userId1 userId2 userId3 是群中的所有用户id
-        **/
+        "msg": ""  
     }
+
+    msg为一下json的字符串形式:
+    {
+    	"masterId":"userId0",
+    	"masterName":"name0",
+    	"otherIds":["userId1", "userId2", "userId3"],  // userId0 加入了群聊roomId0
+    	"otherNames":["name1", "name2", "name3"],     
+    }
+
+   /**
+     userId0 userId1 userId2 userId3 是群中的所有用户id
+    **/
+
 
 	// 某人退出群聊
 	public static final int SOME_ONE_QUIT_CHAT_ROOM = 5;
     {
         "type": 5,
         "channel": "roomId0",
-        "msg": "userId0 name0"  // 用户userId0退出了群聊roomId0
+        "msg": ""  
     }
+    msg:
+    {
+    	“masterId”:"userId0",     // 用户userId0退出了群聊roomId0
+    	"masterName":"name"
+    }
+
+
 
 	// 某人被踢出群聊
 	public static final int SOME_ONE_EXPELLED_FROM_CHAT_ROOM = 6;
     {
         "type": 6,
         "channel": "roomId0",
-        "msg": "userId0,userId1,userId2,userId3 name0,name1,name2,name3"       // 用户userId1,userId2,userId3被用户userId0踢出了群聊
+        "msg": ""       // 用户userId1,userId2,userId3被用户userId0踢出了群聊
+    }
+    msg:
+    {
+    	"masterId": "userId0",
+    	"masterName":"name0",
+    	"hitIds": ["userId1", "userId2", "userId3"],
+    	"hitNames": ["name1", "name2", "name3"]
     }
 
 	// 某人修改了群名称
@@ -483,25 +510,47 @@ public class PushMsg {
     {
         "type": 7,
         "channel": "roomId0",
-        "msg": "userId0,name0,roomNewName"  // 用户userId0将群聊roomId0的名字改为roomNewName
+        "msg": ""  // 用户userId0将群聊roomId0的名字改为newRoom
     }
+
+    msg:
+    {
+    	"masterId": "userId0",
+    	"masterName": "name0",
+    	"chatRoomName": "newRoom"
+    }
+
 
 	// 某人被邀请加入群聊
 	public static final int SOME_ONE_BE_INVITED_OT_CHAT_ROOM = 8;
     {
         "type": 8,
         "channel": "roomId0",
-        "msg": "userId0,userId1,userId2 name0,name1,name2 name3,name4,name5,name6,name7 userId3,userId4,userId5,userId6,userId7"  // 用户userId0邀请userId1,userId2进去群聊roomId0
-        // userId0,userId1,userId2,userId3,userId4,userId5,userId6,userId7 是群中的所有用户
+        "msg": ""  // 用户userId0邀请userId1,userId2,userId3进去群聊roomId0
     }
+    msg:
+    {
+    	"masterId": "userId0",
+    	"masterName": "name0",
+    	"hitIds": ["userId1", "userId2", "userId3"],
+    	"hitNames": ["name1", "name2", "name3"],
+    	"otherIds": ["userId4", "userId5"],
+    	"otherNames": ["name4", "name5"]
+    }
+
 
     // 面对面群中某人第一个加入了群聊
 	public static final int FACE_TO_FACE_SOME_ONE_JOIN_CHAT_ROOM = 9;
     {
         "type": 9,
         "channel": "roomId0",
-        "msg": "userId0,name0,26453"  // userId0第一个加入了面对面群聊roomId0
-
+        "msg": ""  // userId0第一个加入了面对面群聊roomId0
+    }
+    msg:
+    {
+    	"masterId": "userId0",
+    	"masterName": "name0",
+    	"number": 12414
     }
 
 ```
