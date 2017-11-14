@@ -172,10 +172,10 @@ Party APIs
 ### 聚会：评论聚会
 *   path: /party/add-comment.do
 *   param:
-    -   partyComment(String) 聚会评论信息json格式，包括 partyid（聚会id）， content(String) 评论内容，isSync(boolean) 是否同步到个人动态  
+    -   partyComment(String) 聚会评论信息json格式，包括 partyid（聚会id）， content(String) 评论内容，isSync(boolean) 是否同步到个人动态， parentid 回复评论的id ，如果不是回复评论，直接回复聚会，设置为空
     -   photos(MultipartFile[]) 图片 
 *   return:
-    -   通用返回值 
+    -   通用返回值  commentVos  其中parentUserName，parentUser表示当前回复那条评论的用户名和id，类似微信评论 
 *   example:
     -   curl -c cookie/cookie路径 -d 
     -   curl -b  /Users/gouxubo/cookiel -d  'http://180.76.173.200:9999/party/add-comment.do'
