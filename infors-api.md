@@ -108,6 +108,7 @@ User System APIs
     -   inforid(string)  资讯id
     -   countent(String) 评论内容
     -   parentid(String) 如回复其他人评论则必须输入，其他人评论的id
+	-   inforType(int)资讯类型   1 健康，2 安防，3 广播，4 视频
 *   return:
     -   通用返回值， commentVo
 *   example:
@@ -124,28 +125,30 @@ User System APIs
 *   return:
    -	通用返回值 commentVoList
 *   example:
-    -   curl -b cookie -F "noteid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/infor/get-comments.do
+    -   curl -b cookie -F "inforid=[v]&start_id=[v]&gt=[v]&limit=[v]"  http://180.76.173.200:9999/infor/get-comments.do
 
  
 ### 资讯：资讯或评论点赞
 *   path: /infor/thumbsup.do
 *   param:
-   -    targetid(String)  资讯或评论id
-   -	    type(int) 0表示资讯，1表示评论
+    -   targetid(String)  资讯或评论id
+    -	type(int) 0表示资讯，1表示评论
+   	-   inforType(int)资讯类型   1 健康，2 安防，3 广播，4 视频
 *   return:
-   -	通用返回值 commentVoList
+    -	通用返回值 
 *   example:
-    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/thumbsup.do
+    -   curl -b cookie -F "targetid=[v]&type=[v]&inforType=[v]"  http://180.76.173.200:9999/infor/thumbsup.do
  
 ### 资讯：取消点赞
 *   path: /infor/cancal-thumbsup.do
 *   param:
-   -    targetid(String)  资讯或评论id
-   -  	type(int) 0表示资讯，1表示评论
+    -    targetid(String)  资讯或评论id
+    -  	type(int) 0表示资讯，1表示评论
+    -   inforType(int)资讯类型   1 健康，2 安防，3 广播，4 视频
 *   return:
-   -	通用返回值 commentVoList
+    -	通用返回值 
 *   example:
-    -   curl -b cookie -F "targetid=[v]&type=[v]"  http://180.76.173.200:9999/infor/cancal-thumbsup.do
+    -   curl -b cookie -F "targetid=[v]&type=[v]&inforType=[v]"  http://180.76.173.200:9999/infor/cancal-thumbsup.do
 
 ### 资讯：获取广播列表
 *   path: /infor/radio-list.do
@@ -245,3 +248,12 @@ User System APIs
    -	通用返回值  radioList 广播信息列表 
 *   example:
     -   curl -b cookie -F "module=[v]&className=[v]&start=[v]&end=[v]"  http://180.76.173.200:9999/infor/radio-groups.do
+ 
+### 资讯：删除评论
+*   path: /infor/delete-comment.do
+*   param:
+    -   commnetId(string)  评论id
+*   return:
+    -   通用返回值
+*   example:
+    -   curl -c cookie/cookie路径 -d    'commnetId=[v]'   'http://180.76.173.200:9999/infor/delete-comment.do'	
