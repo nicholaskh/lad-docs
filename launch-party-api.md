@@ -26,7 +26,7 @@ Party APIs
         32.029075
     ],
     "reminder": "聚会温馨提示",
-    "status":  聚会的状态， 0 进行中，1 报名结束，2 活动结束  3 已取消 ,
+    "status":  聚会的状态， 1 进行中，2 报名结束，-1 活动结束,
     }
     
 ### 聚会： 发起聚会
@@ -42,14 +42,15 @@ Party APIs
     -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/party/create.do'
 	
 	
-### 聚会： 发起聚会
+### 聚会： 修改聚会
 *   path: /party/update.do
 *   param:
-    -   partyJson(String) 聚会信息参数,包括修改和未修改的
 	-   partyid(String) 聚会id
-    -   backPic(MultipartFile)  背景图片
-	-   photos(MultipartFile[]) 聚会图片 
-	-   video(MultipartFile)  聚会视频
+	-   partyJson(String) 聚会信息参数, 包括修改和未修改的；若任何参数未修改，可为空
+    -   backPic(MultipartFile)  背景图片 可为空
+	-   photos(MultipartFile[]) 新增的聚会图片  可为空
+	-   delPhotos(String[])  删除的聚会图片  可为空 
+	-   video(MultipartFile)  聚会视频  可为空
 *   return:
     -   通用返回值， partyid 聚会id
 *   example:
@@ -244,6 +245,17 @@ Party APIs
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d   'commentId=[v]&type=[v]' http://180.76.173.200:9999/party/comment-thumbsup.do
 	
+### 聚会：聚会临时聊天创建
+*   path: /party/temp-chatroom.do
+*   param:
+    -   partyid(string) 聚会id
+	-   friendid(string) 创建临时聊天用户id
+*   return:
+    -   通用返回值  channelId 临时聊天室id
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]&friendid=[v]' http://180.76.173.200:9999/party/temp-chatroom.do
+
+
 	
 #附录
 ## partyVo  
@@ -264,7 +276,7 @@ Party APIs
 *   open(boolean):  是否允许非圈子人加入， true 是， false 不允许,
 *   position(数组):  具体聚会地点的经纬度
 *   reminder(String): "聚会温馨提示",
-*   status(int):  聚会的状态， 0 进行中，1 报名结束，2 活动结束  3 已取消 ,
+*   status(int):  聚会的状态， 1 进行中，2 报名结束，-1 活动结束
 *   creater(partyUserVo) 聚会创建者信息
 *   create(boolean) 当前用户是不是聚会创建者
 *   users(partyUserVo) 聚会参与者信息
