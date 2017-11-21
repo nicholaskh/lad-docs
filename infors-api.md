@@ -257,3 +257,21 @@ User System APIs
     -   通用返回值
 *   example:
     -   curl -c cookie/cookie路径 -d    'commnetId=[v]'   'http://180.76.173.200:9999/infor/delete-comment.do'	
+
+
+### 资讯：广播个性推荐
+*   path: /infor/user-radios.do
+*   param:
+*   return:
+   -	通用返回值 radioVoList 
+*   example:
+    -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-radios.do
+    
+
+### 资讯：视频个性推荐
+*   path: /infor/user-videos.do
+*   param:
+*   return:
+   -	通用返回值 videoVoList
+*   example:
+    -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-videos.do
