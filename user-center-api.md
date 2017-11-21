@@ -1763,6 +1763,17 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&essence=[v]' http://180.76.173.200:9999/circle/forward-dynamic.do	
 
+	
+###  圈子: 邀请加入圈子好友搜索
+*   path: /circle/invite-user-search
+*   param:
+    -  	circleid(string)  圈子id
+    -	keyword(string) 搜索关键字
+*	return:
+    -	通用返回值  已进注册的好友userVos，timestamp最大时间戳
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&keyword=[v]' http://180.76.173.200:9999/circle/invite-user-search.do	
+
 #附录
 ## commentVo  
 *   commentId(String)     评论id
