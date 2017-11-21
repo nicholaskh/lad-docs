@@ -1742,8 +1742,26 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'phones=[v]' http://180.76.173.200:9999/circle/user-search.do	
 	
+
+###  帖子: 圈子内置顶和加精帖子
+*   path: /note/top-essence.do
+*   param:
+   -	circleid(string) 圈子id
+   -	start_id(string)  
+   -	limit(int)
+*	return:
+   -	通用返回值  noteVoList  essence：1表示加精，0表示未加精， top：1表示置顶， 0 表示未置顶
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&essence=[v]' http://180.76.173.200:9999/circle/top-essence.do
 	
-	
+###  帖子: 帖子转发到我的动态
+*   path: /note/forward-dynamic.do
+*   param:
+   -	noteid(string) 
+*	return:
+   -	通用返回值  dynamicid  动态信息id
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&start_id=[v]&essence=[v]' http://180.76.173.200:9999/circle/forward-dynamic.do	
 
 #附录
 ## commentVo  
