@@ -819,10 +819,11 @@
 *   param:
    -    circleid(String)
    -    reason(String) 申请理由
+   -    isNotice(boolean) 是否通知好友
 *   return:
    -	通用返回值
 *   example:
-    -   curl -b cookie -d 'circleid=[v]&reason=[v]'  http://180.76.173.200:9999/circle/apply-insert.do
+    -   curl -b cookie -d 'circleid=[v]&reason=[v]&isNotice=[v]  http://180.76.173.200:9999/circle/apply-insert.do
 
 ###  圈子:我的圈子
 *   path: /circle/my-info.do
@@ -1008,6 +1009,7 @@
    -    circleid(String)
    -    pictures(files)图片或视频文件数组
    -    type(String) 上传文件类型
+   -    isAsync(boolean) 是否同步到我的动态
 *   return:
    -	通用返回值
 *   example:
