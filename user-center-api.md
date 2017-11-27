@@ -1785,6 +1785,50 @@
     -	通用返回值  0 加入成功， -1  加入失败，需要跳转到验证流程
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/add-in-circle.do	
+
+###  群聊: 二维码扫描进群
+*   path: /chatroom/apply-insert.do
+*   param:
+   -  	chatroomid(string)  群聊id
+*	return:
+   -	通用返回值  0 加入成功， -1 加入失败，需要验证 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/apply-insert.do
+
+###  群聊: 加群验证信息提交
+*   path: /chatroom/add-verify.do
+*   param:
+   -  	chatroomid(string)  群聊id
+   -    reason(string)加群验证信息
+*	return:
+   -	通用返回值
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/add-verify.do
+
+	
+###  群聊: 加群验证信息列表
+*   path: /chatroom/apply-list.do
+*   param:
+   -  	chatroomid(string)  群聊id
+   -    page(int)
+   -    limit(int)
+*	return:
+   -	通用返回值  userApplyVos  status表示状态，0 申请中， 1已同意， 2 已拒绝，-1 已过期
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/apply-list.do
+
+	
+###  群聊: 加群操作同意或拒绝
+*   path: /chatroom/apply-operate.do
+*   param:
+   -  	chatroomid(string)  群聊id
+   -    applyid(string) 申请信息id
+   -    isAgree(boolean) 是否同意
+   -    refues(string) 拒绝理由
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/apply-operate.do
 	
 
 #附录
