@@ -1775,6 +1775,17 @@
     -	通用返回值  已进注册的好友userVos，timestamp最大时间戳
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]&keyword=[v]' http://180.76.173.200:9999/circle/invite-user-search.do	
+	
+
+###  圈子: 加入圈子
+*   path: /circle/add-in-circle.do
+*   param:
+    -  	circleid(string)  圈子id
+*	return:
+    -	通用返回值  0 加入成功， -1  加入失败，需要跳转到验证流程
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' http://180.76.173.200:9999/circle/add-in-circle.do	
+	
 
 #附录
 ## commentVo  
