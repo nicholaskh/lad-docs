@@ -256,6 +256,48 @@ Party APIs
     -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]&friendid=[v]' http://180.76.173.200:9999/party/temp-chatroom.do
 
 
+### 聚会：聚会通知发布
+*   path: /party/send-notice.do
+*   param:
+    -   partyid(string) 聚会id
+	-   content(string) 通知内容
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]&content=[v]' http://180.76.173.200:9999/party/send-notice.do
+
+
+### 聚会：聚会通知详情
+*   path: /party/notice.do
+*   param:
+    -   noticeid(string) 聚会id
+*   return:
+    -   通用返回值  noticeVo  id即为noticeid
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]' http://180.76.173.200:9999/party/notice.do
+
+
+### 聚会：聚会通知列表
+*   path: /party/party-notice.do
+*   param:
+    -   partyid(string) 聚会id
+	-   page(string) 页码
+	-   limit(int) 每页条数
+*   return:
+    -   通用返回值  noticeVos id即为noticeid
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'partyid=[v]&page=[v]&limit=[v]' http://180.76.173.200:9999/party/party-notice.do
+
+
+### 聚会：我收到的聚会通知列表
+*   path: /party/get-my-notices.do
+*   param:
+	-   page(string) 页码
+	-   limit(int) 每页条数
+*   return:
+    -   通用返回值  channelId 临时聊天室id
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d   'page=[v]&limit=[v]' http://180.76.173.200:9999/party/get-my-notices.do
 	
 #附录
 ## partyVo  

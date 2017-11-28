@@ -1830,6 +1830,16 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'chatroomid=[v]&isDisturb=[v]' http://180.76.173.200:9999/chatroom/apply-operate.do
 	
+	
+###  群聊: 加群操作同意或拒绝
+*   path: /chatroom/get-friends-time.do
+*   param:
+   -  	timestamp(string) 时间戳
+*	return:
+   -	通用返回值  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'timestamp=[v]' http://180.76.173.200:9999/chatroom/get-friends-time.do	
+	
 
 #附录
 ## commentVo  
