@@ -999,21 +999,26 @@
 	
 
 ###  帖子:插入新的帖子
+
+###### noteJson数据
+    {
+			"position":[px,py],   地理位置坐标
+            "subject":"标题",
+            "content":"内容",
+            "landmark":"地标",
+            "circleId":"圈子id",
+            "type":"图片或者视频" pic or video
+    }
 *   path: /note/insert.do
 *   param:
-   -    px(double)
-   -    py(double)
-   -    subject(String)
-   -    landmark(String)
-   -    content(String)
-   -    circleid(String)
-   -    pictures(files)图片或视频文件数组
-   -    type(String) 上传文件类型
-   -    isAsync(boolean) 是否同步到我的动态
+   -    noteJson(json)
+   -    pictures(MultipartFile[])图片或视频文件数组
+   -    isAsync(boolean) 是否同步到我的动态 
 *   return:
    -	通用返回值
 *   example:
     -   curl -b cookie -d 'px=[v]&py=[v]&subject=[v]&landmark=[v]&content=[v]&circleid=[v]&pictures=[v]'  http://180.76.173.200:9999/note/insert.do
+
 
 ###  帖子:设置图片
 *   path: /note/phones.do
@@ -1839,7 +1844,17 @@
    -	通用返回值  
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d 'timestamp=[v]' http://180.76.173.200:9999/chatroom/get-friends-time.do	
-	
+
+
+###  好友: 附近的好友
+*   path: /friends/near-friends.do
+*   param:
+   -  	px(double) 经度
+   -  	py(double) 纬度
+*	return:
+   -	通用返回值  friendVos  好友信息表  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/chatroom/friends/near-friends.do	
 
 #附录
 ## commentVo  
