@@ -1008,12 +1008,12 @@
             "landmark":"地标",
             "circleId":"圈子id",
             "type":"图片或者视频" pic or video
+            "async" : true or false 是否同步到我的动态 
     }
 *   path: /note/insert.do
 *   param:
    -    noteJson(json)
    -    pictures(MultipartFile[])图片或视频文件数组
-   -    isAsync(boolean) 是否同步到我的动态 
 *   return:
    -	通用返回值
 *   example:
