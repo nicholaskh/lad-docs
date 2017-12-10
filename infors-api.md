@@ -175,12 +175,13 @@ User System APIs
 *   path: /infor/video-list.do
 *   param:
    -    module(String)  分类
+   -    className 二级分类
    -	    page(int) 页码，从1开始
    -	    limit(int)
 *   return:
    -	通用返回值 
 *   example:
-    -   curl -b cookie -F "module=[v]&page=[v]&limit=[v]"  http://180.76.173.200:9999/infor/video-list.do
+    -   curl -b cookie -F "module=[v]&page=[v]&limit=[v]&className=[v]"  http://180.76.173.200:9999/infor/video-list.do
 
 
 ### 资讯：获取视频详情
@@ -263,7 +264,7 @@ User System APIs
 *   path: /infor/user-radios.do
 *   param:
 *   return:
-   -	通用返回值 radioVoList 
+   -	通用返回值 radioClasses 
 *   example:
     -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-radios.do
     
@@ -272,6 +273,15 @@ User System APIs
 *   path: /infor/user-videos.do
 *   param:
 *   return:
-   -	通用返回值 videoVoList
+   -	通用返回值 videoClasses 
 *   example:
     -   curl -b cookie -F  http://180.76.173.200:9999/infor/user-videos.do
+ 
+### 资讯：获取视频module下的二级分类
+*   path: /infor/video-classes.do
+*   param:
+    -    module(String)  大分类
+*   return:
+   -	通用返回值  videoClasses 二级分类列表 
+*   example:
+    -   curl -b cookie -F "module=[v]"  http://180.76.173.200:9999/infor/video-classes.do
