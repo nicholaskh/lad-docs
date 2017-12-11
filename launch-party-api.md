@@ -66,6 +66,19 @@ Party APIs
 *   example:
     -   curl -c cookie/cookie路径 -d 'http://180.76.173.200:9999/party/party-info.do'	
 
+	
+###  圈子:通过聚会申请加入圈子，需要验证的圈子才需要调用此接口，自由加入的不通过这种方式
+*   path: /circle/party-apply-insert.do
+*   param:
+   -    circleid(String)
+   -    reason(String) 申请理由
+   -    isNotice(boolean) 是否通知好友
+   -    addType(int) 加入类型，通过聚会加入 为 1， 正常为0
+   -    partyid(string) 聚会id
+*   return:
+   -	通用返回值
+*   example:
+    -   curl -b cookie -d 'circleid=[v]&reason=[v]&isNotice=[v]&addType=[v]&partyid=[v]  http://180.76.173.200:9999/circle/party-apply-insert.do
 
 
 ### 聚会：报名聚会
