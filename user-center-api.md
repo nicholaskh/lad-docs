@@ -1178,6 +1178,7 @@
 *   path: /note/comment-thumbsup.do
 *   param:
    -    commentid(String) 评论id
+   -    isThumnbsup(boolean) true 点赞，false 取消点赞
 *   return:
    -	通用返回值 
 *   example:
