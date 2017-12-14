@@ -3,17 +3,24 @@ User System APIs
 #  动态信息相关接口
 
 ###  dynamicVo
-*   msgid(String)    动态信息主键
+*   msgid(String)    动态信息id
 *   title(String)    动态信息标题
 *   photos(String)   动态图片
 *   content(String)  内容
-*   transNum(String)    转发数量
-*   commentNum(String)  评论数量
-*   thumpNum(list)      点赞数量
+*   transNum(int)    转发数量
+*   commentNum(int)  评论数量
+*   thumpNum(int)      点赞数量
 *   userid(String)      当前动态信息发布人员
 *   userPic(String)     当前动态信息人的头像
 *   landmark(long)      发布数动态时地址地理位置展示
 *   isMyThumbsup(boolean)  我是否对当前动态点赞
+*   type(int)   动态类型 0 帖子，1 资讯，3 圈子， 4 聚会， 5 纯动态
+*   sourceid(string)   动态id,如帖子id，圈子id， 资讯id等 
+*   owner(string)    动态信息来源作者
+*   view(string)  转发或评论的说明
+*   postion(double[])  经纬度
+*   videoPic(string)  视频缩略图
+*   video(string) 视频url
 
 
 
@@ -32,7 +39,7 @@ User System APIs
 *   return:
     -   通用返回值， dynamicid 
 *   example:
-    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/infor/dynamic/insert.do'
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/dynamic/insert.do'
 	
 
 ### 动态：获取所有好友的动态信息列表
@@ -43,7 +50,7 @@ User System APIs
 *   return:
     -   通用返回值， dynamicVos
 *   example:
-    -   curl -c cookie/cookie路径 -d 'page=[v]&limit=[v]'  'http://180.76.173.200:9999/infor/all-dynamics.do'	
+    -   curl -c cookie/cookie路径 -d 'page=[v]&limit=[v]'  'http://180.76.173.200:9999/dynamic/all-dynamics.do'	
 
 
 ### 动态：获取所有好友的动态数量
@@ -113,4 +120,44 @@ User System APIs
     -   通用返回值
 *   example:
     -   curl -c cookie/cookie路径 -d 'friendid=[v]'   'http://180.76.173.200:9999/dynamic/dynamic-not-see.do'
-   
+
+### 动态：转发帖子到我的动态
+*   path: /note/forward-dynamic.do
+*   param:
+   -    noteid(String) 帖子id
+   -    view(String) 转发时说明信息
+*   return:
+    -   通用返回值， dynamicid 
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/note/forward-dynamic.do' 
+
+### 动态：转发圈子到我的动态信息
+*   path: /circle/forward-dynamic.do
+*   param:
+   -    circleid(String) 圈子id
+   -    view(String) 转发时说明信息
+*   return:
+    -   通用返回值， dynamicid 
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/circle/forward-dynamic.do' 
+
+### 动态：转发资讯到我的动态信息
+*   path: /infor/forward-dynamic.do
+*   param:
+   -    inforid(String) 圈子id
+   -    inforType(int) 资讯类型， 1健康， 2安防， 3 广播， 4视频
+   -    view(String) 转发时说明信息
+*   return:
+    -   通用返回值， dynamicid 
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/infor/forward-dynamic.do' 
+
+### 动态：转发动态到我的动态信息
+*   path: /party/forward-dynamic.do
+*   param:
+   -    partyid(String) 圈子id
+   -    view(String) 转发时说明信息
+*   return:
+    -   通用返回值， dynamicid 
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/party/forward-dynamic.do' 
