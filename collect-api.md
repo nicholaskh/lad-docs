@@ -8,12 +8,18 @@ User System APIs
 *   title(String)        标题
 *   path(String)         路径
 *   type(int)            收藏类型 1 图片， 2 音乐， 3 视频， 4语音， 5链接 url类或者文件链接
-*   sub_type(int)        收藏子类型， 0帖子， 1 资讯， 2 网页 ， 3 待定 ， 4 聚会
+*   sub_type(int)        收藏子类型， 0帖子， 1 资讯， 2 网页 ， 3 圈子 ， 4 聚会
 *   targetid(string)     收藏内容源id
 *   source(String)       收藏内容来源的如圈子 资讯分类名称等
 *   sourceType(int)      收藏来源类型，资讯类型来源分类，1 健康， 2安防， 3 广播， 4 视频， 5 圈子
 *   userTags(array)      收藏标签
 *   collectTime(time)    收藏时间
+*   collectUserid(string)   收藏为聊天时，聊天对象的id
+*   collectUserName(string)  收藏为聊天时，聊天对象的姓名
+*   collectUserPic(string)   收藏为聊天时，聊天对象的头像
+*   collectPic(string)  收藏内容源的图片，如圈子的头像、帖子第一张图片等，聚会背景图片等 
+*   video(string)      收藏内容源是视频时，视频的url，或者帖子内的视频等
+*   videoPic(string)   收藏内容源是视频的缩略图
 
 
 
@@ -46,8 +52,17 @@ User System APIs
 *   return:
     -   通用返回值 col-time 收藏时间 (yyyy-MM-dd HH:mm:ss)
 *   example:
-    -   curl -b  /Users/gouxubo/cookiel -d 'inforid=[v]' 'http://180.76.173.200:9999/party/collect-infor.do'
+    -   curl -b  /Users/gouxubo/cookiel -d 'inforid=[v]&inforType=[v]' 'http://180.76.173.200:9999/infor/collect-infor.do'
 
+### 收藏：收藏圈子
+*   path: /circle/collect-circle.do
+*   param:
+    -   circleid(String) 圈子id
+*   return:
+    -   通用返回值 col-time 收藏时间 (yyyy-MM-dd HH:mm:ss)
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d 'circleid=[v]' 'http://180.76.173.200:9999/circle/collect-circle.do'
+	
 
 ### 收藏：添加收藏的标签
 *   path: /collect/add-tag.do
@@ -106,6 +121,7 @@ User System APIs
 *   param:
    -    path(String) 收藏源文件的url 
    -    fileType(int) 类型，1 图片， 2 音乐， 3 视频， 4语音， 5链接 url类或者文件链接
+   -    videoPic(String) 收藏为视频时，视频的缩略图
 *   return:
    -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
 *   example:
@@ -143,3 +159,12 @@ User System APIs
     -   通用返回值，collectVos 
 *   example:
     -   curl -c cookie/cookie路径 -d  "tags=[v]&collectid=[v]" 'http://180.76.173.200:9999/collect/add-col-tag.do'
+
+### 收藏：删除收藏
+*   path: /collect/del-collect.do
+*   param:
+*   -   collectids（string）收藏的id，多个以逗号隔开
+*   return:
+    -   通用返回值 
+*   example:
+    -   curl -c cookie/cookie路径 -d  "collectids=[v]" 'http://180.76.173.200:9999/collect/del-collect.do'
