@@ -99,6 +99,7 @@ User System APIs
 *   param:
    -    title(String) 具体的聊天对象或群组名称 
    -    content(String)
+   -    userid(String) 聊天对象的userid
 *   return:
    -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
 *   example:
@@ -168,3 +169,13 @@ User System APIs
     -   通用返回值 
 *   example:
     -   curl -c cookie/cookie路径 -d  "collectids=[v]" 'http://180.76.173.200:9999/collect/del-collect.do'
+
+
+### 收藏：删除帖子收藏
+*   path: /note/cancel-collect.do
+*   param:
+   -    noteid(string)  
+*   return:
+    -   通用返回值
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/note/cancel-collecte.do'
