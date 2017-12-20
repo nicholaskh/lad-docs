@@ -21,6 +21,9 @@ User System APIs
 *   postion(double[])  经纬度
 *   videoPic(string)  视频缩略图
 *   video(string) 视频url
+*   circleid(string)  帖子的圈子
+*   circleName(string)  帖子的圈子名称
+*   time(date)  动态发布时间
 
 
 
@@ -69,7 +72,7 @@ User System APIs
     -   page(int)  当前页数 从1开始
 	-   limit(int)  每页展示条数 
 *   return:
-    -   通用返回值， dynamicVos
+    -   通用返回值， dynamicVos  backPic 背景图， headPic 个人头像， signature 个性签名， showUser
 *   example:
     -   curl -c cookie/cookie路径 -d 'friendid=[v]&page=[v]&limit=[v]'  'http://180.76.173.200:9999/dynamic/friend-dynamics.do'	
 
@@ -90,7 +93,7 @@ User System APIs
     -   page(int)  当前页数 从1开始
 	-   limit(int)  每页展示条数 
 *   return:
-    -   通用返回值， dynamicVos
+    -   通用返回值， dynamicVos， backPic 背景图， headPic 个人头像， signature 个性签名， showUser 展示最后访问的用户
 *   example:
     -   curl -c cookie/cookie路径 -d 'page=[v]&limit=[v]'  'http://180.76.173.200:9999/dynamic/my-dynamics.do'	
 
@@ -161,3 +164,22 @@ User System APIs
     -   通用返回值， dynamicid 
 *   example:
     -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/party/forward-dynamic.do' 
+
+### 动态：谁看过我的动态
+*   path: /dynamic/visit-my-dynamic.do
+*   param:
+   -    page(String) 页数
+   -    limit(String) 每页条数
+*   return:
+    -   通用返回值， visitUserVos 
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/dynamic/visit-my-dynamic.do'
+
+### 动态：更新动态的背景图片
+*   path: /dynamic/update-backpic.do
+*   param:
+   -    backPic(MultipartFile) 图片
+*   return:
+    -   通用返回值
+*   example:
+    -   curl -c cookie/cookie路径 -d  'http://180.76.173.200:9999/dynamic/update-backpic.do'

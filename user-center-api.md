@@ -1857,6 +1857,26 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/chatroom/friends/near-friends.do	
 
+###  圈子: 圈子历史操作信息详情
+*   path: /circle/get-circle-his.do
+*   param:
+   -  	historyid(string) id
+*	return:
+   -	通用返回值    
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/circle/get-circle-his.do	
+
+###  圈子: 我所有的圈子的操作信息列表
+*   path: /circle/get-my-his.do
+*   param:
+   -  	page(int) 
+   -  	limit(int)
+*	return:
+   -	通用返回值  historyVos  操作历史  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/circle/get-my-his.do
+
+
 #附录
 ## commentVo  
 *   commentId(String)     评论id
