@@ -1876,6 +1876,37 @@
 *   example:
     -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/circle/get-my-his.do
 
+###  个人主页: 访问指定好友个人主页
+*   path: /homepage/user-homepage.do
+*   param:
+   -  	page(int) 
+   -  	limit(int)
+   -  	userid（String） 用户id
+*	return:
+   -	通用返回值  userVo  用户信息， userCricles用户圈子信息默认4个  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/homepage/user-homepage.do
+
+###  个人主页: 谁看过我
+*   path: /homepage/visit-to-me.do
+*   param:
+   -  	page(int) 
+   -  	limit(int)
+*	return:
+   -	通用返回值  userVisitVos  用户访问信息列表  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/homepage/visit-to-me.do
+
+###  个人主页: 我看过谁
+*   path: /homepage/visit-from-me.do
+*   param:
+   -  	page(int) 
+   -  	limit(int)
+*	return:
+   -	通用返回值  userVisitVos  用户访问信息列表  
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/homepage/visit-from-me.do
+
 
 #附录
 ## commentVo  
