@@ -168,8 +168,8 @@ User System APIs
 ### 动态：谁看过我的动态
 *   path: /dynamic/visit-my-dynamic.do
 *   param:
-   -    page(String) 页数
-   -    limit(String) 每页条数
+   -    page(int) 页数
+   -    limit(int) 每页条数
 *   return:
     -   通用返回值， visitUserVos 
 *   example:
