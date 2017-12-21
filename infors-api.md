@@ -285,3 +285,22 @@ User System APIs
    -	通用返回值  videoClasses 二级分类列表 
 *   example:
     -   curl -b cookie -F "module=[v]"  http://180.76.173.200:9999/infor/video-classes.do
+
+
+### 资讯：广播播放数量增加1
+*   path: /infor/radio-play.do
+*   param:
+    -    inforid(String)  大分类
+*   return:
+   -	通用返回值  videoClasses 二级分类列表 
+*   example:
+    -   curl -b cookie -F "inforid=[v]"  http://180.76.173.200:9999/infor/radio-play.do
+
+### 资讯：视频播放数量增加1
+*   path: /infor/video-play.do
+*   param:
+    -    inforid(String)  大分类
+*   return:
+   -	通用返回值  videoClasses 二级分类列表 
+*   example:
+    -   curl -b cookie -F "inforid=[v]"  http://180.76.173.200:9999/infor/video-play.do
