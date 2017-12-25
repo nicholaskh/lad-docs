@@ -123,6 +123,7 @@ User System APIs
    -    path(String) 收藏源文件的url 
    -    fileType(int) 类型，1 图片， 2 音乐， 3 视频， 4语音， 5链接 url类或者文件链接
    -    videoPic(String) 收藏为视频时，视频的缩略图
+   -    userid(string) 收藏对象用户的userid
 *   return:
    -	通用返回值   col-time:聊天收藏时间 (yyyy-MM-dd HH:mm:ss) 
 *   example:

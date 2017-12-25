@@ -1908,6 +1908,16 @@
     -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/homepage/visit-from-me.do
 
 
+### 群聊窗口: 删除群聊窗口
+*   path: /chatroom/delete-show.do
+*   param:
+   -  	chatroomid(string) 
+*	return:
+   -	通用返回值   
+*   example:
+    -   curl -b  /Users/gouxubo/cookiel -d http://180.76.173.200:9999/chatroom/delete-show.do
+	
+
 #附录
 ## commentVo  
 *   commentId(String)     评论id

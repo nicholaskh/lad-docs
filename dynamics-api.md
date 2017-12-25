@@ -129,6 +129,7 @@ User System APIs
 *   param:
    -    noteid(String) 帖子id
    -    view(String) 转发时说明信息
+   -    landmark(String) 地标
 *   return:
     -   通用返回值， dynamicid 
 *   example:
@@ -139,6 +140,7 @@ User System APIs
 *   param:
    -    circleid(String) 圈子id
    -    view(String) 转发时说明信息
+   -    landmark(String) 地标
 *   return:
     -   通用返回值， dynamicid 
 *   example:
@@ -150,6 +152,7 @@ User System APIs
    -    inforid(String) 圈子id
    -    inforType(int) 资讯类型， 1健康， 2安防， 3 广播， 4视频
    -    view(String) 转发时说明信息
+   -    landmark(String) 地标
 *   return:
     -   通用返回值， dynamicid 
 *   example:
@@ -160,6 +163,7 @@ User System APIs
 *   param:
    -    partyid(String) 圈子id
    -    view(String) 转发时说明信息
+   -    landmark(String) 地标
 *   return:
     -   通用返回值， dynamicid 
 *   example:
